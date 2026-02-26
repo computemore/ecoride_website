@@ -13,15 +13,20 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const downloadOptions = [
-    { label: 'Driver App (Android)', href: 'https://play.google.com/store/apps/details?id=com.ecoridetaxi.driver' },
-    { label: 'Rider App (Coming Soon)', href: '#' },
+    { label: 'Ecoride Driver (Google Play)', href: 'https://play.google.com/store/apps/details?id=com.ecoridetaxi.driver' },
+    { label: 'Ecoride Rider (Google Play)', href: 'https://play.google.com/store/apps/details?id=com.ecoridetaxi.rider' },
   ];
 
   return (
     <header className={`navbar-wrapper ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <a href="/" className="brand">
-          <span className="brand-text">eco</span>ride
+          {/* <img src="/assets/ecoride.svg" 
+            alt="" 
+            style={{maxHeight: '30px', width: 'auto', objectFit: 'contain', marginRight: '8px'}}
+          /> */}
+          <span className="brand-text">eco</span>
+          <span className="brand-text-red">ride</span>
         </a>
 
         <nav className="desktop-nav">
@@ -65,13 +70,19 @@ export const Navbar: React.FC = () => {
         }
         .brand {
           font-family: var(--font-family-heading);
-          font-size: 28px;
+          font-size: 44px;
           font-weight: 800;
           color: var(--text-primary);
           text-decoration: none;
+          display: flex;
+          align-items: baseline;
+          gap: 0px;
         }
         .brand-text {
           color: var(--primary-green);
+        }
+        .brand-text-red {
+          color: var(--primary-red);
         }
         .nav-links {
           display: flex;

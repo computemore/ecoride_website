@@ -1,4 +1,4 @@
-# EcoRide Official Website Redesign
+# Ecoride Official Website Redesign
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/computemore/ecoride-website)
 [![React](https://img.shields.io/badge/React-18.0%2B-blue)](https://react.dev)
@@ -11,7 +11,7 @@ This repository contains the reconstructed promotional website for EcoRide (ecor
 
 ## Contents
 
-- [EcoRide Official Website Redesign](#ecoride-official-website-redesign)
+- [Ecoride Official Website Redesign](#ecoride-official-website-redesign)
   - [Contents](#contents)
   - [Developers](#developers)
   - [Technology Stack](#technology-stack)

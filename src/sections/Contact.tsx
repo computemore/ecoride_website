@@ -1,5 +1,16 @@
 import React from 'react';
 
+// Structure of the contact section
+// meaning of each part of the line
+// 'export' means that the function is public and can be used by other modules (by using import { Contact } from './Contact')
+// 'const' means that the function is a constant and cannot be changed (even though the data inside can)
+// 'Contact' is the name of the function
+// ': React.FC' means that the function is a functional component i.e it is React.FC type
+// '() => {}' means is equal to the forward casted (pointed) function body i.e 
+//    = () is the arguments of the function, can be structured like (name) or destructured like ({name, city}) or empty i.e void
+//    wherein () is a placeholder for parameters 
+//    => is a forward cast (pointer) to the function body
+//    theink of => as a returner  
 export const Contact: React.FC = () => {
   return (
     <section id="contact" className="contact-section">
@@ -10,29 +21,28 @@ export const Contact: React.FC = () => {
         <div className="contact-grid mt-3">
           <div className="contact-info card">
             <div className="info-item">
-              <div className="info-icon">📍</div>
+              {/* <div className="info-icon">📍</div> */}
               <div>
                 <h3>Address</h3>
-                <p>Blantyre City, Victoria Avenue</p>
-                <p>Meridian House, First Floor</p>
+                <p>📍 Blantyre City, Victoria Avenue, Meridian House, First Floor</p>
               </div>
             </div>
             
             <div className="info-item mt-2">
-              <div className="info-icon">📞</div>
+              {/* <div className="info-icon">📞</div> */}
               <div>
                 <h3>Call Us</h3>
-                <p>+265 994 139 173</p>
-                <p>+265 994 919 373</p>
-                <p>+265 882 599 345</p>
+                <p>📞 +265 994 139 173</p>
+                <p>📞 +265 994 919 373</p>
+                <p>📞 +265 882 599 345</p>
               </div>
             </div>
 
             <div className="info-item mt-2">
-              <div className="info-icon">📧</div>
+              {/* <div className="info-icon">📧</div> */}
               <div>
                 <h3>Email Us</h3>
-                <p><a href="mailto:info@ecoridemw.com">info@ecoridemw.com</a></p>
+                <p><a href="mailto:info@ecoridemw.com">📧 info@ecoridemw.com</a></p>
               </div>
             </div>
           </div>
