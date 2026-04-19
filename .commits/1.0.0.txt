@@ -1,0 +1,41 @@
+Ecoride Website 1.0.0 Release Notes
+Release Date: April 19, 2026
+===================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.0] - 2026-04-19
+
+### Added
+
+- Rebuilt the public website foundation around Next.js App Router, TypeScript, Tailwind CSS, and a typed src architecture.
+- Added core public marketing routes for Home, Ride, Drive, Corporate, About, and a branded not-found page.
+- Added shared public layout, reusable header/footer/widgets, route-level page views, and config-driven content/theme structure.
+- Added route-specific color surfaces with the requested soft diagonal intensity treatment and rounded marketing UI system.
+- Added typed SEO helpers, route metadata, JSON-LD structured data support, robots generation, and sitemap generation.
+- Added future-facing app settings, feature flags, icons, utility helpers, service scaffolding, and state placeholders for later phases.
+- Added public branding assets and static host config files under public.
+
+### Resolved
+
+- Removed the old single-page entry approach and completed the migration to a server-first Next.js setup for SEO.
+- Fixed the App Router build conflict caused by placing route view files under src/pages by moving them to src/page-views.
+- Updated lint configuration to ignore archived legacy files and Next-generated artifacts.
+
+### Validated
+
+- Lint passes for the new website codebase.
+- Production build passes successfully.
+- Local development preview was verified in the browser after startup on port 3003.
+
+### Documentation
+
+- Rewrote README.md to describe the Next.js App Router project structure and run/build workflow.
+- Updated API_INTEGRATION_GUIDE.md to replace old Vite assumptions with NEXT_PUBLIC environment usage and Next.js patterns.
+
+### Pending
+
+- Expand route content depth, imagery, and interaction polish for the main marketing pages.
+- Implement deeper corporate/about storytelling sections and stronger mobile refinement.
+- Connect real backend integrations and auth flows in later phases when public-site scope is extended.

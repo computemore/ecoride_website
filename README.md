@@ -1,184 +1,100 @@
-# Ecoride Official Website Redesign
+# Ecoride Website
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/computemore/ecoride-website)
-[![React](https://img.shields.io/badge/React-18.0%2B-blue)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.0%2B-purple)](https://vitejs.dev/)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/computemore/ecoride/releases/tag/1.0.0)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-blue)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.3-blue)](https://tailwindcss.com/)
+[![Poppins Font](https://img.shields.io/badge/Poppins-Font-green)](https://fonts.google.com/specimen/Poppins)
+[![SEO](https://img.shields.io/badge/SEO-Optimized-green)](https://developers.google.com/search/docs/appearance/seo-starter-guide)
+[![SignalR](https://img.shields.io/badge/SignalR-8.0-blue)](https://dotnet.microsoft.com/apps/aspnet/signalr) 
+[![Google Maps API](https://img.shields.io/badge/Google%20Maps-APIs-green)](https://developers.google.com/maps)
+[![Google Sign-In](https://img.shields.io/badge/Google%20Sign--In-OAuth%202.0-red)](https://developers.google.com/identity)
+[![Microsoft Identity](https://img.shields.io/badge/Microsoft-OIDC-blue)](https://learn.microsoft.com/en-us/entra/identity-platform/)
 
-> **Premium, responsive, single-page application for the official EcoRide Malawi website.**
 
-This repository contains the reconstructed promotional website for EcoRide (ecoridemw.com). It serves as the main landing page, highlighting core features, services, contact information, and providing users direct links to download the respective Driver and Rider mobile applications.
+> Next.js App Router marketing website for Ecoride Malawi, built for strong SEO, fast server-rendered public pages, and a clean path to future rider, driver, and corporate growth.
 
 ## Contents
 
-- [Ecoride Official Website Redesign](#ecoride-official-website-redesign)
+- [Ecoride Website](#ecoride-website)
   - [Contents](#contents)
-  - [Developers](#developers)
-  - [Technology Stack](#technology-stack)
-  - [Repo Layout](#repo-layout)
-  - [Features](#features)
-  - [Quick Reference](#quick-reference)
-  - [Quick Actions](#quick-actions)
-  - [Dev Guides for Browser Testing](#dev-guides-for-browser-testing)
-  - [Deployment \& External Serving](#deployment--external-serving)
-    - [Vercel / Cloudflare Pages](#vercel--cloudflare-pages)
-    - [Nginx Configuration](#nginx-configuration)
-    - [Apache Configuration](#apache-configuration)
-    - [ngrok Tunnel (Local External Testing)](#ngrok-tunnel-local-external-testing)
+  - [Stack](#stack)
+  - [Current Scope](#current-scope)
+  - [Commands](#commands)
+  - [Structure](#structure)
+  - [SEO Notes](#seo-notes)
+  - [Deployment](#deployment)
 
-## Developers
+---
 
-- **Mr. Paul Namalomba** - [GitHub](https://github.com/paulnamalomba) | Backend / Full Stack Engineer
+## Stack
 
-## Technology Stack
+- Next.js 15 App Router
+- React 19
+- Strict TypeScript
+- Tailwind CSS
+- `next/font` with Poppins
+- Typed metadata and JSON-LD for SEO
 
-| Component | Technology | Version |
-|-----------|-----------|---------|
-| **Frontend Framework** | React | 18+ |
-| **Language** | TypeScript | 5+ |
-| **Bundler / Build Tool** | Vite | 5+ |
-| **Styling** | Native CSS3 (Variables, Custom Tokens) | - |
-| **Fonts** | Google Fonts (Poppins, Plus Jakarta Sans) | - |
+## Current Scope
 
-## Repo Layout
+The first implementation pass includes:
 
-```
-ecoride-website/
-├── public/                 # Static assets (favicons, etc.)
-├── src/                    # Source code
-│   ├── components/         # Reusable UI elements
-│   │   ├── Dropdown.tsx    # App download dropdown menu
-│   │   ├── Footer.tsx      # Global page footer
-│   │   ├── Navbar.tsx      # Sticky top navigation with glassmorphism
-│   │   └── index.ts        # Component exports
-│   ├── sections/           # Landing page sections
-│   │   ├── Contact.tsx     # Contact info and form
-│   │   ├── Features.tsx    # Safety and reliability points
-│   │   ├── Hero.tsx        # Main banner and call to action
-│   │   └── Services.tsx    # List of offered services
-│   ├── App.tsx             # Root component assembling all sections
-│   ├── index.css           # Global design tokens and styling
-│   └── main.tsx            # React entry point
-├── API_INTEGRATION_GUIDE.md# Documentation for linking to backend
-├── REACT_DEV_GUIDE.md      # Vite/React boilerplate reference
-├── package.json            # Dependencies and npm scripts
-├── tsconfig.json           # TypeScript configuration
-└── vite.config.ts          # Vite bundler configuration
-```
+- Home page with the red brand surface
+- Ride page with the teal brand surface
+- Drive page with the red brand surface
+- Corporate page with the blue brand surface
+- About page with anchored sections for the dropdown targets
+- Shared rounded header and footer system
+- `robots.txt` and `sitemap.xml`
 
-## Features
+Auth is intentionally deferred. The header reserves a login/profile slot without implementing identity flows yet.
 
-- ✅ **Modern Premium UI**: Built completely without bloated CSS frameworks; utilizing custom CSS variables, elegant emerald green accents, and smooth drop-shadows matching the `ecoride-rider` mobile app theme.
-- ✅ **Responsive Design**: Fluid and accessible gracefully across mobile phones, tablets, and large desktop screens.
-- ✅ **Dynamic Navbar Dropdown**: Integrated dropdown system exclusively for selecting between the Driver and Rider mobile app downloads.
-- ✅ **Glassmorphism Elements**: Beautifully styled transparent navbar utilizing CSS backdrop filters.
-- ✅ **Animations**: Fluid fade-in effects, micro-interactions, and hover states to boost user engagement.
-
-## Quick Reference
+## Commands
 
 | Command | Description |
-|---------|-------------|
-| `npm install` | Installs all project dependencies |
-| `npm run dev` | Starts the local development server with Hot Module Replacement |
-| `npm run build` | Compiles TypeScript and builds the production bundle |
-| `npm run preview` | Serves the production build locally to test performance |
+|---|---|
+| `npm install` | Install dependencies |
+| `npm run dev -- --port 3003` | Start the Next.js dev server on port 3003 |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Build the production app |
+| `npm run start` | Start the production server |
 
-## Quick Actions
+## Structure
 
-**To get running in dev mode:**
-```bash
-# 1. Clone the repository
-git clone https://github.com/computemore/ecoride-website.git
-cd ecoride-website
-
-# 2. Install dependencies
-npm install
-
-# 3. Start development server
-npm run dev
-# Vite will output a local URL, typically http://localhost:5173
+```text
+ecoride-website/
+├── public/
+├── src/
+│   ├── app/                # Next.js App Router routes, sitemap, robots
+│   ├── components/         # Shared UI and widgets
+│   ├── config/             # Navigation, theme, SEO, and app settings
+│   ├── icons/              # Local icon components and barrels
+│   ├── layouts/            # Shared page shells
+│   ├── page-views/         # Route-level view components
+│   ├── services/           # API utilities
+│   ├── state/              # Deferred app state scaffolding
+│   ├── styles/             # Global CSS and tokens
+│   ├── types/              # Shared TypeScript types
+│   └── utils/              # Stateless helpers
+├── API_INTEGRATION_GUIDE.md
+├── package.json
+├── tailwind.config.ts
+└── next.config.ts
 ```
 
-**To test the production build locally:**
-```bash
-# 1. Build the project
-npm run build
+`src/pages` is intentionally not used for reusable route views because Next.js reserves that folder for the legacy Pages Router.
 
-# 2. Preview the static output locally
-npm run preview
-```
+## SEO Notes
 
-## Dev Guides for Browser Testing
+- Public routes are server-rendered by default.
+- Metadata is generated from typed config per route.
+- Organization and website JSON-LD are injected at the root layout.
+- `robots.ts` blocks admin, account, and API paths.
+- `sitemap.ts` publishes the current public route set.
 
-When modifying the UI (e.g., in `src/index.css` or individual component files), use your browser's Developer Tools to audit layouts across devices without needing a physical phone.
+## Deployment
 
-1. **Open Dev Tools**: Press `F12` or `Ctrl+Shift+I` (Windows/Linux) or `Cmd+Opt+I` (Mac) in Chrome/Edge/Firefox.
-2. **Toggle Device Toolbar**: Look for the smartphone/tablet icon (or press `Ctrl+Shift+M`) to switch to responsive design mode.
-3. **Select Devices**: Use the dropdown at the top to simulate various viewpoints (e.g., iPhone 14, iPad Mini, responsive sizing).
-4. **Inspect CSS Variables**: In the Elements tab, check the explicitly defined `--primary-green` or `--space-xl` rules attached to `:root` to quickly tweak spacing or colors live in the browser before committing them to `index.css`.
+Use a platform with first-class Next.js support. Vercel is the cleanest default for this project because it handles App Router rendering, metadata, and image optimization without extra server glue.
 
-## Deployment & External Serving
-
-This React application is a classic SPA (Single Page Application) built statically via `npm run build`. 
-
-### Vercel / Cloudflare Pages
-
-This site is optimized for zero-config deployments on cloud edge servers:
-1. Push this repository to GitHub.
-2. Log into Vercel/Cloudflare.
-3. Import the `ecoride-website` repository.
-4. Framework preset: **Vite**.
-5. Build command: `npm run build`
-6. Output directory: `dist`
-
-### Nginx Configuration
-
-If serving statically on a VPS using Nginx:
-```nginx
-server {
-    listen 80;
-    server_name ecoridemw.com www.ecoridemw.com;
-    root /path/to/ecoride-website/dist;
-    index index.html;
-
-    # Important for React Router (if added later) to fallback to index.html
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
-
-    # Browser caching optimization
-    location ~* \.(js|css|png|jpg|jpeg|gif|svg|ico)$ {
-        expires 30d;
-        add_header Cache-Control "public, no-transform";
-    }
-}
-```
-
-### Apache Configuration
-
-If serving statically using Apache, generate `.htaccess` in your `dist` folder:
-```apache
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
-</IfModule>
-```
-
-### ngrok Tunnel (Local External Testing)
-
-Need to show the website to the client or test it on your actual mobile device while developing locally? Use `ngrok` to expose your Vite localhost port (usually 5173):
-
-```bash
-# 1. Start your local dev server
-npm run dev
-
-# 2. In a new terminal, tunnel the port
-ngrok http 5173
-
-# 3. Share the provided HTTPS link (e.g., https://abc-123.ngrok.app)
-```
-*Note: The Vite dev server will seamlessly handle the external requests.*
+If you deploy elsewhere, make sure the host supports running a Next.js server or a compatible build output rather than expecting a static SPA bundle.
