@@ -1,6 +1,6 @@
 # Ecoride Website
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/computemore/ecoride/releases/tag/1.0.0)
+[![Version](https://img.shields.io/badge/version-1.0.0.1.1-blue)](https://github.com/computemore/ecoride/releases/tag/1.0.0.1.1)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-15-blue)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.3-blue)](https://tailwindcss.com/)

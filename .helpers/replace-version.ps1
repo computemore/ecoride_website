@@ -25,6 +25,14 @@ if (-not $versionMatch) {
     exit 1
 }
 
+# Extract version components from search string (e.g., "0.6.0-alpha" -> "0.6.0" + "alpha", or "1.0.0" -> "1.0.0")
+# Pattern: "X.Y.Z" or "X.Y.Z-suffix" (suffix is optional)
+$versionMatch = $Search -match '^([\d.]+)(?:-(.+))?$'
+if (-not $versionMatch) {
+    Write-Error "Invalid version format. Expected 'X.Y.Z' or 'X.Y.Z-suffix' (e.g., '1.0.0' or '0.6.0-alpha')"
+    exit 1
+}
+
 $versionNumber = $matches[1]  # "0.6.0" or "1.0.0"
 $suffix = $matches[2]         # "alpha" or $null if no suffix
 
@@ -101,14 +109,18 @@ $excludedDirs = @(
     ".commits",
     ".secrets",
     "build",
+    "minor-changelogs",
+    "prompts",
     ".git",
     "Flutter",
     "node_modules",
+    ".next",
     "bin",
     "obj",
     "logs",
     ".vs",
-    ".vscode"
+    ".vscode",
+    "zip-cache"
 )
 
 # Excluded file patterns
@@ -119,7 +131,7 @@ $excludedPatterns = @(
     "*.cache",
     "*.suo",
     "*.user",
-    "package-lock.json",
+    # "package-lock.json",
     "*.min.js",
     "*.min.css",
     "*.ps1",
@@ -127,10 +139,8 @@ $excludedPatterns = @(
     "*.rc",
     "*.xml",
     "*.jar",
-    "*\zip-cache\*",
-    "*\Flutter\*",
     "*.stamp",
-    "package_config.json",
+    # "package_config.json",
     "CHANGELOG.md"
 )
 
@@ -142,7 +152,7 @@ $allFiles = Get-ChildItem -Path $repoRoot -Recurse -File | Where-Object {
     # Check if file is in excluded directory
     $isExcluded = $false
     foreach ($excludedDir in $excludedDirs) {
-        if ($file.FullName -like "*\$excludedDir\*") {
+        if ($file.FullName -match "[/\\]$([regex]::Escape($excludedDir))[/\\]") {
             $isExcluded = $true
             break
         }

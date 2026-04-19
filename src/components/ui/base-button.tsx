@@ -30,7 +30,7 @@ const sizeClasses: Record<ButtonSize, string> = {
 };
 
 const baseClassName =
-  'surface-button inline-flex items-center justify-center gap-2 rounded-pill font-medium tracking-[-0.02em] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white';
+  'surface-button inline-flex items-center justify-center gap-2 rounded-pill font-bold tracking-[-0.02em] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white';
 
 export const BaseButton = ({
   children,

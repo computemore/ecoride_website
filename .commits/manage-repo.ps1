@@ -394,7 +394,7 @@ function Invoke-Release {
     }
      if (-not (Invoke-GitPush -Remote $Remote -Branch $Branch -Deploy $Deploy)) { return }
     if (-not (Invoke-GitTag -VersionNumber $VersionNumber -Remote $Remote)) { return }
-    if ($Release -eq "private") {
+    if ($Release -eq "private" -and $Deploy -eq "public") {
        if(-not (Set-RepoPrivate -Sleep 180)) { return }
     }
     

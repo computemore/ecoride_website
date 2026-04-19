@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { BaseButton } from '@/components/ui/base-button';
 import { appSettings } from '@/config/app-settings';
 import { headerNavigation } from '@/config/site-content';
-import { ChevronDownIcon } from '@/icons';
+import { ChevronDownIcon, SiteTitleIcon } from '@/icons';
 import type { PublicPageKey } from '@/types';
 import { cn } from '@/utils/cn';
 
@@ -22,13 +22,13 @@ export const IndexHeader = ({ pageKey }: IndexHeaderProps) => {
   const navigation = headerNavigation[pageKey];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-transparent backdrop-blur-xl">
+    <header className="sticky top-0 z-40 bg-transparent backdrop-blur-xl">
       <div className="mx-auto flex max-w-content-wide items-center justify-between gap-4 px-4 py-4 md:px-6 lg:px-8">
         <Link className="shrink-0 text-2xl font-semibold tracking-[-0.08em] text-white" href="/">
-          ecoride
+          <SiteTitleIcon />
         </Link>
 
-        <nav className="hidden items-center justify-center gap-8 lg:flex">
+        <nav className="hidden items-center justify-center gap-6 lg:flex xl:gap-8">
           {navigation.map((item) =>
             item.kind === 'dropdown' ? (
               <div className="relative" key={item.label} onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
@@ -88,7 +88,7 @@ export const IndexHeader = ({ pageKey }: IndexHeaderProps) => {
               </div>
             ) : null}
           </div>
-          <BaseButton className="text-[#f0453d]" href="/about#explore" variant="solid-light">
+          <BaseButton href="/about#explore" variant="solid-light">
             Login
           </BaseButton>
         </div>
@@ -104,7 +104,7 @@ export const IndexHeader = ({ pageKey }: IndexHeaderProps) => {
       </div>
 
       {mobileMenuOpen ? (
-        <div className="border-t border-white/10 px-4 pb-5 pt-2 lg:hidden">
+        <div className="border-t border-white/10 px-4 pb-5 pt-3 lg:hidden">
           <nav className="grid gap-2">
             {navigation.map((item) =>
               item.kind === 'dropdown' ? (
@@ -141,7 +141,7 @@ export const IndexHeader = ({ pageKey }: IndexHeaderProps) => {
                 Download {item.label}
               </BaseButton>
             ))}
-            <BaseButton className="w-full text-[#f0453d]" href="/about#explore" variant="solid-light">
+            <BaseButton className="w-full" href="/about#explore" variant="solid-light">
               Login
             </BaseButton>
           </div>

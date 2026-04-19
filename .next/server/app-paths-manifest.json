@@ -1,6 +1,5 @@
 {
   "/page": "app/page.js",
-  "/ride/page": "app/ride/page.js",
-  "/corporate/page": "app/corporate/page.js",
-  "/about/page": "app/about/page.js"
+  "/drive/page": "app/drive/page.js",
+  "/corporate/page": "app/corporate/page.js"
 }
