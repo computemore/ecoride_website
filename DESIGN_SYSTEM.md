@@ -243,6 +243,17 @@ Typical vertical rhythm:
 
 Anchored sections should use the `section-anchor` class so in-page navigation lands below the sticky header.
 
+### 6.5 Split scrolling for legal pages
+
+Legal document layouts may use split scrolling on desktop when the section index is long enough to exceed the viewport height.
+
+Rules:
+
+- The legal sidebar should remain sticky below the header.
+- The legal sidebar should be independently scrollable within the viewport so users can browse the local section index without losing their article position.
+- The main legal article should continue to scroll as part of the page itself rather than becoming a second nested article scroller.
+- This split-scroll behavior is scoped to long-form legal/navigation layouts and should not be treated as a default pattern for marketing pages.
+
 ---
 
 ## 7. Layout System
@@ -296,6 +307,17 @@ Each route has its own identity but must still feel like the same system.
 | Drive | Red | Earning, readiness, support |
 | Corporate | Blue | Pricing clarity, oversight, sustainability |
 | About | Red | Platform explanation and anchored narrative |
+
+### 7.5 Legal document layout
+
+Legal routes under About may adopt a light-surface reading layout instead of the saturated brand-surface treatment used by the main marketing routes.
+
+Legal layout rules:
+
+- The left rail presents the local legal context, route selector, and in-page heading index.
+- The left rail may scroll independently on desktop if its content exceeds the available viewport height.
+- The right column remains the primary reading surface and scrolls with the page.
+- Metadata rows such as Effective Date and Last Updated should be presented as simple structured text, not elevated cards, unless the legal page introduces a materially different information hierarchy.
 
 ---
 

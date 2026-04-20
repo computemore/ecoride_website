@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import { cn } from '@/utils/cn';
 
-type ButtonVariant = 'solid-light' | 'ghost-light' | 'ghost-outline';
+type ButtonVariant = 'solid-light' | 'ghost-light' | 'ghost-outline' | 'solid-dark' | 'ghost-dark' | 'ghost-outline-dark';
 type ButtonSize = 'sm' | 'md';
 
 interface BaseButtonProps {
@@ -19,9 +19,12 @@ interface BaseButtonProps {
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
-  'solid-light': 'bg-white text-black hover:bg-white/90',
-  'ghost-light': 'bg-white/12 text-white hover:bg-white/18',
-  'ghost-outline': 'border border-white/30 bg-transparent text-white hover:bg-white/10',
+  'solid-light': 'bg-white text-black hover:bg-white/90 focus-visible:outline-white',
+  'ghost-light': 'bg-white/12 text-white hover:bg-white/18 focus-visible:outline-white',
+  'ghost-outline': 'border border-white/30 bg-transparent text-white hover:bg-white/10 focus-visible:outline-white',
+  'solid-dark': 'bg-slate-900 text-white hover:bg-slate-800 focus-visible:outline-slate-900',
+  'ghost-dark': 'bg-slate-900/6 text-slate-900 hover:bg-slate-900/10 focus-visible:outline-slate-900',
+  'ghost-outline-dark': 'border border-slate-900/14 bg-transparent text-slate-900 hover:bg-slate-900/5 focus-visible:outline-slate-900',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -30,7 +33,7 @@ const sizeClasses: Record<ButtonSize, string> = {
 };
 
 const baseClassName =
-  'surface-button inline-flex items-center justify-center gap-2 rounded-pill font-bold tracking-[-0.02em] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white';
+  'surface-button inline-flex items-center justify-center gap-2 rounded-pill font-bold tracking-[-0.02em] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
 export const BaseButton = ({
   children,

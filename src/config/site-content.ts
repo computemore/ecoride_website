@@ -30,6 +30,8 @@ const aboutDropdownItems = [
   { href: '/about#explore', label: 'Explore' },
   { href: '/about#blog', label: 'Blog' },
   { href: '/about#corporate-overview', label: 'Corporate' },
+  { href: '/about/terms', label: 'Terms' },
+  { href: '/about/privacy-policy', label: 'Privacy Policy' },
 ] as const;
 
 export const pageThemes: Record<PublicPageKey, PageTheme> = {
@@ -82,6 +84,25 @@ export const pageSeo: Record<PublicPageKey, SeoProps> = {
     keywords: ['about Ecoride', 'Malawi mobility platform', 'Ecoride partners'],
   },
 };
+
+export const legalPageSeo = {
+  privacyPolicy: {
+    title: 'Privacy Policy | Ecoride Malawi',
+    description:
+      'Read how Ecoride collects, processes, stores, and protects personal data across rider, driver, website, and service interactions in Malawi.',
+    canonical: '/about/privacy-policy',
+    ogImage: '/ecoride-256.png',
+    keywords: ['Ecoride privacy policy', 'Malawi data protection', 'Ecoride personal data'],
+  },
+  terms: {
+    title: 'Terms Of Use | Ecoride Malawi',
+    description:
+      'Review the legal terms that govern access to Ecoride services, payments, liability, dispute resolution, and user responsibilities in Malawi.',
+    canonical: '/about/terms',
+    ogImage: '/ecoride-256.png',
+    keywords: ['Ecoride terms of use', 'Ecoride legal terms', 'Malawi ride sharing terms'],
+  },
+} satisfies Record<'privacyPolicy' | 'terms', SeoProps>;
 
 export const headerNavigation: Record<PublicPageKey, NavItem[]> = {
   home: [
