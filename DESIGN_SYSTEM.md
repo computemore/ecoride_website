@@ -213,6 +213,18 @@ The current implementation uses responsive Tailwind sizing rather than a central
 - Card H3: approximately `text-xl` to `text-2xl` responsive.
 - Body copy: `text-[15px]` to `text-lg` depending on hierarchy.
 
+### 5.5 Mobile type reduction rule
+
+Below `768px`, the public website should intentionally step typography down by one level from the desktop reading scale.
+
+Rules:
+
+- Hero headlines should reduce from the desktop-first `text-5xl` pattern to a mobile-first `text-4xl` baseline unless a tighter headline requires an even smaller starting size.
+- Section headings should start at `text-2xl` on mobile before expanding upward at `sm` and `lg` breakpoints.
+- Shared body copy in marketing sections should default to `text-sm` or `text-base` on mobile rather than `text-lg`.
+- Shared support copy, card bullets, and footer/meta text should default to `text-xs` or `text-sm` on mobile before scaling up.
+- Button text should also reduce by one step on mobile so CTA groups do not force premature wrapping or horizontal crowding.
+
 ---
 
 ## 6. Spatial System
@@ -284,6 +296,16 @@ The header is:
 - Download Apps stays a white button with black text.
 - Login stays a white button with black text in the current resolved system.
 - Dropdown items use `rounded-pill` styling.
+
+#### Mobile header behavior
+
+Below `768px`, the shared header follows these rules:
+
+- The wordmark should shrink substantially on mobile to preserve horizontal space for the menu toggle. The current implementation reduces the logo width to roughly 40% of the desktop width.
+- The menu toggle should open a full-width panel directly beneath the sticky header rather than a floating side drawer.
+- Navigation groups belong at the top of that mobile panel.
+- Utility and download actions belong at the bottom of that mobile panel, separated from the navigation links by a divider.
+- The mobile panel may scroll vertically inside the viewport, but it must not introduce horizontal scrolling.
 
 ### 7.3 Footer model
 
@@ -512,6 +534,17 @@ When adapting a section for smaller screens, prioritize in this order:
 - Center hero content on mobile when the layout shifts from split to stacked.
 - Collapse multi-column card grids cleanly before content becomes cramped.
 - Maintain touch-friendly hit areas for buttons and nav items.
+
+### 12.4 Horizontal overflow prevention
+
+The public website should treat horizontal scrolling on mobile as a defect unless a component is explicitly designed as a horizontal scroller.
+
+Rules:
+
+- `html` and `body` should prevent accidental horizontal overflow at the global level.
+- Route surfaces should clip incidental horizontal overflow caused by shadows, translated elements, or long strings.
+- Long contact strings such as email addresses must wrap or break cleanly on small screens.
+- Shared components should avoid fixed-width mobile assumptions when the same intent can be achieved with responsive widths or wrapping behavior.
 
 ---
 

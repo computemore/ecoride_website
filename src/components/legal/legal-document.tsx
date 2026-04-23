@@ -66,14 +66,14 @@ const renderBlock = (block: LegalBlock, index: number) => {
   if (block.type === 'heading') {
     if (block.level === 2) {
       return (
-        <h2 className="scroll-mt-28 text-2xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-3xl" id={block.id} key={block.id}>
+        <h2 className="scroll-mt-28 text-xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-3xl" id={block.id} key={block.id}>
           {renderInlineNodes(block.content)}
         </h2>
       );
     }
 
     return (
-      <h3 className="scroll-mt-28 text-lg font-semibold tracking-[-0.03em] text-slate-900 sm:text-xl" id={block.id} key={block.id}>
+      <h3 className="scroll-mt-28 text-base font-semibold tracking-[-0.03em] text-slate-900 sm:text-xl" id={block.id} key={block.id}>
         {renderInlineNodes(block.content)}
       </h3>
     );
@@ -84,7 +84,7 @@ const renderBlock = (block: LegalBlock, index: number) => {
       return (
         <ul className="space-y-3" key={`list-${index}`}>
           {block.items.map((item, itemIndex) => (
-            <li className="flex gap-3 text-[15px] leading-8 text-slate-700 md:text-base" key={`bullet-${itemIndex}`}>
+            <li className="flex gap-3 text-sm leading-7 text-slate-700 md:text-base" key={`bullet-${itemIndex}`}>
               <span className="mt-3 h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
               <span>{renderInlineNodes(item.content)}</span>
             </li>
@@ -96,7 +96,7 @@ const renderBlock = (block: LegalBlock, index: number) => {
     return (
       <ol className="space-y-3" key={`list-${index}`}>
         {block.items.map((item, itemIndex) => (
-          <li className="flex gap-3 text-[15px] leading-8 text-slate-700 md:text-base" key={`ordered-${itemIndex}`}>
+          <li className="flex gap-3 text-sm leading-7 text-slate-700 md:text-base" key={`ordered-${itemIndex}`}>
             <span className="w-9 shrink-0 font-semibold text-slate-500">{item.marker}</span>
             <span>{renderInlineNodes(item.content)}</span>
           </li>
@@ -108,7 +108,7 @@ const renderBlock = (block: LegalBlock, index: number) => {
   return (
     <p
       className={cn(
-        'text-[15px] leading-8 text-slate-700 md:text-base',
+        'text-sm leading-7 text-slate-700 md:text-base',
         block.isLabel && 'text-sm font-semibold uppercase tracking-[0.24em] text-slate-500',
         block.isEmphasis && 'font-semibold text-slate-900',
       )}
@@ -127,8 +127,8 @@ export const LegalDocumentView = ({ document, slug }: LegalDocumentProps) => {
       <aside className="lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-hidden">
         <div className="surface-card-light border border-white/90 rounded-card p-6 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:overscroll-contain">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500">About</p>
-          <p className="mt-4 text-2xl font-semibold tracking-[-0.05em] text-slate-950">Legal</p>
-          <p className="mt-3 text-sm leading-7 text-slate-600">
+          <p className="mt-4 text-xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-2xl">Legal</p>
+          <p className="mt-3 text-[13px] leading-6 text-slate-600 sm:text-sm sm:leading-7">
             Read the policies that govern how Ecoride handles service access, personal data, and essential user protections.
           </p>
 
@@ -163,7 +163,7 @@ export const LegalDocumentView = ({ document, slug }: LegalDocumentProps) => {
                 {document.headings.map((heading) => (
                   <a
                     className={cn(
-                      'text-sm leading-6 text-slate-600 transition hover:text-slate-950',
+                        'text-[13px] leading-5 text-slate-600 transition hover:text-slate-950 sm:text-sm sm:leading-6',
                       heading.level === 3 && 'pl-4 text-[13px]',
                     )}
                     href={`#${heading.id}`}
@@ -183,7 +183,7 @@ export const LegalDocumentView = ({ document, slug }: LegalDocumentProps) => {
           <Link className="text-sm font-medium text-slate-500 transition hover:text-slate-900" href="/about">
             Back to About
           </Link>
-          <h1 className="mt-4 text-4xl font-semibold tracking-[-0.06em] text-slate-950 sm:text-5xl">{renderInlineNodes(document.title)}</h1>
+          <h1 className="mt-4 text-3xl font-semibold tracking-[-0.06em] text-slate-950 sm:text-5xl">{renderInlineNodes(document.title)}</h1>
 
           {document.meta.length > 0 ? (
             <div className="mt-6 flex flex-col gap-4 border-t border-slate-900/8 pt-5 sm:flex-row sm:items-start sm:justify-between">

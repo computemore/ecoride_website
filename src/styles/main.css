@@ -19,6 +19,7 @@
 
 @layer components {
   .page-surface {
+    overflow-x: clip;
     background-image: linear-gradient(
       135deg,
       color-mix(in srgb, var(--page-color) 95%, black) 0%,
@@ -28,6 +29,7 @@
   }
 
   .page-surface-light {
+    overflow-x: clip;
     background: #fcfcfc;
   }
 

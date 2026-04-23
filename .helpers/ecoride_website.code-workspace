@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "../../ecoride_admin"
+		},
+		{
+			"path": "../../halfqr"
 		}
 	]
 }

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { BaseButton } from '@/components/ui/base-button';
 import { appSettings } from '@/config/app-settings';
 import { headerNavigation } from '@/config/site-content';
-import { ChevronDownIcon, SiteTitleIcon } from '@/icons';
+import { ChevronDownIcon, SiteTitleIcon, EcorideMenuIcon, EcorideCloseIcon } from '@/icons';
 import type { PublicPageKey } from '@/types';
 import { cn } from '@/utils/cn';
 
@@ -17,11 +17,27 @@ interface IndexHeaderProps {
 
 export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
   const [appsOpen, setAppsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const isLightTone = tone === 'light';
 
   const navigation = headerNavigation[pageKey];
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setMobileDropdownOpen(null);
+  };
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen((current) => {
+      if (current) {
+        setMobileDropdownOpen(null);
+        return false;
+      }
+
+      setMobileDropdownOpen(null);
+      return true;
+    });
+  };
 
   return (
     <header
@@ -30,8 +46,8 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
         isLightTone ? 'bg-[#FCFCFC]/92' : 'bg-transparent',
       )}
     >
-      <div className="mx-auto flex max-w-content-wide items-center justify-between gap-4 px-4 py-4 md:px-6 lg:px-8">
-        <Link className={cn('shrink-0 text-2xl font-semibold tracking-[-0.08em]', isLightTone ? 'text-slate-950' : 'text-white')} href="/">
+      <div className="mx-auto flex max-w-content-wide items-center justify-between gap-3 px-4 py-4 md:gap-4 md:px-6 lg:px-8">
+        <Link className={cn('min-w-0 shrink-0 text-2xl font-semibold tracking-[-0.08em]', isLightTone ? 'text-slate-950' : 'text-white')} href="/">
           <SiteTitleIcon />
         </Link>
 
@@ -131,68 +147,84 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
           aria-label="Open navigation menu"
           className={cn(
             'inline-flex h-11 w-11 items-center justify-center rounded-pill lg:hidden',
-            isLightTone
-              ? 'border border-slate-900/10 bg-slate-900/4 text-slate-900'
-              : 'border border-white/18 bg-white/10 text-white',
           )}
-          onClick={() => setMobileMenuOpen((current) => !current)}
+          onClick={toggleMobileMenu}
           type="button"
         >
-          <span className="text-lg">{mobileMenuOpen ? '×' : '≡'}</span>
+          {mobileMenuOpen ?
+            <EcorideCloseIcon sx={{ fontSize: 36 }} /> :
+            <EcorideMenuIcon sx={{ fontSize: 36 }} />
+          }
         </button>
       </div>
 
+      {/* Mobile menu */}
       {mobileMenuOpen ? (
-        <div className={cn('px-4 pb-5 pt-3 lg:hidden', isLightTone ? 'border-t border-slate-900/8' : 'border-t border-white/10')}>
-          <nav className="grid gap-2">
-            {navigation.map((item) =>
-              item.kind === 'dropdown' ? (
-                <div className={cn('rounded-card p-2', isLightTone ? 'surface-card-light' : 'surface-card')} key={item.label}>
-                  <p className={cn('px-3 py-2 text-sm font-medium', isLightTone ? 'text-slate-950' : 'text-white')}>{item.label}</p>
-                  <div className="grid gap-1">
-                    {item.items?.map((dropdownItem) => (
-                      <Link
-                        className={cn(
-                          'rounded-pill px-3 py-2.5 text-sm transition',
-                          isLightTone
-                            ? 'text-slate-700 hover:bg-slate-900/5 hover:text-slate-950'
-                            : 'text-white/74 hover:bg-white/10 hover:text-white',
-                        )}
-                        href={dropdownItem.href}
-                        key={dropdownItem.label}
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {dropdownItem.label}
-                      </Link>
-                    ))}
+        <div className={cn('px-4 pb-5 pt-3 lg:hidden', isLightTone ? 'border-t border-slate-900/8 bg-[#FCFCFC]/98' : 'border-t border-white/10 bg-black/10')}>
+          <div className="flex max-h-[calc(100vh-5.5rem)] flex-col overflow-y-auto">
+            <nav className="grid gap-2">
+              {navigation.map((item) =>
+                item.kind === 'dropdown' ? (
+                  <div className={cn('rounded-card p-2', isLightTone ? 'surface-card-light' : 'surface-card')} key={item.label}>
+                    <button
+                      aria-expanded={mobileDropdownOpen === item.label}
+                      className={cn(
+                        'flex w-full items-center justify-between gap-3 rounded-pill px-3 py-2 text-left text-sm font-medium transition',
+                        isLightTone ? 'text-slate-950 hover:bg-slate-900/5' : 'text-white hover:bg-white/10',
+                      )}
+                      onClick={() => setMobileDropdownOpen((current) => (current === item.label ? null : item.label))}
+                      type="button"
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDownIcon className={cn('h-4 w-4 transition', mobileDropdownOpen === item.label && 'rotate-180')} />
+                    </button>
+                    {mobileDropdownOpen === item.label ? (
+                      <div className="mt-1 grid gap-1">
+                        {item.items?.map((dropdownItem) => (
+                          <Link
+                            className={cn(
+                              'rounded-pill px-3 py-2.5 text-sm transition',
+                              isLightTone
+                                ? 'text-slate-700 hover:bg-slate-900/5 hover:text-slate-950'
+                                : 'text-white/74 hover:bg-white/10 hover:text-white',
+                            )}
+                            href={dropdownItem.href}
+                            key={dropdownItem.label}
+                            onClick={closeMobileMenu}
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
-                </div>
-              ) : (
-                <Link
-                  className={cn(
-                    'rounded-pill px-3 py-3 text-sm font-medium transition',
-                    isLightTone
-                      ? 'text-slate-700 hover:bg-slate-900/5 hover:text-slate-950'
-                      : 'text-white/78 hover:bg-white/10 hover:text-white',
-                  )}
-                  href={item.href ?? '/'}
-                  key={item.label}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ),
-            )}
-          </nav>
-          <div className="mt-4 grid gap-2">
-            {Object.values(appSettings.downloadLinks).map((item) => (
-              <BaseButton className="w-full" href={item.href} key={item.label} variant={isLightTone ? 'ghost-outline-dark' : 'solid-light'}>
-                Download {item.label}
+                ) : (
+                  <Link
+                    className={cn(
+                      'rounded-pill px-3 py-3 text-sm font-medium transition',
+                      isLightTone
+                        ? 'text-slate-700 hover:bg-slate-900/5 hover:text-slate-950'
+                        : 'text-white/78 hover:bg-white/10 hover:text-white',
+                    )}
+                    href={item.href ?? '/'}
+                    key={item.label}
+                    onClick={closeMobileMenu}
+                  >
+                    {item.label}
+                  </Link>
+                ),
+              )}
+            </nav>
+            <div className={cn('mt-6 grid gap-2 border-t pt-4', isLightTone ? 'border-slate-900/8' : 'border-white/10')}>
+              {Object.values(appSettings.downloadLinks).map((item) => (
+                <BaseButton className="w-full" href={item.href} key={item.label} variant={isLightTone ? 'ghost-outline-dark' : 'solid-light'}>
+                  Download {item.label}
+                </BaseButton>
+              ))}
+              <BaseButton className="w-full" href="/about#explore" variant={isLightTone ? 'solid-dark' : 'solid-light'}>
+                Login
               </BaseButton>
-            ))}
-            <BaseButton className="w-full" href="/about#explore" variant={isLightTone ? 'solid-dark' : 'solid-light'}>
-              Login
-            </BaseButton>
+            </div>
           </div>
         </div>
       ) : null}

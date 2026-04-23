@@ -1,6 +1,6 @@
 {
   "name": "ecoride-website",
-  "version": "1.0.0.2",
+  "version": "1.0.0.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -30,6 +30,6 @@
     "eslint-config-next": "^15.2.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "typescript": "^6.0.3"
   }
 }

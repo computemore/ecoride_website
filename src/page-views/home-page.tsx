@@ -11,11 +11,11 @@ export const HomePage = () => (
     <section className="mx-auto flex min-h-[76vh]li max-w-content-wide items-center px-4 pb-14 pt-20 md:px-6 md:pt-24 lg:px-8">
       <div className="w-full">
         <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/66">Local-first mobility in Malawi</p>
-          <h1 className="text-balance mx-auto mt-6 max-w-5xl text-5xl font-semibold leading-[0.92] text-white md:text-7xl lg:text-[5.4rem]">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/66">Local-first mobility in Malawi</p>
+          <h1 className="text-balance mx-auto mt-6 max-w-5xl text-4xl font-semibold leading-[0.92] text-white md:text-7xl lg:text-[5.4rem]">
             Welcome to Ecoride - A Ride simplified
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/78 md:text-2xl md:leading-10">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-white/78 md:text-2xl md:leading-10">
             A local-first ride sharing platform by Malawians, for Malawians, with clearer paths for riders, drivers, and businesses.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -61,8 +61,8 @@ export const HomePage = () => (
       <div className="surface-card rounded-card grid gap-8 p-7 md:grid-cols-[1.2fr,0.8fr] md:p-10">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/68">Local credibility</p>
-          <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl">Grounded in Blantyre, built for the journeys people already make</h2>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/76">
+          <h2 className="mt-4 text-2xl font-semibold text-white md:text-4xl">Grounded in Blantyre, built for the journeys people already make</h2>
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/76 md:text-base md:leading-8">
             The new website treats Ecoride as a platform for riders, drivers, and teams without hiding the fact that real local transport depends on
             practical support, local contact, and clear expectations.
           </p>
@@ -77,14 +77,14 @@ export const HomePage = () => (
         </div>
         <div className="rounded-card border border-white/12 bg-black/10 p-6">
           <p className="text-sm font-semibold text-white">Visit or call</p>
-          <div className="mt-4 space-y-2 text-sm leading-7 text-white/74">
+          <div className="mt-4 space-y-2 text-xs leading-6 text-white/74 sm:text-sm sm:leading-7">
             {appSettings.addressLines.map((line) => (
               <p key={line}>{line}</p>
             ))}
             {appSettings.phoneNumbers.map((phone) => (
               <p key={phone}>{phone}</p>
             ))}
-            <a className="inline-flex items-center gap-2 pt-3 text-white" href={`mailto:${appSettings.supportEmail}`}>
+            <a className="inline-flex break-all items-center gap-2 pt-3 text-white" href={`mailto:${appSettings.supportEmail}`}>
               {appSettings.supportEmail}
               <ArrowRightIcon className="h-4 w-4" />
             </a>

@@ -3,8 +3,9 @@ export { default as EcorideDashboardIcon } from '@mui/icons-material/DashboardOu
 export { default as EcorideFinancesIcon } from '@mui/icons-material/MonetizationOnOutlined';
 export { default as EcorideRidesIcon } from '@mui/icons-material/LocalTaxiOutlined';
 export { default as EcorideFleetsIcon } from '@mui/icons-material/CommuteOutlined';
-export { default as EcorideBackButtonIcon } from '@mui/icons-material/ArrowBackIosNewOutlined';
-export { default as EcorideExitButtonIcon } from '@mui/icons-material/ExitToAppOutlined';
+export { default as EcorideBackIcon } from '@mui/icons-material/ArrowBackIosNewOutlined';
+export { default as EcorideCloseIcon } from '@mui/icons-material/CloseOutlined';
+export { default as EcorideExitIcon } from '@mui/icons-material/ExitToAppOutlined';
 export { default as EcoridePinIcon } from '@mui/icons-material/PinOutlined';
 export { default as EcoridePasswordIcon } from '@mui/icons-material/PasswordOutlined';
 export { default as EcorideEmailIcon } from '@mui/icons-material/AlternateEmailOutlined';
