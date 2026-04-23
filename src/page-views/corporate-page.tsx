@@ -12,7 +12,7 @@ export const CorporatePage = () => (
     <section className="mx-auto max-w-content-wide px-4 pb-12 pt-20 md:px-6 md:pt-24 lg:px-8">
       <div className="grid gap-10 lg:grid-cols-[1.08fr,0.92fr] lg:items-center">
         <div className="text-center lg:text-left">
-          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-white/66">Corporate</p>
+          <p className="text-[14px] font-semibold uppercase tracking-[0.26em] text-white/66">Corporate</p>
           <h1 className="text-balance mt-6 max-w-4xl text-4xl font-semibold leading-[0.96] text-white md:text-7xl lg:max-w-5xl">
             Business transport works better when pricing, visibility, and support stay clear
           </h1>
@@ -27,7 +27,7 @@ export const CorporatePage = () => (
               Contact Corporate Team
             </BaseButton>
           </div>
-          <p className="mt-4 max-w-3xl text-xs leading-6 text-white/72 sm:text-sm sm:leading-7 lg:max-w-2xl">
+          <p className="mt-4 max-w-3xl text-[14px] leading-6 text-white/72 sm:text-sm sm:leading-7 lg:max-w-2xl">
             By partnering with Ecoride, corporate clients can reduce their carbon footprint, save money, and provide employees with a more dependable mobility option backed by a dedicated support team.
           </p>
         </div>
@@ -66,7 +66,7 @@ export const CorporatePage = () => (
     <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
       <div className="surface-card rounded-card grid gap-6 p-6 md:grid-cols-[1fr,auto] md:items-center md:p-8">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/68">Corporate support</p>
+          <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-white/68">Corporate support</p>
           <h2 className="mt-3 text-2xl font-semibold text-white md:text-3xl">Plan team transport with more clarity and less fleet burden</h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-white/76 md:text-base md:leading-8">
             Ecoride Corporate is built for organizations that want clearer transport costs, dashboard visibility, and a dedicated support team instead of more depreciating vehicles to manage.

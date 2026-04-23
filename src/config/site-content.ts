@@ -34,8 +34,9 @@ const aboutDropdownItems = [
   { href: '/about/privacy-policy', label: 'Privacy Policy' },
 ] as const;
 
+// this file centralizes all the static content for the site, such as page themes, SEO metadata, navigation items, and marketing copy for each section
 export const pageThemes: Record<PublicPageKey, PageTheme> = {
-  home: { pageColor: '#f0453d' },
+  home: { pageColor: '#ffffff' },
   ride: { pageColor: '#2c9c8e' },
   drive: { pageColor: '#f0453d' },
   corporate: { pageColor: '#2196F3' },

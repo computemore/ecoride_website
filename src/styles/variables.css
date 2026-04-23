@@ -2,6 +2,8 @@
   --radius-pill: 20px;
   --radius-card: 28px;
   --content-max-width: 86rem;
+  --bg-color-primary: #f0453d;
+  --bg-color-secondary: #f0453d;
   --surface-border: rgba(255, 255, 255, 0.18);
   --surface-muted: rgba(255, 255, 255, 0.08);
   --surface-strong: rgba(255, 255, 255, 0.16);
