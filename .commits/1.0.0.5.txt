@@ -1,18 +1,18 @@
-Ecoride Website 1.0.0.4 Release Notes
-Release Date: April 22, 2026
+Ecoride Website 1.0.0.5 Release Notes
+Release Date: April 24, 2026
 =====================================
 
 MAJOR CHANGES
 =============
 
-## [1.0.0.4] - 2026-04-22
+## [1.0.0.5] - 2026-04-24
 
 ### Added
 
+- Slightly tweaked our components site-wide
+- Added embedded google map for the office location on the contact page (need to be tweaked thought later) `src/page-views/contact-page.tsx` and `src/components/widgets/map-office.tsx`
 - Added a slightly moving background image at low size and quality with webp formatting to the Home page to add subtle visual interest without impacting load times or performance.
-- Added a `tone` prop to the `SectionHeading` component to allow for light or brand color options on the eyebrow, title, and description text, enabling better contrast and visual hierarchy on different background surfaces.
-- Changed the home page to not be reg bg but white with the aforemnetioned motioned background image
-- Changed the header site wide to show the round icon on the home page and the wordmark style svg on the otehr styled pages, to add a bit more visual interest and differentiation to the home page while keeping the header more consistent with the original design on the other pages.
+- Added concept notes for the animating app screenshots planned for later check 'animated-screenshots.md' in the docs/ideas folder for the concept and next steps for this.
 
 ### Validated
 
@@ -24,9 +24,10 @@ MAJOR CHANGES
 
 ### Documentation
 
-- Captured old site dns in docs/dns/old-dns.md for future reference in case we need to revert or reference the old hosting setup.
+- `docs/ideas/animated-screenshots.md` added with concept notes and next steps for the device-aware animated webp screenshots planned for the driver and rider info cards on the home page.
 
 ### Pending
 
 - The existing unused-variable warning in `src/page-views/home-page.tsx` remains outside the scope of this change.
 - A broader device sweep across additional handset sizes can still be done if more breakpoint-specific tuning is needed.
+- Device aware scnreeshotted animated webp images that smoothly curve in and out on each driver or rider info card for the apps

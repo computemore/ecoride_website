@@ -11,7 +11,7 @@ export const LegalPage = async ({ slug }: LegalPageProps) => {
 
   return (
     <PublicLayout pageKey="about" tone="light">
-      <section className="mx-auto max-w-content-wide px-4 pb-20 pt-10 md:px-6 md:pt-14 lg:px-8 lg:pt-16">
+      <section className="mx-auto max-w-content-wide px-4 pb-20 pt-2 md:px-6 md:pt-4 lg:px-8">
         <LegalDocumentView document={document} slug={slug} />
       </section>
     </PublicLayout>

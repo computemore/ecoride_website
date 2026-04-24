@@ -18,6 +18,7 @@ export const PublicLayout = ({ children, pageKey, tone = 'brand' }: PublicLayout
   const theme = pageThemes[pageKey];
   const pageStyle = { '--page-color': theme.pageColor } as CSSProperties;
 
+  // the main div is the page surface
   return (
     <div 
       // Removed the background image classes from here, added 'relative' and 'z-0' base

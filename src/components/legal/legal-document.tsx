@@ -124,8 +124,8 @@ export const LegalDocumentView = ({ document, slug }: LegalDocumentProps) => {
 
   return (
     <div className="grid gap-8 lg:grid-cols-[minmax(0,280px),minmax(0,1fr)] lg:items-start">
-      <aside className="lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-hidden">
-        <div className="surface-card-light border border-white/90 rounded-card p-6 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:overscroll-contain">
+      <aside className="lg:sticky lg:top-2 lg:max-h-[calc(100vh-8rem)] lg:overflow-hidden">
+        <div className="surface-card-light border border-slate-150 rounded-card p-6 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:overscroll-contain">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500">About</p>
           <p className="mt-4 text-xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-2xl">Legal</p>
           <p className="mt-3 text-[13px] leading-6 text-slate-600 sm:text-sm sm:leading-7">
@@ -178,7 +178,8 @@ export const LegalDocumentView = ({ document, slug }: LegalDocumentProps) => {
         </div>
       </aside>
 
-      <article className="rounded-[32px] border border-white/90 bg-white p-6 shadow-[0_24px_72px_rgba(15,23,42,0.08)] sm:p-8 lg:p-10">
+      {/* articles here, added break words to prevent transition overflows */}
+      <article className="min-w-0 break-words transition rounded-[32px] border border-white/90 bg-white p-6 shadow-[0_24px_72px_rgba(15,23,42,0.08)] sm:p-8 lg:p-10">
         <div className="border-b border-slate-900/8 pb-8">
           <Link className="text-sm font-medium text-slate-500 transition hover:text-slate-900" href="/about">
             Back to About

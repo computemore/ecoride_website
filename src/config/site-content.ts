@@ -172,12 +172,14 @@ export const homeSignalStats: HighlightStat[] = [
   },
 ];
 
-export const homeJourneyCards: CardContent[] = [
+// home journey cars are now being renamed to home info cards
+export const homeInfoCards: CardContent[] = [
   {
     eyebrow: 'Ride',
     title: 'Book safer trips with more context at every stage',
     description: 'Verification, trip sharing, and flexible payments make rider journeys feel easier to trust and simpler to manage.',
     bullets: ['Trusted ride confirmation', 'Trip sharing and contacts', 'Flexible local payment options'],
+    variation: 'green',
     href: '/ride',
     hrefLabel: 'Explore Ride',
   },
@@ -186,6 +188,7 @@ export const homeJourneyCards: CardContent[] = [
     title: 'Earn with flexible availability and visible support',
     description: 'The driver experience is framed around real-time demand, clearer onboarding, and support that stays in view.',
     bullets: ['Flexible earning flow', 'Fast and luxury ride classes', 'Driver Safety Hub support'],
+    variation: 'green',
     href: '/drive',
     hrefLabel: 'Explore Drive',
   },
@@ -194,6 +197,7 @@ export const homeJourneyCards: CardContent[] = [
     title: 'Coordinate team transport without carrying fleet overhead',
     description: 'Fixed per-km pricing and a dedicated support model give businesses a cleaner, more sustainable transport option.',
     bullets: ['Fixed per-km pricing', 'Dashboard and analytics visibility', 'Dedicated corporate support'],
+    variation: 'green',
     href: '/corporate',
     hrefLabel: 'Explore Corporate',
   },
@@ -465,7 +469,7 @@ export const aboutSections: AboutSection[] = [
     title: 'Different journeys need different entry points',
     description:
       'Ride pages speak to safety and flexibility, Drive pages speak to earning and support, and Corporate pages speak to coordination and reliability.',
-    cards: [homeJourneyCards[0], homeJourneyCards[1], homeJourneyCards[2]],
+    cards: [homeInfoCards[0], homeInfoCards[1], homeInfoCards[2]],
   },
   {
     id: 'blog',
