@@ -329,6 +329,10 @@ Each route has its own identity but must still feel like the same system.
 | Drive | Red | Earning, readiness, support |
 | Corporate | Blue | Pricing clarity, oversight, sustainability |
 | About | Red | Platform explanation and anchored narrative |
+| Account | Warning orange | Caution, compliance, and account-guidance flows |
+
+Delete-me and similar caution/compliance routes may use a dedicated branded warning surface derived from the rider-app `warningOrange` token when the route needs stronger action awareness than the standard public routes.
+These routes should still keep their information structure disciplined: direct copy on the page surface first, cards only where grouping materially improves comparison or scanability.
 
 ### 7.5 Legal document layout
 
@@ -348,6 +352,10 @@ Legal layout rules:
 ### 8.1 Shared component philosophy
 
 Reusable components should absorb repeated behaviors so new pages do not re-implement layout, interaction, or typography rules ad hoc.
+
+Public pages should not wrap whole sections or major layout blocks in extra containers by default.
+Cards and elevated containers are reserved for iterated items, grid or column layouts, and isolated callouts that need clear separation from surrounding content.
+If a section is a single narrative block, keep the structure direct and semantic and let spacing, typography, and the route surface do the work first.
 
 ### 8.2 Core shared components
 

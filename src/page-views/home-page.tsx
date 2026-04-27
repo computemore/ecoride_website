@@ -12,11 +12,11 @@ export const HomePage = () => (
     <section className="mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-14 pt-0 md:px-6 md:pt-0 lg:px-8">
       <div className="w-full">
         <div className="text-center">
-          <p className="text-[15px] md:text-[17px] font-bold uppercase tracking-[0.28em] text-slate-950/85">Local-first mobility in Malawi</p>
+          <p className="text-[16px] md:text-[17px] font-bold uppercase tracking-[0.28em] text-slate-950/85">Local-first mobility in Malawi</p>
           <h1 className="text-balance mx-auto mt-6 max-w-5xl text-4xl font-medium leading-[0.92] text-slate-950/95 md:text-7xl lg:text-[5.4rem]">
             <SiteTitleIconDark className='w-[180px] md:w-[380px]  inline-flex items-center justify-center'/><br />a ride simplified
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-[13px] leading-7 text-slate-950/85 md:text-[18px] md:leading-10">
+          <p className="mx-auto mt-6 max-w-3xl text-[13px] leading-7 md:text-[18px] md:leading-10 text-slate-950/85">
             A local-first ride sharing and car rental platform by Malawians, for Malawians, with support for corporates . . .
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">

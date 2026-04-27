@@ -5,6 +5,7 @@ export interface CardContent {
   title: string;
   description: string;
   bullets?: string[];
+  variation?: 'blue' | 'green' | 'red' | 'normal';
   href?: string;
   hrefLabel?: string;
 }
@@ -41,6 +42,7 @@ export const pageThemes: Record<PublicPageKey, PageTheme> = {
   drive: { pageColor: '#f0453d' },
   corporate: { pageColor: '#2196F3' },
   about: { pageColor: '#f0453d' },
+  account: { pageColor: '#FF9800' },
 };
 
 export const pageSeo: Record<PublicPageKey, SeoProps> = {
@@ -83,6 +85,14 @@ export const pageSeo: Record<PublicPageKey, SeoProps> = {
     canonical: '/about',
     ogImage: '/ecoride-256.png',
     keywords: ['about Ecoride', 'Malawi mobility platform', 'Ecoride partners'],
+  },
+  account: {
+    title: 'Ecoride Account Guidance | Deletion And Recovery',
+    description:
+      'Review Ecoride account deletion guidance for riders and drivers, including verification, access changes, recovery windows, retained records, and support contacts.',
+    canonical: '/ecoride-user/delete-me',
+    ogImage: '/ecoride-256.png',
+    keywords: ['Ecoride account help', 'delete Ecoride account', 'Ecoride recovery window'],
   },
 };
 
@@ -127,6 +137,11 @@ export const headerNavigation: Record<PublicPageKey, NavItem[]> = {
   about: [
     { kind: 'link', label: 'About', href: '/about' },
     { kind: 'dropdown', label: 'Explore', items: [...aboutDropdownItems] },
+  ],
+  account: [
+    { kind: 'link', label: 'Ride', href: '/ride' },
+    { kind: 'link', label: 'Drive', href: '/drive' },
+    { kind: 'dropdown', label: 'About', items: [...aboutDropdownItems] },
   ],
 };
 

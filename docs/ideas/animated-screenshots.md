@@ -1,6 +1,6 @@
 # Animated Screenshots Concept for Driver and Rider Info Cards
 
-**Version:** 1.0.0.6
+**Version:** 1.0.0.7
 **Production URL:** `https://ecoridemw.com`  
 **Idea Inception Date:** April 24, 2026
 **Last Updated:** April 24, 2026

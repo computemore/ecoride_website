@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 import { appSettings } from '@/config/app-settings';
 
-const routes = ['', '/ride', '/drive', '/corporate', '/about', '/about/terms', '/about/privacy-policy'];
+const routes = ['', '/ride', '/drive', '/corporate', '/about', '/about/terms', '/about/privacy-policy', '/ecoride-user/delete-me'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
