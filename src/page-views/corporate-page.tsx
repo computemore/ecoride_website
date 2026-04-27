@@ -14,7 +14,7 @@ export const CorporatePage = () => (
         <div className="text-center lg:text-left">
           <p className="text-[16px] font-semibold uppercase tracking-[0.26em] text-white/66">ecoride Corporate</p>
           <h1 className="text-balance mx-auto mt-6 max-w-5xl text-3xl font-medium leading-[0.96] md:text-7xl md:text-4xl lg:text-[4.5rem] text-white">
-            The smart, affordable alternative to team transport
+            The smart, affordable alternative for team transport
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-[13px] leading-7 md:text-[18px] md:leading-10">
             Designed to give organizations a fixed rate per kilometer, and a sustainable cost-management strategy for employee transport, without the burden of asset acquisition and maintenance
