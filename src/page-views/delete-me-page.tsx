@@ -143,7 +143,7 @@ export const DeleteMePage = () => (
         </div>
       </div>
 
-      {/* <div className="mt-10 grid gap-5 md:grid-cols-3">
+      {/* <div className="mt-8 grid gap-5 md:grid-cols-3">
         {quickFacts.map((fact) => (
           <article className="surface-card rounded-card border border-white/20 bg-white/10 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.1)]" key={fact.label}>
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7C4A03]">{fact.label}</p>
@@ -155,12 +155,12 @@ export const DeleteMePage = () => (
 
     <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
       <SectionHeading
-        // description="These checks reduce confusion for riders, drivers, and anyone who uses more than one Ecoride access type."
+        description=""
         eyebrow="Before You Continue"
         title="Three things to review before you request deletion"
         tone="light"
       />
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
+      <div className="mt-8 grid gap-5 md:grid-cols-3">
         {reviewPoints.map((item, index) => (
           <article className="surface-card rounded-card border border-white/20 bg-white/10 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.1)]" key={item}>
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#ffffffe9] text-sm font-semibold text-[#7C4A03]">{index + 1}</span>
@@ -178,7 +178,7 @@ export const DeleteMePage = () => (
         tone="light"
       />
 
-      <div className="relative mt-10 hidden lg:block">
+      <div className="relative mt-8 hidden lg:block">
         <div className="absolute left-[12.5%] right-[12.5%] top-7 h-[3px] -translate-y-1/2 rounded-full bg-[#FFD08A]" />
         <div className="grid gap-5 lg:grid-cols-4">
           {deletionSteps.map((step, index) => (
@@ -198,7 +198,7 @@ export const DeleteMePage = () => (
         </div>
       </div>
 
-      <div className="mt-10 grid gap-5 lg:hidden">
+      <div className="mt-8 grid gap-5 lg:hidden">
         {deletionSteps.map((step, index) => (
           <div className="relative pl-16" key={step.number}>
             {index < deletionSteps.length - 1 ? <div className="absolute left-[27px] top-14 h-[calc(100%-12px)] w-[3px] rounded-full bg-[#FFD08A]" /> : null}
@@ -222,7 +222,7 @@ export const DeleteMePage = () => (
         title="What a deletion request can affect"
         tone="light"
       />
-      <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {dataGroups.map((group) => (
           <article className="surface-card rounded-card border border-white/20 bg-white/10 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.1)]" key={group.title}>
             <h3 className="text-lg font-semibold tracking-[-0.03em] text-slate-950">{group.title}</h3>
@@ -265,7 +265,7 @@ export const DeleteMePage = () => (
         title="Contact Ecoride before you proceed if anything looks unclear"
         tone="light"
       />
-      <div className="mt-4 grid gap-5 md:grid-cols-2">
+      <div className="mt-8 grid gap-5 md:grid-cols-2">
         <article className="surface-card rounded-card border border-white/20 bg-white/10 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.1)]">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/72">Support Contact</p>
           <ul className="mt-4 space-y-3 text-sm font-medium leading-6 text-slate-950">
