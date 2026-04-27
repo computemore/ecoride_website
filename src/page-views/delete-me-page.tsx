@@ -111,7 +111,7 @@ export const DeleteMePage = () => (
         <div className="text-center lg:text-left">
           <p className="text-[16px] font-semibold uppercase tracking-[0.26em] text-slate-950/72">Account Deletion</p>
           <h1 className="text-balance mx-auto mt-6 max-w-5xl text-2xl font-medium leading-[0.96] md:text-7xl md:text-4xl lg:text-[4.5rem] text-slate-950">
-            Delete your Ecoride account with clear expectations before you continue
+            Thinking of deleting your Ecoride account?
           </h1>
           <p className="mx-auto mt-6 max-w-4xl text-base leading-7 text-slate-950 md:text-[18px] md:leading-10 lg:mx-0">
             This page serves to explain how Ecoride handles account deletion requests, what changes immediately, and what to expect during the process
