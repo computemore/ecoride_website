@@ -1,6 +1,6 @@
 # Animated Screenshots Concept for Driver and Rider Info Cards
 
-**Version:** 1.0.0.5
+**Version:** 1.0.0.6
 **Production URL:** `https://ecoridemw.com`  
 **Idea Inception Date:** April 24, 2026
 **Last Updated:** April 24, 2026
@@ -17,6 +17,10 @@ This document provides a complete reference for all APIs in the Ecoride platform
   - [3. Mobile Autoplay Restrictions](#3-mobile-autoplay-restrictions)
   - [Here is a conceptual example of how we can build a lightweight "App Flow" component:](#here-is-a-conceptual-example-of-how-we-can-build-a-lightweight-app-flow-component)
   - [When would video make sense?](#when-would-video-make-sense)
+  - [Data flow for each card](#data-flow-for-each-card)
+    - [Card 1 - Ride Booking Flow](#card-1---ride-booking-flow)
+    - [Card 2 - Payment Flows](#card-2---payment-flows)
+  - [Card 3 - Safety and Ride-Sharing Flows](#card-3---safety-and-ride-sharing-flows)
 
 ---
 
@@ -90,3 +94,25 @@ export function AppFlowAnimation() {
 ## When would video make sense?
 
 The only time we should use video for this is if we need to show complex, fluid micro-interactions (like a map specifically panning while a car icon drives smoothly). If we must use video, we wait to render the <video> tag until the user scrolls near it (Intersection Observer), serve it in .webm format, and ensure it is placed well below the initial viewport ("below the fold") to protect our SEO scores.
+
+## Data flow for each card
+
+**Keys: need to show taps**
+
+### Card 1 - Ride Booking Flow
+
+- **Image 1:** User opens the home page and sees their home page information including hotspots, promotions, and a "Where to?" search bar.
+- **Image 2:** User clicks on the "Where to?" search bar, and then is routed to the Select Location Page where they can search for and select their destination.
+- **Image 3:** User selects a destination and is then routed to the Confirm Ride Page where they can see different ride types, prices, and ETAs.
+
+### Card 2 - Payment Flows
+
+- **Image 1:** We have non-cash payment methods set up.
+- **Image 2:** When a user selects a non-cash payment method, we can show a direct charge flow where they enter their mobile money number or bank details directly within our app. This avoids redirecting them to external sites and provides a smoother experience.
+- **Image 3:** Ridehub Wallet Focused, where credits can be loaded from referrals and manual topups.
+
+## Card 3 - Safety and Ride-Sharing Flows
+
+- **Image 1:** Users can share a ride with trusted contacts from their phone, including splitting ride fares and coordinating pickup locations (to come multi-pickup locations in the recent update)
+- **Image 2:** Users can also share their ride details (ETA, driver info) with non-users via SMS or WhatsApp, allowing them to keep friends and family informed without needing to download the app.
+- **Image 3:** In-app safety features like a RideHub Pass, SOS Button and real-time ride tracking that can be shared with trusted contacts for added security during rides.
