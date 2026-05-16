@@ -109,24 +109,24 @@ export const HomePage = () => {
 
   return (
     <PublicLayout pageKey="home" tone="light">
-      <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-12 lg:-mt-12">
+      <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
         {/* Hero */}
         <div
           className={`w-full transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] origin-top md:origin-left ${
             showImage
-              ? 'transform -translate-y-[15vh] scale-90 md:translate-y-0 md:scale-[0.85] md:-translate-x-[10%]'
+              ? 'transform -translate-y-[15vh] scale-90 md:translate-y-0 md:scale-[0.85] xl:-translate-x-[10%] lg:-translate-x-[15%]'
               : 'transform translate-y-0 scale-100 translate-x-0'
           }`}
         >
           <div className="text-center">
-            <h1 className="text-balance mx-auto mt-0 max-w-5xl text-6xl font-medium leading-[0.92] text-slate-950/95 md:text-7xl lg:text-[6.8rem]">
-              <SiteTitleIconDark className='w-[260px] md:w-[460px]  inline-flex items-center justify-center'/>
+            <h1 className="text-balance mx-auto mt-0 max-w-5xl text-5xl font-medium leading-[0.92] text-slate-950/95 md:text-7xl lg:text-[3.8rem] xl:text-[6.8rem]">
+              <SiteTitleIconDark className='w-[220px] xl:w-[460px] lg:w-[300px] inline-flex items-center justify-center'/>
               <br/>a ride simplified
             </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-[13px] leading-7 md:text-[18px] md:leading-10 text-slate-950/85">
+            <p className="mx-auto mt-4 lg:mt-6 max-w-3xl lg:max-w-xl text-[16px] leading-7 md:text-[18px] md:leading-10 text-slate-950/85">
               A local-first ride sharing and car rental platform by Malawians, for Malawians, with support for corporates . . .
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <div className="mt-4 md:mt-6 lg:mt-6 flex flex-wrap justify-center gap-3">
               <BaseButton href={appSettings.downloadLinks.rider.href} variant="solid-green">
                 Download Rider App
               </BaseButton>
@@ -140,7 +140,7 @@ export const HomePage = () => {
         {/* Framed Screenshot Animation */}
         <a
           href="#"
-          className={`absolute bottom-0 mb-8 left-0 right-0 pb-8 md:pb-0 md:left-auto md:right-8 md:top-1/2 flex justify-center z-10 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+          className={`absolute bottom-0 mb-8 left-0 right-0 pb-8 md:pb-0 md:left-auto md:right-8 md:top-1/2 top-3/5 flex justify-center z-10 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
             showImage
               ? 'opacity-100 translate-y-0 md:-translate-y-1/2 md:translate-x-0'
               : 'opacity-0 translate-y-full md:-translate-y-1/2 md:translate-x-full'
@@ -151,7 +151,7 @@ export const HomePage = () => {
             alt="Ecoride App Preview"
             width={900}
             height={1800}
-            className="w-auto h-[40vh] md:h-auto md:w-[40vw] max-w-[450px] object-contain drop-shadow-2xl hover:scale-[1.03] hover:-translate-y-2 transition-all duration-300"
+            className="w-auto h-[32vh] md:h-auto md:w-[40vw] max-w-[450px] object-contain drop-shadow-2xl hover:scale-[1.03] hover:-translate-y-2 transition-all duration-300"
           />
         </a>
       </section>

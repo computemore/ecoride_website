@@ -36,12 +36,12 @@ export const MarketingCard = ({ eyebrow, title, description, bullets, variation 
   // the surface-card class provides the base card styling, we can add additional classes for variations if needed in the future, 
   // using style allows hot swapping into css using the a named var that is cross-referened here and in css - pretty cool
   return (
-    <article className={`surface-card rounded-[var(--radius-card)] p-4 text-left transition duration-200 hover:scale-[1.04] hover:shadow-float md:p-7`} style={cardStyle}>
+    <article className={`surface-card rounded-[var(--radius-card)] p-4 text-left transition duration-200 hover:scale-[1.04] hover:shadow-float md:p-6`} style={cardStyle}>
       <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/68">{eyebrow}</p>
-      <h3 className="mt-4 text-lg font-semibold text-white md:text-2xl">{title}</h3>
-      <p className="mt-4 text-sm leading-6 text-white/74 md:text-base">{description}</p>
+      <h3 className="mt-2 text-lg font-semibold text-white md:text-2xl">{title}</h3>
+      <p className="mt-2 text-sm leading-6 text-white/74 md:text-base">{description}</p>
       {bullets ? (
-        <ul className="mt-6 space-y-3">
+        <ul className="mt-4 space-y-4">
           {bullets.map((bullet) => (
             <li key={bullet} className="flex items-start gap-3 text-xs leading-6 text-white/74 sm:text-sm">
               <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-white" />
