@@ -25,7 +25,7 @@ const AutoScrollingGallery = () => {
     let currentX = 0;
     let direction = 1;
 
-    const duration = 300000; // 30 seconds for a full sweep across
+    const duration = 75000; // 30 seconds for a full sweep across
 
     const animate = (time: number) => {
       const dt = time - lastTime;
@@ -164,12 +164,12 @@ export const HomePage = () => {
         title="Explore the ecoride rider app on both iOS and Android"
       />
       <div className="mt-10 grid gap-4 lg:grid-cols-[1fr,2fr]">
+        <AutoScrollingGallery />
         {homeInfoCards.length > 0 && (
           <div className="h-full">
             <MarketingCard {...homeInfoCards[0]} />
           </div>
         )}
-        <AutoScrollingGallery />
       </div>
     </section>
 
