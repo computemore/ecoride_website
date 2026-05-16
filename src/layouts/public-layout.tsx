@@ -16,7 +16,7 @@ interface PublicLayoutProps {
 //  the public layout is predefined and standardised
 export const PublicLayout = ({ children, pageKey, tone = 'brand' }: PublicLayoutProps) => {
   const theme = pageThemes[pageKey];
-  const pageStyle = { '--page-color': theme.pageColor } as CSSProperties;
+  const pageStyle = { '--page-color': theme.pageColor, '--page-color-gradient': theme.pageBgColor} as CSSProperties;
 
   // the main div is the page surface
   return (

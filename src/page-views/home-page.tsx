@@ -88,7 +88,7 @@ const AutoScrollingGallery = () => {
             alt={`App Screen ${i + 1}`} 
             width={360}
             height={760}
-            className="h-[280px] md:h-[340px] w-auto object-contain rounded-xl shadow-md hover:scale-[1.05] transition-transform duration-300"
+            className="h-[280px] xl:h-[320px] w-auto object-contain rounded-xl shadow-md hover:scale-[1.05] transition-transform duration-300"
             loading="lazy"
           />
         ))}
@@ -121,10 +121,10 @@ export const HomePage = () => {
           <div className="text-center">
             <h1 className="text-balance mx-auto mt-0 max-w-5xl text-5xl font-medium leading-[0.92] text-slate-950/95 md:text-7xl lg:text-[3.8rem] xl:text-[6.8rem]">
               <SiteTitleIconDark className='w-[220px] xl:w-[460px] lg:w-[300px] inline-flex items-center justify-center'/>
-              <br/>a ride simplified
+              <br/>a ride simplified.
             </h1>
             <p className="mx-auto mt-4 lg:mt-6 max-w-3xl lg:max-w-xl text-[16px] leading-7 md:text-[18px] md:leading-10 text-slate-950/85">
-              A local-first ride sharing and car rental platform by Malawians, for Malawians, with support for corporates . . .
+              A local-first ride sharing and car rental platform by Malawians, for Malawians, with support for corporates
             </p>
             <div className="mt-4 md:mt-6 lg:mt-6 flex flex-wrap justify-center gap-3">
               <BaseButton href={appSettings.downloadLinks.rider.href} variant="solid-green">
@@ -163,13 +163,13 @@ export const HomePage = () => {
         eyebrow="The Ecoride rider app"
         title="Explore the ecoride rider app on both iOS and Android"
       />
-      <div className="mt-10 grid gap-4 lg:grid-cols-[1fr,2fr]">
-        <AutoScrollingGallery />
+      <div className="mt-6 xl:mt-8 grid gap-4 xl:gap-2 lg:grid-cols-[1fr,2fr]">
         {homeInfoCards.length > 0 && (
           <div className="h-full">
             <MarketingCard {...homeInfoCards[0]} />
           </div>
         )}
+        <AutoScrollingGallery />
       </div>
     </section>
 

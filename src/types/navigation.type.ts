@@ -15,4 +15,5 @@ export interface NavItem {
 
 export interface PageTheme {
   pageColor: string;
+  pageBgColor?: string;
 }

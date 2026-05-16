@@ -7,15 +7,15 @@ import { PublicLayout } from '@/layouts/public-layout';
 
 export const DrivePage = () => (
   <PublicLayout pageKey="drive">
-    <section className="mx-auto max-w-content-wide px-4 pb-12 pt-20 md:px-6 md:pt-24 lg:px-8">
+    <section className="mx-auto max-w-content-wide min-h-screen px-4 pb-12 pt-20 md:px-6 xl:pt-32 lg:px-8">
       <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
         <div className="text-center lg:text-left">
-          <p className="text-[14px] font-semibold uppercase tracking-[0.26em] text-white/66">Drive</p>
+          <p className="text-[14px] font-semibold uppercase tracking-[0.26em] text-white/66">Driver App</p>
           <h1 className="text-balance mt-6 max-w-4xl text-4xl font-semibold leading-[0.96] text-white md:text-7xl">
-            Earn with Ecoride on a schedule that still feels like yours
+            Time is money, and Ecoride Driver gets you the best of both.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-7 text-white/76">
-            The driver experience is centered on earning clarity, flexible availability, real-time demand, and support structures that stay visible.
+            The driver experience is centered on earning clarity, flexible availability, real-time demand, and support structures that are visible and transparent
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
             <BaseButton href={appSettings.downloadLinks.driver.href} variant="solid-light">
@@ -48,6 +48,7 @@ export const DrivePage = () => (
         description="The marketing layer mirrors the strongest parts of the driver app: flexibility, responsive demand, support access, and transparent driver readiness."
         eyebrow="Driver features"
         title="Clear earning stories beat generic driver recruitment"
+        tone="brand"
       />
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         {driveFeatureCards.map((card) => (
@@ -61,6 +62,7 @@ export const DrivePage = () => (
         description="The driver message stays simple: clearer onboarding, visible support, and an earning flow that feels grounded in daily work."
         eyebrow="Driver support"
         title="A better driver story is built on readiness, earnings, and trust"
+        tone="brand"
       />
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         {driveSupportCards.map((card) => (
@@ -69,7 +71,24 @@ export const DrivePage = () => (
       </div>
     </section>
 
-    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
+    <section className="mx-auto max-w-content-wide px-4 pb-16 md:px-6 lg:px-8">
+      <SectionHeading
+        description="The final step in the driver journey: a seamless experience that reinforces confidence and convenience."
+        eyebrow="Ready to earn?"
+        title="Download the driver app for Android/iOS and get started"
+        tone="brand"
+      />
+      <div className="flex flex-wrap gap-3 md:justify-start md:items-center mt-6">
+        <BaseButton href={appSettings.downloadLinks.driver.href} variant="solid-light">
+          Get Driver App
+        </BaseButton>
+        <BaseButton href="/about#partners" variant="ghost-light">
+          Partner With Ecoride
+        </BaseButton>
+      </div>
+      {/* </div> */}
+    </section>
+    {/* <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
       <div className="surface-card rounded-card grid gap-6 p-6 md:grid-cols-[1fr,auto] md:items-center md:p-8">
         <div>
           <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-white/68">Ready to drive</p>
@@ -87,6 +106,6 @@ export const DrivePage = () => (
           </BaseButton>
         </div>
       </div>
-    </section>
+    </section> */}
   </PublicLayout>
 );

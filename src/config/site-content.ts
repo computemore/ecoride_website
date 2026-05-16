@@ -38,9 +38,9 @@ const aboutDropdownItems = [
 // this file centralizes all the static content for the site, such as page themes, SEO metadata, navigation items, and marketing copy for each section
 export const pageThemes: Record<PublicPageKey, PageTheme> = {
   home: { pageColor: '#ffffff' },
-  ride: { pageColor: '#2c9c8e' },
-  drive: { pageColor: '#f0453d' },
-  corporate: { pageColor: '#2196F3' },
+  ride: { pageColor: '#2c9c8e', pageBgColor: '#3cdac7' },
+  drive: { pageColor: '#f0453d', pageBgColor: '#ed7a74' },
+  corporate: { pageColor: '#2196F3', pageBgColor: '#64afec' },
   about: { pageColor: '#f0453d' },
   account: { pageColor: '#FF9800' },
 };
