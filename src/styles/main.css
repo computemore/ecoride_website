@@ -67,9 +67,9 @@
     border: 1px solid var(--surface-border);
     /* angle, start, end */
     background: linear-gradient(
-      180deg, 
-      var(--card-bg-color) 0%, 
-      color-mix(in srgb, var(--card-bg-color) 70%, rgba(255, 255, 255, 0.16)) 100%);
+      135deg, 
+      var(--card-bg-color), 
+      var(--card-bg-color-gradient));
     backdrop-filter: blur(18px);
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
     transition:
@@ -113,7 +113,7 @@
 
   /* hover button on surface */
   .surface-button:hover {
-    transform: translateY(-1px);
+    transform: scale(1.04);
     box-shadow: 0 12px 24px rgba(15, 23, 42, 0.15);
   }
 

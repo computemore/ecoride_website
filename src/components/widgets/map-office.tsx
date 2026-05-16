@@ -1,6 +1,5 @@
 // imports
-import type { CSSProperties, ReactNode } from 'react';
-import Image from 'next/image';
+import type { CSSProperties } from 'react';
 
 // site-wide usable component
 export const MapOffice = ({ style }: { style?: CSSProperties }) => {

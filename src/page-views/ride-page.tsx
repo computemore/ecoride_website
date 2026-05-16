@@ -9,6 +9,7 @@ export const RidePage = () => (
   <PublicLayout pageKey="ride">
     <section className="mx-auto max-w-content-wide px-4 pb-12 pt-4 md:px-6 md:pt-24 lg:px-8">
       <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+        {/* Hero */}
         <div className="text-center lg:text-left">
           <p className="text-[14px] font-semibold uppercase tracking-[0.26em] text-white/66">Ride</p>
           <h1 className="text-balance mt-6 max-w-4xl text-4xl font-semibold leading-[0.96] text-white md:text-7xl lg:max-w-5xl">

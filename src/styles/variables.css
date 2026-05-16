@@ -1,8 +1,13 @@
 :root {
   --radius-pill: 20px;
-  --radius-card: 28px;
+  --radius-card: 18px;
   --content-max-width: 86rem;
+  --bg-color-ride-gradient: #3cdac7;
+  --bg-color-ride: #2c9c8e;
   --bg-color-primary: #f0453d;
+  --bg-color-primary-gradient: #ed7a74;
+  --bg-color-blue: #2196F3;
+  --bg-color-blue-gradient: #64afec;
   --bg-color-secondary: #f0453d;
   --surface-border: rgba(255, 255, 255, 0.18);
   --surface-muted: rgba(255, 255, 255, 0.08);

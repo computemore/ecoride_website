@@ -1,5 +1,5 @@
 // imports
-import type { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { ArrowRightIcon, CheckCircleIcon } from '@/icons';
 
@@ -9,6 +9,13 @@ enum CardBackground {
   green = '#2c9c8e',
   red = '#f0453d',
   normal = 'rgba(255, 255, 255, 0.16)'
+}
+
+enum CardBackgroundGradient {
+  blue = '#64afec',
+  green = '#3cdac7',
+  red = '#ed7a74',
+  normal = 'rgba(255, 255, 255, 0.28)'
 }
 
 // data shape for the marketing card
@@ -24,12 +31,12 @@ interface MarketingCardProps {
 
 // site-wide usable component
 export const MarketingCard = ({ eyebrow, title, description, bullets, variation = 'normal', href, hrefLabel }: MarketingCardProps & { variation?: keyof typeof CardBackground }) => {
-  const cardStyle = { '--card-bg-color' : CardBackground[variation] } as CSSProperties; // default to blue, can be overridden by passing a different background color in the future if needed
+  const cardStyle = { '--card-bg-color' : CardBackground[variation], '--card-bg-color-gradient' : CardBackgroundGradient[variation] } as CSSProperties; // default to blue, can be overridden by passing a different background color in the future if needed
 
   // the surface-card class provides the base card styling, we can add additional classes for variations if needed in the future, 
   // using style allows hot swapping into css using the a named var that is cross-referened here and in css - pretty cool
   return (
-    <article className={`surface-card rounded-card p-4 text-left transition duration-200 hover:-translate-y-1 hover:shadow-float md:p-7`} style={cardStyle}>
+    <article className={`surface-card rounded-[var(--radius-card)] p-4 text-left transition duration-200 hover:scale-[1.04] hover:shadow-float md:p-7`} style={cardStyle}>
       <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/68">{eyebrow}</p>
       <h3 className="mt-4 text-lg font-semibold text-white md:text-2xl">{title}</h3>
       <p className="mt-4 text-sm leading-6 text-white/74 md:text-base">{description}</p>

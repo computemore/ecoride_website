@@ -22,21 +22,6 @@ const pageMeta = [
   },
 ];
 
-const quickFacts = [
-  {
-    label: 'Identity verification',
-    value: 'A deletion request does not proceed until Ecoride confirms it is really coming from you.',
-  },
-  {
-    label: 'Grace period',
-    value: 'Eligible access can still be restored during the 30-day recovery window if you change your mind.',
-  },
-  {
-    label: 'Retention limits',
-    value: 'Some records may still be retained where safety, legal, dispute, or financial obligations require it.',
-  },
-];
-
 const reviewPoints = [
   'Use the deletion flow for the app or access type you actually want to remove.',
   'Read the recovery-window section before confirming if there is any chance you may need the account again soon.',

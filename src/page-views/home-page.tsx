@@ -1,3 +1,7 @@
+"use client";
+
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 import { BaseButton } from '@/components/ui/base-button';
 import { ArrowRightIcon, SiteTitleIconDark } from '@/icons';
 import { PublicLayout } from '@/layouts/public-layout';
@@ -5,43 +9,167 @@ import { MarketingCard } from '@/components/widgets/marketing-card';
 import { MapOffice } from '@/components/widgets/map-office';
 import { SectionHeading } from '@/components/widgets/section-heading';
 import { appSettings } from '@/config/app-settings';
-import { homeAboutCards, homeInfoCards, homeSignalStats } from '@/config/site-content';
+import { homeInfoCards } from '@/config/site-content';
 
-export const HomePage = () => (
-  <PublicLayout pageKey="home" tone="light">
-    <section className="mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-14 pt-0 md:px-6 md:pt-0 lg:px-8">
-      <div className="w-full">
-        <div className="text-center">
-          <p className="text-[16px] md:text-[17px] font-bold uppercase tracking-[0.28em] text-slate-950/85">Local-first mobility in Malawi</p>
-          <h1 className="text-balance mx-auto mt-6 max-w-5xl text-4xl font-medium leading-[0.92] text-slate-950/95 md:text-7xl lg:text-[5.4rem]">
-            <SiteTitleIconDark className='w-[180px] md:w-[380px]  inline-flex items-center justify-center'/><br />a ride simplified
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-[13px] leading-7 md:text-[18px] md:leading-10 text-slate-950/85">
-            A local-first ride sharing and car rental platform by Malawians, for Malawians, with support for corporates . . .
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <BaseButton href={appSettings.downloadLinks.rider.href} variant="solid-green">
-              Download Rider App
-            </BaseButton>
-            <BaseButton href="/corporate" variant="ghost-dark">
-              Explore Corporate
-            </BaseButton>
+const AutoScrollingGallery = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const track = trackRef.current;
+    if (!container || !track) return;
+
+    let animationFrameId: number;
+    let lastTime = performance.now();
+    let currentX = 0;
+    let direction = 1;
+
+    const duration = 300000; // 30 seconds for a full sweep across
+
+    const animate = (time: number) => {
+      const dt = time - lastTime;
+      lastTime = time;
+
+      const maxScroll = Math.max(0, track.scrollWidth - container.offsetWidth);
+
+      if (maxScroll > 0) {
+        const speed = maxScroll / duration; 
+        currentX += speed * dt * direction;
+
+        if (currentX >= maxScroll) {
+          currentX = maxScroll;
+          direction = -1;
+        } else if (currentX <= 0) {
+          currentX = 0;
+          direction = 1;
+        }
+
+        track.style.transform = `translateX(${-currentX}px)`;
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, []);
+
+  // Mocking your processed images array (update counts/filenames as needed)
+  const images = [
+    '/home-marketing/processed/01-processed-login-page-phone-otp-page.png',
+    '/home-marketing/processed/02-processed-login-page-email-pass-page.png',
+    '/home-marketing/processed/03-processed-home-page.png',
+    '/home-marketing/processed/04-processed-favorite-places-pop-page.png',
+    '/home-marketing/processed/05-processed-favorite-places-add-page.png',
+    '/home-marketing/processed/06-processed-select-location-page.png',
+    '/home-marketing/processed/07-processed-confirm-ride-page.png',
+    '/home-marketing/processed/08-processed-pinpoint-page.png',
+    '/home-marketing/processed/09-processed-account-page.png',
+    '/home-marketing/processed/10-processed-safety-hub-page.png',
+    '/home-marketing/processed/11-processed-login-security-page.png',
+    '/home-marketing/processed/12-processed-payment-method-page.png',
+    '/home-marketing/processed/13-processed-topup-page.png',
+    '/home-marketing/processed/14-processed-transactions-page.png',
+    '/home-marketing/processed/15-processed-referrals-page.png',
+  ];
+
+  return (
+    <div 
+      ref={containerRef} 
+      className="w-full h-full min-h-[300px] overflow-hidden rounded-[18px] md:rounded-[20px] bg-slate-900/0 border-none border-slate-900/10 flex items-center"
+    >
+      <div ref={trackRef} className="flex gap-4 px-4 py-4 w-max">
+        {images.map((src, i) => (
+          <Image
+            key={i} 
+            src={src} 
+            alt={`App Screen ${i + 1}`} 
+            width={360}
+            height={760}
+            className="h-[280px] md:h-[340px] w-auto object-contain rounded-xl shadow-md hover:scale-[1.05] transition-transform duration-300"
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const HomePage = () => {
+  const [showImage, setShowImage] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowImage(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <PublicLayout pageKey="home" tone="light">
+      <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-12 lg:-mt-12">
+        {/* Hero */}
+        <div
+          className={`w-full transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] origin-top md:origin-left ${
+            showImage
+              ? 'transform -translate-y-[15vh] scale-90 md:translate-y-0 md:scale-[0.85] md:-translate-x-[10%]'
+              : 'transform translate-y-0 scale-100 translate-x-0'
+          }`}
+        >
+          <div className="text-center">
+            <h1 className="text-balance mx-auto mt-0 max-w-5xl text-6xl font-medium leading-[0.92] text-slate-950/95 md:text-7xl lg:text-[6.8rem]">
+              <SiteTitleIconDark className='w-[260px] md:w-[460px]  inline-flex items-center justify-center'/>
+              <br/>a ride simplified
+            </h1>
+            <p className="mx-auto mt-6 max-w-3xl text-[13px] leading-7 md:text-[18px] md:leading-10 text-slate-950/85">
+              A local-first ride sharing and car rental platform by Malawians, for Malawians, with support for corporates . . .
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <BaseButton href={appSettings.downloadLinks.rider.href} variant="solid-green">
+                Download Rider App
+              </BaseButton>
+              <BaseButton href="/corporate" variant="ghost-dark">
+                Explore Corporate
+              </BaseButton>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+
+        {/* Framed Screenshot Animation */}
+        <a
+          href="#"
+          className={`absolute bottom-0 mb-8 left-0 right-0 pb-8 md:pb-0 md:left-auto md:right-8 md:top-1/2 flex justify-center z-10 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+            showImage
+              ? 'opacity-100 translate-y-0 md:-translate-y-1/2 md:translate-x-0'
+              : 'opacity-0 translate-y-full md:-translate-y-1/2 md:translate-x-full'
+          }`}
+        >
+          <Image
+            src="/framed-screenshots/framed-home-page.png"
+            alt="Ecoride App Preview"
+            width={900}
+            height={1800}
+            className="w-auto h-[40vh] md:h-auto md:w-[40vw] max-w-[450px] object-contain drop-shadow-2xl hover:scale-[1.03] hover:-translate-y-2 transition-all duration-300"
+          />
+        </a>
+      </section>
 
     {/* rider app section */}
-    <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
+    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
       <SectionHeading
-        description="Intentionally designed to take you wherever you want to go"
+        description="Designed and engineered to take you wherever you want to go"
         eyebrow="The Ecoride rider app"
         title="Explore the ecoride rider app on both iOS and Android"
       />
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
-        {homeInfoCards.map((card) => (
-          <MarketingCard key={card.title} {...card} />
-        ))}
+      <div className="mt-10 grid gap-4 lg:grid-cols-[1fr,2fr]">
+        {homeInfoCards.length > 0 && (
+          <div className="h-full">
+            <MarketingCard {...homeInfoCards[0]} />
+          </div>
+        )}
+        <AutoScrollingGallery />
       </div>
     </section>
 
@@ -104,5 +232,6 @@ export const HomePage = () => (
     <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
       <MapOffice />
     </section> */}
-  </PublicLayout>
-);
+    </PublicLayout>
+  );
+};
