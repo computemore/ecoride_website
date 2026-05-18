@@ -24,13 +24,14 @@ export interface AboutSection {
   cards: CardContent[];
 }
 
+// About us dropdown items that appear in the header and footer across the site
 const aboutDropdownItems = [
-  { href: '/about#about-us', label: 'About Us' },
-  { href: '/about#partners', label: 'Partners' },
-  { href: '/about#how-ecoride-works', label: 'How Ecoride Works' },
-  { href: '/about#explore', label: 'Explore' },
-  { href: '/about#blog', label: 'Blog' },
-  { href: '/about#corporate-overview', label: 'Corporate' },
+  // { href: '/about#about-us', label: 'About Us' },
+  // { href: '/about#partners', label: 'Partners' },
+  // { href: '/about#how-ecoride-works', label: 'How Ecoride Works' },
+  // { href: '/about#explore', label: 'Explore' },
+  // { href: '/about#blog', label: 'Blog' },
+  // { href: '/about#corporate-overview', label: 'Corporate' },
   { href: '/about/terms', label: 'Terms' },
   { href: '/about/privacy-policy', label: 'Privacy Policy' },
 ] as const;
@@ -42,7 +43,7 @@ export const pageThemes: Record<PublicPageKey, PageTheme> = {
   drive: { pageColor: '#f0453d', pageBgColor: '#ed7a74' },
   corporate: { pageColor: '#2196F3', pageBgColor: '#64afec' },
   about: { pageColor: '#f0453d' },
-  account: { pageColor: '#FF9800' },
+  account: { pageColor: '#FF9800', pageBgColor: '#ffb74d' },
 };
 
 export const pageSeo: Record<PublicPageKey, SeoProps> = {
@@ -192,20 +193,20 @@ export const homeInfoCards: CardContent[] = [
   {
     eyebrow: 'Ride',
     title: 'Book safer trips with more context at every stage',
-    description: 'Verification, trip sharing, and flexible payments make rider journeys feel easier to trust and simpler to manage.',
-    bullets: ['Trusted ride confirmation', 'Trip sharing and contacts', 'Flexible local payment options'],
+    description: 'Driver verification, trip sharing, live tracking, and flexible payments make rider journeys feel easy, trustworthy and fast.',
+    bullets: ['Trusted ride confirmation', 'Trip sharing and contacts', 'Flexible, local, digital payment options'],
     variation: 'green',
     href: '/ride',
-    hrefLabel: 'Explore Ride',
+    hrefLabel: 'Explore the Rider App',
   },
   {
     eyebrow: 'Drive',
     title: 'Earn with flexible availability and visible support',
-    description: 'The driver experience is framed around real-time demand, clearer onboarding, and support that stays in view.',
-    bullets: ['Flexible earning flow', 'Fast and luxury ride classes', 'Driver Safety Hub support'],
-    variation: 'green',
+    description: 'Featuring smooth, GPS-aware navigation, real-time support, live driver analytics and controls, with in-ride chat.',
+    bullets: ['Flexible earning, with realtime analytics', 'Fast and luxury ride classes', 'Driver Safety Hub support'],
+    variation: 'red',
     href: '/drive',
-    hrefLabel: 'Explore Drive',
+    hrefLabel: 'Explore the Driver App',
   },
   {
     eyebrow: 'Corporate',
@@ -225,25 +226,25 @@ export const rideFeatureCards: CardContent[] = [
     description:
       'The rider app emphasizes protected trips with verification moments that make each pickup feel intentional and secure.',
     bullets: ['Trip verification flow', 'Driver detail visibility', 'Trusted ride confirmation'],
-    href: '/about#how-ecoride-works',
+    // href: '/about#how-ecoride-works',
     hrefLabel: 'See how it works',
   },
   {
     eyebrow: 'Trip Sharing',
     title: 'Keep the right people close to every journey',
     description:
-      'Trusted contacts, real-time sharing, and rider-friendly visibility features make it easier to travel with confidence.',
+      'Trusted contacts, real-time sharing, and rider-friendly visibility features make travelling easy.',
     bullets: ['Share live trip progress', 'Trusted contacts support', 'Safety-focused rider experience'],
-    href: '/about#about-us',
+    // href: '/about#about-us',
     hrefLabel: 'Why it matters',
   },
   {
     eyebrow: 'Flexible',
     title: 'Local convenience without extra friction',
     description:
-      'Multi-stop trips, guest rides, and local payment flexibility make Ecoride practical for real day-to-day transport in Malawi.',
-    bullets: ['Cash and mobile money', 'Multi-stop ride support', 'Order for someone else'],
-    href: '/about#explore',
+      'Multi-stop trips, guest rides, digital payments and even scheduled rides for both yourself and others.',
+    bullets: ['Cash and mobile money', 'Multi-stop and Scheduled ride support', 'Order for others too'],
+    // href: '/about#explore',
     hrefLabel: 'Explore rider journeys',
   },
 ];

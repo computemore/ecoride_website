@@ -91,10 +91,10 @@ const supportLinks = [
 
 export const DeleteMePage = () => (
   <PublicLayout pageKey="account">
-    <section className="mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-14 pt-0 md:px-6 md:pt-0 lg:px-8">
+    <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
       <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
         <div className="text-center lg:text-left">
-          <p className="text-[16px] font-semibold uppercase tracking-[0.26em] text-slate-950/72">Account Deletion</p>
+          <p className="text-[16px] font-semibold uppercase tracking-[0.26em] text-slate-950/80">Account Deletion</p>
           <h1 className="text-balance mx-auto mt-6 max-w-5xl text-2xl font-medium leading-[0.96] md:text-7xl md:text-4xl lg:text-[4.5rem] text-slate-950">
             Thinking of deleting your Ecoride account?
           </h1>
@@ -112,19 +112,19 @@ export const DeleteMePage = () => (
           </div>
         </div>
 
-        <div className="hidden lg:block surface-card rounded-card border overflow-hidden border-white/20 bg-white/10 p-6 shadow-[0_20px_40px_rgba(15,23,42,0.12)] md:p-6">
-          <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-[#7C4A03]">Brief</p>
+        <div className="hidden lg:block surface-card rounded-card border overflow-hidden border-white/20 bg-white/10 p-6 shadow-[0_20px_40px_rgba(15,23,42,0.12)] md:p-6 space-y-4">
+          {/* <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-[#7C4A03]">Brief</p> */}
           {/* <p className="mt-4 text-base leading-7 text-slate-950">
             Deletion requests can affect access quickly. This page is designed to help users understand the process
           </p> */}
-          <dl className="mt-8 grid gap-x-6 gap-y-5 border-t border-slate-950/12 pt-6 sm:grid-cols-2 xl:grid-cols-2">
+          {/* <dl className="mt-8 grid gap-x-6 gap-y-5 border-t border-slate-950/12 pt-6 sm:grid-cols-2 xl:grid-cols-2"> */}
             {pageMeta.map((item) => (
               <div key={item.label}>
-                <dt className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/72">{item.label}</dt>
-                <dd className="mt-2 text-sm font-medium leading-6 text-slate-950">{item.value}</dd>
+                <dt className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/80">{item.label}</dt>
+                <dd className="mt-0 text-sm font-medium leading-6 text-slate-950">{item.value}</dd>
               </div>
             ))}
-          </dl>
+          {/* </dl> */}
         </div>
       </div>
 
@@ -148,7 +148,7 @@ export const DeleteMePage = () => (
       <div className="mt-8 grid gap-5 md:grid-cols-3">
         {reviewPoints.map((item, index) => (
           <article className="surface-card rounded-card border border-white/20 bg-white/10 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.1)]" key={item}>
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#ffffffe9] text-sm font-semibold text-[#7C4A03]">{index + 1}</span>
+            <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full border-4 border-white bg-slate-950 text-base font-semibold text-white shadow-[0_14px_28px_rgba(15,23,42,0.14)]">{index + 1}</span>
             <p className="mt-4 text-sm font-medium leading-7 text-slate-950">{item}</p>
           </article>
         ))}
@@ -172,7 +172,7 @@ export const DeleteMePage = () => (
                 <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 border-white bg-slate-950 text-base font-semibold text-white shadow-[0_14px_28px_rgba(15,23,42,0.14)]">
                   {index + 1}
                 </div>
-                <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/72">Step {step.number}</p>
+                <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/80">Step {step.number}</p>
               </div>
               <article className="mt-5 min-h-[220px] surface-card rounded-card border border-white/20 bg-white/10 p-6 shadow-[0_20px_40px_rgba(15,23,42,0.1)]">
                 <h3 className="text-xl font-semibold tracking-[-0.03em] text-slate-950">{step.title}</h3>
@@ -191,7 +191,7 @@ export const DeleteMePage = () => (
               {index + 1}
             </div>
             <article className="surface-card rounded-card border border-white/20 bg-white/10 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.1)]">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/72">Step {step.number}</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/80">Step {step.number}</p>
               <h3 className="mt-3 text-xl font-semibold tracking-[-0.03em] text-slate-950">{step.title}</h3>
               <p className="mt-3 text-sm font-medium leading-7 text-slate-950">{step.description}</p>
             </article>
@@ -252,7 +252,7 @@ export const DeleteMePage = () => (
       />
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         <article className="surface-card rounded-card border border-white/20 bg-white/10 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.1)]">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/72">Support Contact</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/80">Support Contact</p>
           <ul className="mt-4 space-y-3 text-sm font-medium leading-6 text-slate-950">
             <li>{appSettings.supportEmail}</li>
             {appSettings.phoneNumbers.map((number) => (
@@ -261,7 +261,7 @@ export const DeleteMePage = () => (
           </ul>
         </article>
         <article className="surface-card rounded-card border border-white/20 bg-white/10 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.1)]">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/72">Office</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950/80">Office</p>
           <ul className="mt-4 space-y-3 text-sm font-medium leading-6 text-slate-950">
             {appSettings.addressLines.map((line) => (
               <li key={line}>{line}</li>
@@ -281,7 +281,7 @@ export const DeleteMePage = () => (
     <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8" id="future-actions">
       <div className="grid gap-10 lg:grid-cols-[1.08fr,0.92fr] lg:items-start">
         <div>
-          <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-slate-950/72">Manage Deletion Online</p>
+          <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-slate-950/80">Manage Deletion Online</p>
           <h2 className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">Web-based account actions are in development</h2>
           <p className="mt-5 max-w-3xl text-base leading-7 text-slate-950 md:text-[18px] md:leading-9">
             Coming soon. Please now refer to the WHAT TO DO FOR NOW section

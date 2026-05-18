@@ -10,7 +10,7 @@ export const SiteTitleIcon = ({ className, ...props }: SiteTitleIconProps) => (
         alt="Ecoride"
         width={185}
         height={50}
-        className={cn('h-auto w-[148px] md:w-[185px]', className)}
+        className={cn('h-auto -ml-2 w-[148px] md:w-[185px]', className)}
         {...props}
     />
 );

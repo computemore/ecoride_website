@@ -11,7 +11,7 @@ import { SectionHeading } from '@/components/widgets/section-heading';
 import { appSettings } from '@/config/app-settings';
 import { homeInfoCards } from '@/config/site-content';
 
-const AutoScrollingGallery = () => {
+const AutoScrollingGallery = ({ images }: { images: string[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -25,7 +25,7 @@ const AutoScrollingGallery = () => {
     let currentX = 0;
     let direction = 1;
 
-    const duration = 75000; // 30 seconds for a full sweep across
+    const duration = 10000 * images.length; // 30 seconds for a full sweep across
 
     const animate = (time: number) => {
       const dt = time - lastTime;
@@ -56,25 +56,6 @@ const AutoScrollingGallery = () => {
     return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
-  // Mocking your processed images array (update counts/filenames as needed)
-  const images = [
-    '/home-marketing/processed/01-processed-login-page-phone-otp-page.png',
-    '/home-marketing/processed/02-processed-login-page-email-pass-page.png',
-    '/home-marketing/processed/03-processed-home-page.png',
-    '/home-marketing/processed/04-processed-favorite-places-pop-page.png',
-    '/home-marketing/processed/05-processed-favorite-places-add-page.png',
-    '/home-marketing/processed/06-processed-select-location-page.png',
-    '/home-marketing/processed/07-processed-confirm-ride-page.png',
-    '/home-marketing/processed/08-processed-pinpoint-page.png',
-    '/home-marketing/processed/09-processed-account-page.png',
-    '/home-marketing/processed/10-processed-safety-hub-page.png',
-    '/home-marketing/processed/11-processed-login-security-page.png',
-    '/home-marketing/processed/12-processed-payment-method-page.png',
-    '/home-marketing/processed/13-processed-topup-page.png',
-    '/home-marketing/processed/14-processed-transactions-page.png',
-    '/home-marketing/processed/15-processed-referrals-page.png',
-  ];
-
   return (
     <div 
       ref={containerRef} 
@@ -99,6 +80,39 @@ const AutoScrollingGallery = () => {
 
 export const HomePage = () => {
   const [showImage, setShowImage] = useState(false);
+
+  const driverImages = [
+    // '/home-marketing/processed/01-processed-login-page-phone-otp-page.png',
+    // '/home-marketing/processed/02-processed-login-page-email-pass-page.png',
+    // '/home-marketing/processed/03-processed-home-page.png',
+    '/home-marketing/processed-driver/01_login_page.png', 
+    '/home-marketing/processed-driver/02_create_account.png',
+    '/home-marketing/processed-driver/03_home_page.png',
+    '/home-marketing/processed-driver/05_driver_navigation.png',
+    '/home-marketing/processed-driver/06_in_ride_chat.png', 
+    '/home-marketing/processed-driver/07_ride_cash_collection.png',
+    '/home-marketing/processed-driver/08_driver_dashboard.png',
+    '/home-marketing/processed-driver/09_account_page.png',
+  ];
+
+  // Mocking your processed images array (update counts/filenames as needed)
+  const riderImages = [
+    '/home-marketing/processed/01-processed-login-page-phone-otp-page.png',
+    '/home-marketing/processed/02-processed-login-page-email-pass-page.png',
+    '/home-marketing/processed/03-processed-home-page.png',
+    '/home-marketing/processed/04-processed-favorite-places-pop-page.png',
+    '/home-marketing/processed/05-processed-favorite-places-add-page.png',
+    '/home-marketing/processed/06-processed-select-location-page.png',
+    '/home-marketing/processed/07-processed-confirm-ride-page.png',
+    '/home-marketing/processed/08-processed-pinpoint-page.png',
+    '/home-marketing/processed/09-processed-account-page.png',
+    '/home-marketing/processed/10-processed-safety-hub-page.png',
+    '/home-marketing/processed/11-processed-login-security-page.png',
+    '/home-marketing/processed/12-processed-payment-method-page.png',
+    '/home-marketing/processed/13-processed-topup-page.png',
+    '/home-marketing/processed/14-processed-transactions-page.png',
+    '/home-marketing/processed/15-processed-referrals-page.png',
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -126,7 +140,11 @@ export const HomePage = () => {
             <p className="mx-auto mt-4 lg:mt-6 max-w-3xl lg:max-w-xl text-[16px] leading-7 md:text-[18px] md:leading-10 text-slate-950/85">
               A local-first ride sharing and car rental platform by Malawians, for Malawians, with support for corporates
             </p>
-            <div className="mt-4 md:mt-6 lg:mt-6 flex flex-wrap justify-center gap-3">
+            <div 
+              className={`mt-4 md:mt-6 lg:mt-6 flex flex-wrap justify-center gap-3 ${
+                showImage ? 'scale-111 md:translate-y-0 md:scale-[1.18]' : ''
+              }`}
+            >
               <BaseButton href={appSettings.downloadLinks.rider.href} variant="solid-green">
                 Download Rider App
               </BaseButton>
@@ -169,7 +187,7 @@ export const HomePage = () => {
             <MarketingCard {...homeInfoCards[0]} />
           </div>
         )}
-        <AutoScrollingGallery />
+        <AutoScrollingGallery images={riderImages} />
       </div>
     </section>
 
@@ -181,10 +199,13 @@ export const HomePage = () => {
         title="Enroll for our driver program and start earning with ecoride"
         forceAlignment='right'
       />
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
-        {homeInfoCards.map((card) => (
-          <MarketingCard key={card.title} {...card} />
-        ))}
+      <div className="mt-6 xl:mt-8 grid gap-4 xl:gap-2 lg:grid-cols-[2fr,1fr]">
+        <AutoScrollingGallery images={driverImages} />
+        {homeInfoCards.length > 1 && (
+          <div className="h-full">
+            <MarketingCard {...homeInfoCards[1]} />
+          </div>
+        )}
       </div>
     </section>
 
@@ -193,11 +214,11 @@ export const HomePage = () => {
       <div className="surface-card rounded-card grid gap-8 p-7 md:grid-cols-[1.2fr,0.8fr] md:p-10">
         <div>
           <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-slate-950/85">Local credibility</p>
-          <h2 className="mt-4 text-2xl font-medium text-slate-950/95 md:text-4xl">Grounded in Blantyre, built for the journeys people already make</h2>
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-950/85 md:text-base md:leading-8">
-            The new website treats Ecoride as a platform for riders, drivers, and teams without hiding the fact that real local transport depends on
-            practical support, local contact, and clear expectations.
-          </p>
+          <h2 className="mt-4 text-2xl font-medium text-slate-950/95 md:text-4xl">Grounded in Malawi, built for the journeys people already make</h2>
+          {/* <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-950/85 md:text-base md:leading-8"> */}
+            {/* The new website treats Ecoride as a platform for riders, drivers, and teams without hiding the fact that real local transport depends on */}
+            {/* practical support, local contact, and clear expectations. */}
+          {/* </p> */}
           <div className="mt-6 flex flex-wrap gap-3">
             <BaseButton href="/about" variant="solid-dark">
               About Ecoride
@@ -207,23 +228,27 @@ export const HomePage = () => {
             </BaseButton>
           </div>
         </div>
-        <div className="rounded-card border border-slate-950/12 bg-black/10 p-6">
-          <p className="text-sm font-semibold text-slate-950">Visit or call</p>
-          <div className="mt-4 space-y-2 text-[14px] leading-6 text-slate-950/74 sm:text-sm sm:leading-7">
-            {appSettings.addressLines.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
-            {appSettings.phoneNumbers.map((phone) => (
-              <p key={phone}>{phone}</p>
-            ))}
-            <a className="inline-flex break-all items-center gap-2 pt-3 text-slate-950" href={`mailto:${appSettings.supportEmail}`}>
-              {appSettings.supportEmail}
-              <ArrowRightIcon className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-        <div className="w-full md:col-span-2 rounded-[20px] border border-slate-950/12 ">
+        <div className="w-full md:col-span-2 flex flex-row rounded-[18px]">
           <MapOffice />
+          <div className="rounded-[18px] min-w-[300px] p-6">
+            <p className="text-[16px] font-semibold text-slate-950">Visit or call</p>
+            <div className="mt-4 space-y-2 text-[16px] leading-6 text-slate-950/80 sm:text-sm sm:leading-7">
+              {appSettings.addressLines.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+              {appSettings.phoneNumbers.map((phone) => (
+                <p key={phone}>{phone}</p>
+              ))}
+              <a 
+                className="rounded-[18px] text-[15px] bg-slate-950 inline-flex break-all items-center gap-2 pl-3 pr-2 text-white" 
+                href={`mailto:${appSettings.supportEmail}`}
+              >
+                {appSettings.supportEmail}
+                <ArrowRightIcon className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

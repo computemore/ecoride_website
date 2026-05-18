@@ -6,7 +6,7 @@ import { PublicLayout } from '@/layouts/public-layout';
 
 export const AboutPage = () => (
   <PublicLayout pageKey="about">
-    <section className="mx-auto max-w-content-wide px-4 pb-12 pt-20 md:px-6 md:pt-24 lg:px-8">
+    <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
       <div className="grid gap-8 lg:grid-cols-[1fr,auto] lg:items-end">
         <SectionHeading
           description="This phase keeps the About route substantial enough to support the full dropdown without splitting the site into thin, low-value pages."

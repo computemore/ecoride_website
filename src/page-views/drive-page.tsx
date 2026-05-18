@@ -1,3 +1,7 @@
+"use client";
+
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 import { BaseButton } from '@/components/ui/base-button';
 import { MarketingCard } from '@/components/widgets/marketing-card';
 import { SectionHeading } from '@/components/widgets/section-heading';
@@ -5,17 +9,99 @@ import { appSettings } from '@/config/app-settings';
 import { driveFeatureCards, driveSupportCards } from '@/config/site-content';
 import { PublicLayout } from '@/layouts/public-layout';
 
+const AutoScrollingGallery = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const track = trackRef.current;
+    if (!container || !track) return;
+
+    let animationFrameId: number;
+    let lastTime = performance.now();
+    let currentX = 0;
+    let direction = 1;
+
+    const duration = 75000; // 30 seconds for a full sweep across
+
+    const animate = (time: number) => {
+      const dt = time - lastTime;
+      lastTime = time;
+
+      const maxScroll = Math.max(0, track.scrollWidth - container.offsetWidth);
+
+      if (maxScroll > 0) {
+        const speed = maxScroll / duration; 
+        currentX += speed * dt * direction;
+
+        if (currentX >= maxScroll) {
+          currentX = maxScroll;
+          direction = -1;
+        } else if (currentX <= 0) {
+          currentX = 0;
+          direction = 1;
+        }
+
+        track.style.transform = `translateX(${-currentX}px)`;
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, []);
+
+  // Mocking your processed images array (update counts/filenames as needed)
+  const images = [
+    // '/home-marketing/processed/01-processed-login-page-phone-otp-page.png',
+    // '/home-marketing/processed/02-processed-login-page-email-pass-page.png',
+    // '/home-marketing/processed/03-processed-home-page.png',
+    '/home-marketing/processed-driver/01_login_page.png', 
+    '/home-marketing/processed-driver/02_create_account.png',
+    '/home-marketing/processed-driver/03_home_page.png',
+    '/home-marketing/processed-driver/05_driver_navigation.png',
+    '/home-marketing/processed-driver/06_in_ride_chat.png', 
+    '/home-marketing/processed-driver/07_ride_cash_collection.png',
+    '/home-marketing/processed-driver/08_driver_dashboard.png',
+    '/home-marketing/processed-driver/09_account_page.png',
+  ];
+
+  return (
+    <div 
+      ref={containerRef} 
+      className="w-full h-full min-h-[300px] overflow-hidden rounded-[18px] md:rounded-[20px] bg-slate-900/0 border-none border-slate-900/10 flex items-center"
+    >
+      <div ref={trackRef} className="flex py-0 w-max">
+        {images.map((src, i) => (
+          <Image
+            key={i} 
+            src={src} 
+            alt={`App Screen ${i + 1}`} 
+            width={360}
+            height={760}
+            className="h-[280px] xl:h-[420px] w-auto object-contain rounded-xl shadow-md hover:scale-[1.05] transition-transform duration-300"
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export const DrivePage = () => (
   <PublicLayout pageKey="drive">
-    <section className="mx-auto max-w-content-wide min-h-screen px-4 pb-12 pt-20 md:px-6 xl:pt-32 lg:px-8">
+    <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
       <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
         <div className="text-center lg:text-left">
-          <p className="text-[14px] font-semibold uppercase tracking-[0.26em] text-white/66">Driver App</p>
+          <p className="text-[16px] ml-1 font-semibold uppercase tracking-[0.26em] text-white/66">Driver App</p>
           <h1 className="text-balance mt-6 max-w-4xl text-4xl font-semibold leading-[0.96] text-white md:text-7xl">
             Time is money, and Ecoride Driver gets you the best of both.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-7 text-white/76">
-            The driver experience is centered on earning clarity, flexible availability, real-time demand, and support structures that are visible and transparent
+            The driver experience is designed and engineered around your time and money - featuring real-time demand indicators, smooth navigation, and earnings breakdowns!
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
             <BaseButton href={appSettings.downloadLinks.driver.href} variant="solid-light">
@@ -26,28 +112,22 @@ export const DrivePage = () => (
             </BaseButton>
           </div>
         </div>
-        <div className="surface-card rounded-card p-7 md:p-8">
-          <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-white/68">Driver path</p>
-          <div className="mt-5 grid gap-3">
-            {['Go online when ready', 'Respond to live requests', 'Keep support in view'].map((step) => (
-              <div className="rounded-card border border-white/10 bg-black/10 p-4" key={step}>
-                <p className="text-[14px] font-semibold text-white sm:text-sm">{step}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-5 space-y-4 text-[14px] leading-6 text-white/76 sm:text-sm sm:leading-7">
-            <p>Drive fast or luxury classes, manage your activity, and stay close to live trip requests without a cluttered driver story.</p>
-            <p>The public story positions the driver app around earning, safety, and onboarding readiness rather than vague recruitment slogans.</p>
-          </div>
+        <div className="mt-6 xl:mt-8 grid gap-4 xl:gap-2">
+          {/* {homeInfoCards.length > 0 && (
+            <div className="h-full">
+              <MarketingCard {...homeInfoCards[0]} />
+            </div>
+          )} */}
+          <AutoScrollingGallery />
         </div>
       </div>
     </section>
 
     <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
       <SectionHeading
-        description="The marketing layer mirrors the strongest parts of the driver app: flexibility, responsive demand, support access, and transparent driver readiness."
+        description="Our promise is: earning flexibility, responsive demand, support access, and transparent driver readiness."
         eyebrow="Driver features"
-        title="Clear earning stories beat generic driver recruitment"
+        title="Clear earning potential - earn up to MWK100,000/day with ecoride"
         tone="brand"
       />
       <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -57,7 +137,7 @@ export const DrivePage = () => (
       </div>
     </section>
 
-    <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
+    {/* <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
       <SectionHeading
         description="The driver message stays simple: clearer onboarding, visible support, and an earning flow that feels grounded in daily work."
         eyebrow="Driver support"
@@ -69,7 +149,7 @@ export const DrivePage = () => (
           <MarketingCard key={card.title} {...card} />
         ))}
       </div>
-    </section>
+    </section> */}
 
     <section className="mx-auto max-w-content-wide px-4 pb-16 md:px-6 lg:px-8">
       <SectionHeading

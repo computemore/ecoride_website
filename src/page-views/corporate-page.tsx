@@ -9,10 +9,10 @@ import { PublicLayout } from '@/layouts/public-layout';
 
 export const CorporatePage = () => (
   <PublicLayout pageKey="corporate">
-    <section className="mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-14 pt-0 md:px-6 md:pt-0 lg:px-8">
+    <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
       <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
         <div className="text-center lg:text-left">
-          <p className="text-[16px] font-semibold uppercase tracking-[0.26em] text-white/66">ecoride Corporate</p>
+          <p className="text-[16px] ml-1 font-semibold uppercase tracking-[0.26em] text-white/66">ecoride Corporate</p>
           <h1 className="text-balance mx-auto mt-6 max-w-5xl text-3xl font-medium leading-[0.96] md:text-7xl md:text-4xl lg:text-[4.5rem] text-white">
             The smart, affordable alternative for team transport
           </h1>
@@ -34,7 +34,7 @@ export const CorporatePage = () => (
       </div>
     </section>
 
-    <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
+    {/* <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
       <SectionHeading
         description="By partnering with Ecoride, corporate clients can reduce their carbon footprint, save money, and provide employees with a more dependable mobility option backed by a dedicated support team"
         eyebrow="Corporate value"
@@ -46,7 +46,7 @@ export const CorporatePage = () => (
           <MarketingCard key={card.title} {...card} />
         ))}
       </div>
-    </section>
+    </section> */}
 
     <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
       <SectionHeading

@@ -69,7 +69,7 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
                   aria-expanded={aboutOpen}
                   className={cn(
                     'inline-flex items-center gap-2 text-[16px] font-medium transition',
-                    isLightTone ? 'text-slate-900 hover:text-slate-700' : 'text-white hover:text-white/80',
+                    isLightTone ? 'text-slate-900 hover:font-bold' : 'text-white hover:font-bold',
                   )}
                   onClick={() => setAboutOpen((current) => !current)}
                   type="button"
@@ -91,8 +91,8 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
                             className={cn(
                               'rounded-[14px] px-3.5 py-2 text-[14px] transition',
                               isLightTone
-                                ? 'text-slate-700 hover:bg-slate-900/5 hover:text-slate-950'
-                                : 'text-white/78 hover:bg-white/10 hover:text-white',
+                                ? 'text-slate-700 hover:bg-slate-900/5 hover:text-slate-950 hover:font-bold'
+                                : 'text-white/78 hover:bg-white/10 hover:text-white hover:font-bold',
                             )}
                             href={dropdownItem.href}
                             key={dropdownItem.label}
@@ -110,7 +110,7 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
               <Link
                 className={cn(
                   'text-[16px] font-medium transition',
-                  isLightTone ? 'text-slate-900 hover:text-slate-700' : 'text-white hover:text-white/80',
+                  isLightTone ? 'text-slate-900 hover:font-bold' : 'text-white hover:font-bold',
                 )}
                 href={item.href ?? '/'}
                 key={item.label}
@@ -133,8 +133,8 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
                       className={cn(
                         'rounded-[14px] px-3.5 py-2 text-[14px] transition',
                         isLightTone
-                          ? 'text-slate-700 hover:bg-slate-900/5 hover:text-slate-950'
-                          : 'text-white/78 hover:bg-white/10 hover:text-white',
+                          ? 'text-slate-700 hover:bg-slate-900/5 hover:text-slate-950 hover:font-bold'
+                          : 'text-white/80 hover:bg-white/10 hover:text-white hover:font-bold',
                       )}
                       href={item.href}
                       key={item.label}

@@ -97,17 +97,16 @@ const AutoScrollingGallery = () => {
 
 export const RidePage = () => (
   <PublicLayout pageKey="ride">
-    <section className="mx-auto max-w-content-wide min-h-screen px-4 pb-12 pt-20 md:px-6 xl:pt-32 lg:px-8">
+    <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
       <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
         {/* Hero */}
         <div className="text-center lg:text-left">
-          <p className="text-[14px] font-semibold uppercase tracking-[0.26em] text-white/66">Rider App</p>
+          <p className="text-[16px] ml-1 font-semibold uppercase tracking-[0.26em] text-white/66">Rider App</p>
           <h1 className="text-balance mt-6 max-w-4xl text-4xl font-semibold leading-[0.96] text-white md:text-7xl lg:max-w-5xl">
             Local first mobility, customer-first safety features, and digital payments.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-7 text-white/76 lg:max-w-3xl">
-            Ecoride’s rider experience is built around verification, trip sharing, flexible payments, and the kinds of practical transport details
-            that matter across Malawi.
+            The Ecoride Rider App brings a distinct feel to Malawian ride-sharing, now with shared rides, live tracking and digital payment. Getting you where you need to go.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
             <BaseButton href={appSettings.downloadLinks.rider.href} variant="solid-light">
@@ -132,9 +131,9 @@ export const RidePage = () => (
     {/* TODO: add focused screenshots or videos for marketing */}
     <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
       <SectionHeading
-        description="The public Ride story mirrors the real rider product: safer pickups, clearer trip context, and flexible payment choices instead of a generic booking flow."
+        description="Safer pickups, clearer trip context, and flexible payment choices - innovations that make it easy for you."
         eyebrow="Rider features"
-        title="Convenience should never strip out rider confidence"
+        title="With Ecoride, the Rider always comes first"
         tone="brand"
       />
       <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -144,7 +143,7 @@ export const RidePage = () => (
       </div>
     </section>
 
-    <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
+    {/* <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
       <SectionHeading
         description="The best rider stories feel calm and practical. Each moment below reinforces confidence without turning the page into a wall of feature copy."
         eyebrow="Rider confidence"
@@ -156,7 +155,7 @@ export const RidePage = () => (
           <MarketingCard key={card.title} {...card} />
         ))}
       </div>
-    </section>
+    </section> */}
 
     <section className="mx-auto max-w-content-wide px-4 pb-16 md:px-6 lg:px-8">
       <SectionHeading
