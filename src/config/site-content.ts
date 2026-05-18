@@ -125,15 +125,15 @@ export const headerNavigation: Record<PublicPageKey, NavItem[]> = {
   ],
   ride: [
     { kind: 'link', label: 'Ride', href: '/ride' },
-    { kind: 'link', label: 'Rent', href: '/about#explore' },
+    // { kind: 'link', label: 'Rent' },
   ],
   drive: [
     { kind: 'link', label: 'Drive', href: '/drive' },
-    { kind: 'link', label: 'Rent out', href: '/about#partners' },
+    // { kind: 'link', label: 'Rent out'},
   ],
   corporate: [
     { kind: 'link', label: 'Ecoride Corporate', href: '/corporate' },
-    { kind: 'link', label: 'Partnerships', href: '/about#partners' },
+    // { kind: 'link', label: 'Partnerships' },
   ],
   about: [
     { kind: 'link', label: 'About', href: '/about' },
