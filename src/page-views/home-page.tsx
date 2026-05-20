@@ -54,7 +54,7 @@ const AutoScrollingGallery = ({ images }: { images: string[] }) => {
     animationFrameId = requestAnimationFrame(animate);
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, []);
+  }, [images.length]);
 
   return (
     <div 

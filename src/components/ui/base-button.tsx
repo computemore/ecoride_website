@@ -32,13 +32,13 @@ const variantClasses: Record<ButtonVariant, string> = {
 
 // small and other screens
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'px-3.5 py-2 text-[14px] md:px-3.5 md:py-2 md:text-[15px]',
-  md: 'px-3.5 py-2 text-[14px] md:px-3.5 md:py-2 md:text-[15px]',
+  sm: 'px-3 py-1.5 text-[14px] md:px-3 md:py-1.5 md:text-[15px]',
+  md: 'px-3 py-1.5 text-[14px] md:px-3 md:py-1.5 md:text-[15px]',
 };
 
 // constant props for all button variants
 const baseClassName =
-  'surface-button inline-flex items-center justify-center gap-2 rounded-[14px] font-semibold tracking-[-0.02em] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
+  'surface-button inline-flex items-center justify-center gap-2 rounded-[6px] font-semibold tracking-[-0.02em] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
 export const BaseButton = ({
   children,

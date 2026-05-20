@@ -6,7 +6,7 @@ import { BaseButton } from '@/components/ui/base-button';
 import { MarketingCard } from '@/components/widgets/marketing-card';
 import { SectionHeading } from '@/components/widgets/section-heading';
 import { appSettings } from '@/config/app-settings';
-import { rideConfidenceCards, rideFeatureCards } from '@/config/site-content';
+import { rideFeatureCards } from '@/config/site-content';
 import { PublicLayout } from '@/layouts/public-layout';
 
 const AutoScrollingGallery = () => {

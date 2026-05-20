@@ -4,7 +4,7 @@ import { BaseButton } from '@/components/ui/base-button';
 import { MarketingCard } from '@/components/widgets/marketing-card';
 import { SectionHeading } from '@/components/widgets/section-heading';
 import { appSettings } from '@/config/app-settings';
-import { corporateFeatureCards, corporateOutcomeCards } from '@/config/site-content';
+import { corporateOutcomeCards } from '@/config/site-content';
 import { PublicLayout } from '@/layouts/public-layout';
 
 export const CorporatePage = () => (
@@ -50,12 +50,12 @@ export const CorporatePage = () => (
 
     <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
       <SectionHeading
-        description="These outcomes turn the corporate story from a vague partnership pitch into something easier to evaluate against real transport costs and sustainability goals."
+        description=""
         eyebrow="Why it matters"
-        title="The value is cost control, cleaner oversight, and a more sustainable transport strategy"
+        title="The coroporate value is clear and clean cost control, oversight and analytics"
         tone="brand"
       />
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
+      <div className="mt-4 grid gap-5 md:grid-cols-3">
         {corporateOutcomeCards.map((card) => (
           <MarketingCard key={card.title} {...card} />
         ))}

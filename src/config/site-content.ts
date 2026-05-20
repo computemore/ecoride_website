@@ -44,6 +44,7 @@ export const pageThemes: Record<PublicPageKey, PageTheme> = {
   corporate: { pageColor: '#2196F3', pageBgColor: '#64afec' },
   about: { pageColor: '#f0453d' },
   account: { pageColor: '#FF9800', pageBgColor: '#ffb74d' },
+  comingSoon: { pageColor: '#9E9E9E', pageBgColor: '#E0E0E0' },
 };
 
 export const pageSeo: Record<PublicPageKey, SeoProps> = {
@@ -95,6 +96,14 @@ export const pageSeo: Record<PublicPageKey, SeoProps> = {
     ogImage: '/ecoride-256.png',
     keywords: ['Ecoride account help', 'delete Ecoride account', 'Ecoride recovery window'],
   },
+  comingSoon: {
+    title: 'Coming Soon | Ecoride Malawi',
+    description:
+      'Stay tuned for upcoming features and updates from Ecoride, including new ride sharing and login functionalities.',
+    canonical: '/login-coming-soon',
+    ogImage: '/ecoride-256.png',
+    keywords: ['Ecoride coming soon', 'upcoming features Malawi', 'Ecoride updates'],
+  },
 };
 
 export const legalPageSeo = {
@@ -143,6 +152,10 @@ export const headerNavigation: Record<PublicPageKey, NavItem[]> = {
     { kind: 'link', label: 'Ride', href: '/ride' },
     { kind: 'link', label: 'Drive', href: '/drive' },
     { kind: 'dropdown', label: 'About', items: [...aboutDropdownItems] },
+  ],
+  comingSoon: [
+    { kind: 'link', label: 'Ride', href: '/ride' },
+    { kind: 'link', label: 'Drive', href: '/drive' },
   ],
 };
 

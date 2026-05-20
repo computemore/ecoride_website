@@ -121,7 +121,7 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
           )}
           {/* download button */}
           <div className="relative">
-            <BaseButton className="min-w-[148px] w-[180px] pl-3 pr-2" onClick={() => setAppsOpen((current) => !current)} variant={isLightTone ? 'solid-dark' : 'solid-light'}>
+            <BaseButton className="min-w-[148px] w-[180px] pl-3 pr-1.5" onClick={() => setAppsOpen((current) => !current)} variant={isLightTone ? 'solid-dark' : 'solid-light'}>
               Download Apps
               <ChevronDownIcon className={cn('h-6 w-6 transition', appsOpen && 'rotate-180')} />
             </BaseButton>
@@ -153,7 +153,7 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
         {/* cta buttons in header, desktop version */}
         <div className="hidden items-center gap-3 lg:flex">
           {/* login button */}
-          <BaseButton href="/about#explore" variant={isLightTone ? 'solid-dark' : 'solid-light'}>
+          <BaseButton href="/login-coming-soon" variant={isLightTone ? 'solid-dark' : 'solid-light'}>
             Login
           </BaseButton>
         </div>
@@ -238,7 +238,7 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
             <div className={cn('mt-6 grid gap-2 border-t pt-4', isLightTone ? 'border-slate-900/8' : 'border-white/10')}>
           {/* download button */}
           <div className="relative">
-            <BaseButton className="min-w-[148px] w-full pl-3 pr-2" onClick={() => setAppsOpen((current) => !current)} variant={isLightTone ? 'solid-dark' : 'solid-light'}>
+            <BaseButton className="min-w-[148px] w-full pl-3 pr-1.5" onClick={() => setAppsOpen((current) => !current)} variant={isLightTone ? 'solid-dark' : 'solid-light'}>
               Download Apps
               <ChevronDownIcon className={cn('h-6 w-6 transition', appsOpen && 'rotate-180')} />
             </BaseButton>
@@ -265,7 +265,7 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
               </div>
             ) : null}
           </div>
-              <BaseButton className="w-full" href="/about#explore" variant={isLightTone ? 'solid-dark' : 'solid-light'}>
+              <BaseButton className="w-full" href="/login-coming-soon" variant={isLightTone ? 'solid-dark' : 'solid-light'}>
                 Login
               </BaseButton>
             </div>
