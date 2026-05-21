@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# React Development Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is a Next.js App Router project using TypeScript, Tailwind CSS, and a config-driven public marketing architecture. It is not a Vite application.
 
-Currently, two official plugins are available:
+## Current stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Next.js App Router
+- React with TypeScript
+- Tailwind CSS
+- ESLint with Next.js rules
+- Server-first route rendering for SEO-sensitive public pages
 
-## React Compiler
+## Project expectations
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Keep route files inside `src/app` and keep route-level view composition in `src/page-views`.
+- Prefer React Server Components by default. Only use client components where interactivity is required, such as the header dropdowns and mobile navigation.
+- Keep marketing content config-driven where practical by extending `src/config/site-content.ts` instead of scattering copy across many files.
+- Preserve the current route color identities and shared visual system unless a scoped task explicitly changes them.
 
-## Expanding the ESLint configuration
+## Common workflows
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Install dependencies:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start development:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Run lint:
+
+```bash
+npm run lint
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## File conventions
+
+- `src/app`: App Router route entry points, metadata-bearing route files, `robots.ts`, and `sitemap.ts`
+- `src/page-views`: route-specific presentation components used by App Router pages
+- `src/components`: shared UI and reusable marketing widgets
+- `src/config`: page content, navigation, themes, and SEO content sources
+- `src/layouts`: route wrappers such as the public layout shell
+- `src/styles`: global CSS layers and shared visual utilities
+
+## React guidance for this repo
+
+- Prefer simple component boundaries over premature optimization.
+- Reuse shared widgets like `BaseButton`, `MarketingCard`, and `SectionHeading` before introducing one-off markup.
+- When adding links for marketing cards or CTAs, preserve semantic HTML and internal linking value.
+- Keep content sections lean. If a page starts accumulating large copy blocks, move that content into `src/config/site-content.ts`.
+
+## SEO and rendering guidance
+
+- Do not move public pages back into a Pages Router structure.
+- Keep metadata changes aligned with `src/config/site-content.ts` and the existing metadata helpers.
+- Preserve server-rendered output for public marketing routes unless a task explicitly requires a client-only interaction.
+
+## Responsive UI guidance
+
+- Mobile spacing and typography should be tuned first, then scaled upward.
+- Keep light and dark mode visually aligned unless a scoped task explicitly changes that rule.
+- Use the existing rounded-pill and rounded-card design system rather than introducing a parallel style language.

@@ -1,0 +1,26 @@
+Ecoride Website 1.0.0.6 Release Notes
+Release Date: April 27, 2026
+=====================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.0.6] - 2026-04-27
+
+### Added
+
+- Changes to `animated-screenshots.md` in the `docs/ideas` folder to add more detail on the concept and next steps for the device-aware animated webp screenshots planned for the driver and rider info cards on the home page.
+
+### Validated
+
+- `npm run build` passes.
+
+### Documentation
+
+- `docs/ideas/animated-screenshots.md` added with concept notes and next steps for the device-aware animated webp screenshots planned for the driver and rider info cards on the home page.
+
+### Pending
+
+- The existing unused-variable warning in `src/page-views/home-page.tsx` remains outside the scope of this change.
+- A broader device sweep across additional handset sizes can still be done if more breakpoint-specific tuning is needed.
+- Device aware scnreeshotted animated webp images that smoothly curve in and out on each driver or rider info card for the apps

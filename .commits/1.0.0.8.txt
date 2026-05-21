@@ -1,0 +1,54 @@
+Ecoride Website 1.0.0.8 Release Notes
+Release Date: May 16, 2026
+=====================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.0.8] - 2026-05-16
+
+### Added
+
+- Added a client-side animated hero implementation in `src/page-views/home-page.tsx` using React state/effects (`useState`, `useEffect`, `useRef`) to drive timed layout transitions.
+- Added a new `AutoScrollingGallery` section in `src/page-views/home-page.tsx` that continuously pans processed rider-app screenshots across the home page.
+- Added new framed preview and marketing image assets:
+  - `public/framed-screenshots/framed-home-page.png`
+  - `public/home-marketing/processed/01-processed-login-page-phone-otp-page.png` through `15-processed-referrals-page.png`
+- Added new design tokens in `src/styles/variables.css` to support stronger gradient surfaces:
+  - `--bg-color-ride-gradient`
+  - `--bg-color-primary-gradient`
+  - `--bg-color-blue-gradient`
+
+### Changed
+
+- Reworked the home hero in `src/page-views/home-page.tsx` from a static centered intro into an animated reveal where:
+  - the hero shifts/scales after a timed delay, and
+  - a framed app screenshot slides/fades in as a paired visual anchor.
+- Replaced the prior 3-card rider-app marketing block with a split layout in `src/page-views/home-page.tsx`:
+  - one lead marketing card, and
+  - one wide auto-scrolling screenshot gallery.
+- Updated marketing card visual behavior in `src/components/widgets/marketing-card.tsx` to support dual-color surface styling (`--card-bg-color` + `--card-bg-color-gradient`) and stronger hover scaling.
+- Updated shared surface styling in `src/styles/main.css`:
+  - card gradients now use a directional 135deg blend with explicit gradient variable targets,
+  - hover interaction changed from slight translate to scale emphasis.
+- Adjusted global card geometry in `src/styles/variables.css` by reducing `--radius-card` from `28px` to `18px` for a tighter visual rhythm.
+- Added an inline Hero section marker comment in `src/page-views/ride-page.tsx` for readability and structure clarity.
+
+### Validated
+
+- `npx tsc --noEmit -p tsconfig.json` passes.
+- `git diff --stat` confirms scope across home page view, marketing card widget, shared CSS variables/main styles, and new screenshot asset directories.
+- Home page now references and renders the newly added framed and processed screenshot asset paths.
+
+### Documentation
+
+- Added this `1.0.0.8.txt` release-note file in `.commits/` following the established 1.0.0.7 structure and detail level.
+
+### Pending
+
+- `npm run build` currently fails due to a lint error in `src/components/widgets/marketing-card.tsx`:
+  - `Error: Duplicate enum member value #3cdac7.  @typescript-eslint/no-duplicate-enum-values`
+- Existing warnings remain (or were introduced) and are still outside this release-note-only scope, including:
+  - unused imports/variables in `src/components/widgets/map-office.tsx`,
+  - unused variables in `src/page-views/home-page.tsx` and `src/page-views/delete-me-page.tsx`,
+  - `@next/next/no-img-element` warnings for image usage in `src/page-views/home-page.tsx`.

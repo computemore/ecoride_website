@@ -1,0 +1,36 @@
+Ecoride Website 1.0.0.3 Release Notes
+Release Date: April 22, 2026
+=====================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.0.3] - 2026-04-22
+
+### Added
+
+- Added a mobile-first responsive pass across the shared public website primitives so the header, buttons, section headings, marketing cards, and legal reading surfaces scale down more appropriately below `768px`.
+- Added a clearer full-width mobile navigation panel under the shared header, with navigation links at the top and action buttons grouped at the bottom.
+- Added documented design-system rules for mobile type reduction, mobile header behavior, and horizontal overflow prevention.
+- Upgraded to TypeScript 6.0.3 to align with the latest Next.js requirements and removed `baseUrl` ref: [TypeScript GitHub issue No. 62207](https://github.com/microsoft/TypeScript/issues/62207)
+
+### Resolved
+
+- Reduced the top-left Ecoride wordmark size on mobile to free up header space and improve small-screen balance.
+- Reduced oversized mobile typography across Home, Ride, Drive, Corporate, and legal routes so text hierarchy remains readable without feeling crowded.
+- Added global and route-surface overflow guards plus safer wrapping for long contact strings to reduce unintended horizontal scrolling on mobile.
+
+### Validated
+
+- `npm run build` passes.
+- Shared file diagnostics are clean for the edited TypeScript, TSX, and CSS files involved in the responsive pass.
+- The existing lint warning in `src/page-views/home-page.tsx` for the unused `homeSignalStats` symbol remains unchanged.
+
+### Documentation
+
+- Captured the mobile responsive rules in `DESIGN_SYSTEM.md` so future route work follows the same typography, header, and overflow expectations.
+
+### Pending
+
+- The existing unused-variable warning in `src/page-views/home-page.tsx` remains outside the scope of this change.
+- A broader device sweep across additional handset sizes can still be done if more breakpoint-specific tuning is needed.

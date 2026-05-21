@@ -5,12 +5,19 @@ interface SectionHeadingProps {
   title: string;
   description: string;
   centered?: boolean;
+  forceAlignment?: 'left' | 'right';
+  tone?: 'light' | 'brand';
 }
 
-export const SectionHeading = ({ eyebrow, title, description, centered = false }: SectionHeadingProps) => (
-  <div className={cn('max-w-3xl', centered && 'mx-auto text-center')}>
-    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/68">{eyebrow}</p>
-    <h2 className="mt-4 text-4xl font-semibold text-white md:text-5xl">{title}</h2>
-    <p className="mt-5 text-base leading-8 text-white/76 md:text-lg">{description}</p>
+export const SectionHeading = ({ eyebrow, title, description, centered = false, forceAlignment = 'left', tone = 'light' }: SectionHeadingProps) => (
+  <div className={cn(
+    'flex flex-col max-w-full',
+    centered && 'items-center text-center',
+    forceAlignment === 'left' && !centered && 'items-start text-left',
+    forceAlignment === 'right' && !centered && 'items-end text-right'
+  )}>
+    <p className={cn('text-[14px] font-semibold uppercase tracking-[0.28em]', tone === 'light' ? 'text-slate-950/80' : 'text-white')}>{eyebrow}</p>
+    <h2 className={cn('mt-4 max-w-2xl text-2xl font-medium leading-tight sm:text-4xl lg:text-5xl', tone === 'light' ? 'text-slate-950' : 'text-white')}>{title}</h2>
+    <p className={cn('mt-5 max-w-3xl text-[16px] font-medium leading-6 md:text-[18px] md:leading-8', tone === 'light' ? 'text-slate-950/85' : 'text-white/75')}>{description}</p>
   </div>
 );

@@ -1,4 +1,4 @@
-export type PublicPageKey = 'home' | 'ride' | 'drive' | 'corporate' | 'about';
+export type PublicPageKey = 'home' | 'ride' | 'drive' | 'corporate' | 'about' | 'account' | 'comingSoon';
 
 export interface DropdownItem {
   href: string;
@@ -15,4 +15,5 @@ export interface NavItem {
 
 export interface PageTheme {
   pageColor: string;
+  pageBgColor?: string;
 }

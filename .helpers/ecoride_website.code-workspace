@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../ecoride_driver"
+		},
+		{
+			"path": "../../ecoride_rider"
+		},
+		{
+			"path": "../../ecoride_admin"
+		},
+		{
+			"path": "../../halfqr"
+		},
+		{
+			"path": "../../ecoride"
+		},
+		{
+			"path": "../../skillsets"
+		}
+	]
+}

@@ -1,0 +1,32 @@
+Ecoride Website 1.0.0.9 Release Notes
+Release Date: May 20, 2026
+=====================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.0.9] - 2026-05-20
+
+### Added
+
+- Added copies of `AutoScrollingGallery` section in `src/page-views/ride-page.tsx` and `src/page-views/drive-page.tsx` that continuously pans processed rider-app screenshots across the home page.
+- Added new framed preview and marketing image assets:
+  - `public/framed-screenshots/framed-home-page.png`
+  - `public/home-marketing/processed-driver/*`
+- Added new design tokens in `src/styles/main.css` to support hover blowups for cards and hover text emboldening.
+- Added new coming soon login page at `src/app/login-coming-soon/page.tsx` with a placeholder message and a link back to the home page.
+
+### Validated
+
+- `npx tsc --noEmit -p tsconfig.json` passes.
+- `npm run build` passes without errors.
+- `git diff --stat` confirms scope across home page view, marketing card widget, shared CSS variables/main styles, and new screenshot asset directories.
+- Home page now references and renders the newly added framed and processed screenshot asset paths.
+
+### Documentation
+
+- Added this `1.0.0.9.txt` release-note file in `.commits/` following the established 1.0.0.8 structure and detail level.
+
+### Pending
+
+- Login and ride sharing hooks natively in the app are still pending and will be scoped in a future release, but the home page now includes the new marketing assets that will support those features once live.  

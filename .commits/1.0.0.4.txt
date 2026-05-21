@@ -1,0 +1,32 @@
+Ecoride Website 1.0.0.4 Release Notes
+Release Date: April 22, 2026
+=====================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.0.4] - 2026-04-22
+
+### Added
+
+- Added a slightly moving background image at low size and quality with webp formatting to the Home page to add subtle visual interest without impacting load times or performance.
+- Added a `tone` prop to the `SectionHeading` component to allow for light or brand color options on the eyebrow, title, and description text, enabling better contrast and visual hierarchy on different background surfaces.
+- Changed the home page to not be reg bg but white with the aforemnetioned motioned background image
+- Changed the header site wide to show the round icon on the home page and the wordmark style svg on the otehr styled pages, to add a bit more visual interest and differentiation to the home page while keeping the header more consistent with the original design on the other pages.
+
+### Validated
+
+- `npm run build` passes.
+- Shared file diagnostics are clean for the edited TypeScript, TSX, and CSS files involved in the responsive pass.
+- The existing lint warning in `src/page-views/home-page.tsx` for the unused `homeSignalStats` symbol remains unchanged.
+- Tested the screens on 2 devices, and they are all conforming - next will be content-level changes
+- Ready for initial hosting as it is better than the current site and we can iterate on content and visuals from here without needing to worry about the hosting setup.
+
+### Documentation
+
+- Captured old site dns in docs/dns/old-dns.md for future reference in case we need to revert or reference the old hosting setup.
+
+### Pending
+
+- The existing unused-variable warning in `src/page-views/home-page.tsx` remains outside the scope of this change.
+- A broader device sweep across additional handset sizes can still be done if more breakpoint-specific tuning is needed.

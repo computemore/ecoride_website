@@ -1,0 +1,36 @@
+Ecoride Website 1.0.0.2 Release Notes
+Release Date: April 20, 2026
+=====================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.0.2] - 2026-04-20
+
+### Added
+
+- Added a purpose-built legal document pipeline that parses markdown headings, lists, inline emphasis, links, and document metadata into reusable website content blocks.
+- Added routed legal pages for Terms and Privacy Policy under `/about/terms` and `/about/privacy-policy` with a dedicated light-surface public layout.
+- Added light-tone support across the shared public shell so the header, footer, buttons, metadata, sitemap, and robots configuration treat legal pages as first-class public routes.
+
+### Resolved
+
+- Fixed legal list parsing so ordered and unordered lists remain grouped correctly even when the source markdown includes blank lines between items.
+- Normalized the internal Privacy Policy reference used in the legal content so it points to the live website route.
+- Fixed the desktop About and Explore dropdown interaction so the visual gap no longer causes the menu to close before links can be clicked.
+
+### Validated
+
+- `npm run lint` passes with one existing warning in `src/page-views/home-page.tsx` for the unused `homeSignalStats` symbol.
+- `npm run build` passes.
+- Browser verification passes for Home -> About -> Privacy Policy and Privacy Policy -> Explore -> Terms on the local dev server.
+
+### Documentation
+
+- Captured the legal-page rollout, shared light-tone shell updates, SEO/discovery changes, parser fixes, and dropdown interaction fix in this release note.
+
+### Pending
+
+- The existing unused-variable warning in `src/page-views/home-page.tsx` remains outside the scope of this change.
+- Real auth flows and profile-aware public entry points remain deferred.
+- Future legal copy revisions still depend on updates to the source markdown documents.

@@ -1,0 +1,33 @@
+Ecoride Website 1.0.0.5 Release Notes
+Release Date: April 24, 2026
+=====================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.0.5] - 2026-04-24
+
+### Added
+
+- Slightly tweaked our components site-wide
+- Added embedded google map for the office location on the contact page (need to be tweaked thought later) `src/page-views/contact-page.tsx` and `src/components/widgets/map-office.tsx`
+- Added a slightly moving background image at low size and quality with webp formatting to the Home page to add subtle visual interest without impacting load times or performance.
+- Added concept notes for the animating app screenshots planned for later check 'animated-screenshots.md' in the docs/ideas folder for the concept and next steps for this.
+
+### Validated
+
+- `npm run build` passes.
+- Shared file diagnostics are clean for the edited TypeScript, TSX, and CSS files involved in the responsive pass.
+- The existing lint warning in `src/page-views/home-page.tsx` for the unused `homeSignalStats` symbol remains unchanged.
+- Tested the screens on 2 devices, and they are all conforming - next will be content-level changes
+- Ready for initial hosting as it is better than the current site and we can iterate on content and visuals from here without needing to worry about the hosting setup.
+
+### Documentation
+
+- `docs/ideas/animated-screenshots.md` added with concept notes and next steps for the device-aware animated webp screenshots planned for the driver and rider info cards on the home page.
+
+### Pending
+
+- The existing unused-variable warning in `src/page-views/home-page.tsx` remains outside the scope of this change.
+- A broader device sweep across additional handset sizes can still be done if more breakpoint-specific tuning is needed.
+- Device aware scnreeshotted animated webp images that smoothly curve in and out on each driver or rider info card for the apps

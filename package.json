@@ -1,6 +1,6 @@
 {
   "name": "ecoride-website",
-  "version": "0.1.0",
+  "version": "1.0.0.9",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.0.0",
+    "@mui/material": "^9.0.0",
     "clsx": "^2.1.1",
     "next": "^15.2.0",
     "react": "^19.0.0",
@@ -26,6 +30,6 @@
     "eslint-config-next": "^15.2.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "typescript": "^6.0.3"
   }
 }
