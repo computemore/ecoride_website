@@ -21,5 +21,10 @@
 		{
 			"path": "../../skillsets"
 		}
-	]
+	],
+	"settings": {
+		"chat.tools.terminal.autoApprove": {
+			"dotnet build": true
+		}
+	}
 }

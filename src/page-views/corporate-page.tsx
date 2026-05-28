@@ -12,11 +12,11 @@ export const CorporatePage = () => (
     <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
       <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
         <div className="text-center lg:text-left">
-          <p className="text-[16px] ml-1 font-semibold uppercase tracking-[0.26em] text-white/66">ecoride Corporate</p>
-          <h1 className="text-balance mx-auto mt-6 max-w-5xl text-3xl font-medium leading-[0.96] md:text-7xl md:text-4xl lg:text-[4.5rem] text-white">
-            The smart, affordable alternative for team transport
+          {/* <p className="text-[16px] ml-1 font-semibold uppercase tracking-[0.26em] text-white/66">ecoride Corporate</p> */}
+          <h1 className="text-2xl lg:text-5xl mt-6 max-w-4xl font-semibold leading-[0.96] text-white lg:max-w-5xl">
+            The smart, affordable alternative for team transport.
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-[13px] leading-7 md:text-[18px] md:leading-10">
+          <p className="mt-6 max-w-2xl text-sm lg:text-base leading-7 text-white/80 lg:max-w-3xl">
             Designed to give organizations a fixed rate per kilometer, and a sustainable cost-management strategy for employee transport, without the burden of asset acquisition and maintenance
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">

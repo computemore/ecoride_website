@@ -93,14 +93,14 @@ const AutoScrollingGallery = () => {
 
 export const DrivePage = () => (
   <PublicLayout pageKey="drive">
-    <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
+    <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-24 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
       <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
         <div className="text-center lg:text-left">
-          <p className="text-[16px] ml-1 font-semibold uppercase tracking-[0.26em] text-white/66">Driver App</p>
-          <h1 className="text-balance mt-6 max-w-4xl text-4xl font-semibold leading-[0.96] text-white md:text-7xl">
+          {/* <p className="text-[16px] ml-1 font-semibold uppercase tracking-[0.26em] text-white/66">Driver App</p> */}
+          <h1 className="text-2xl lg:text-5xl mt-6 max-w-4xl font-semibold leading-[0.96] text-white lg:max-w-5xl">
             Time is money, and Ecoride Driver gets you the best of both.
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/76">
+          <p className="mt-6 max-w-2xl text-sm lg:text-base leading-7 text-white/80 lg:max-w-3xl">
             The driver experience is designed and engineered around your time and money - featuring real-time demand indicators, smooth navigation, and earnings breakdowns!
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">

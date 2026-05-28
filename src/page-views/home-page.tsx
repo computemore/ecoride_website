@@ -137,7 +137,7 @@ export const HomePage = () => {
               <SiteTitleIconDark className='w-[220px] xl:w-[460px] lg:w-[300px] inline-flex items-center justify-center'/>
               <br/>a ride simplified.
             </h1>
-            <p className="mx-auto mt-4 lg:mt-6 max-w-3xl lg:max-w-xl text-[16px] leading-7 md:text-[18px] md:leading-10 text-slate-950/85">
+            <p className="mx-auto mt-4 lg:mt-6 max-w-3xl lg:max-w-xl text-[16px] leading-7 md:leading-10 text-slate-950/85">
               A local-first ride sharing and car rental platform by Malawians, for Malawians, with support for corporates
             </p>
             <div 
