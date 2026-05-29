@@ -162,9 +162,9 @@ export const DrivePage = () => (
         <BaseButton href={appSettings.downloadLinks.driver.href} variant="solid-light">
           Get Driver App
         </BaseButton>
-        <BaseButton href="/about#partners" variant="ghost-light">
+        {/* <BaseButton href="/about#partners" variant="ghost-light">
           Partner With Ecoride
-        </BaseButton>
+        </BaseButton> */}
       </div>
       {/* </div> */}
     </section>

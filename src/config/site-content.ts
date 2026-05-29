@@ -290,8 +290,8 @@ export const driveFeatureCards: CardContent[] = [
     description:
       'The driver product is built around flexible schedules, online-offline control, and clear activity visibility for everyday earning.',
     bullets: ['Flexible availability', 'Daily activity visibility', 'Earnings-led workflow'],
-    href: '/about#partners',
-    hrefLabel: 'Explore driver opportunities',
+    // href: '/about#partners',
+    // hrefLabel: 'Explore driver opportunities',
   },
   {
     eyebrow: 'Move Fast',
