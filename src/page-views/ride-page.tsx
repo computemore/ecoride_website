@@ -112,9 +112,9 @@ export const RidePage = () => (
             <BaseButton href={appSettings.downloadLinks.rider.href} variant="solid-light">
               Download Rider App
             </BaseButton>
-            <BaseButton href="/about#how-ecoride-works" variant="ghost-light">
+            {/* <BaseButton href="/about#how-ecoride-works" variant="ghost-light">
               How Ecoride Works
-            </BaseButton>
+            </BaseButton> */}
           </div>
         </div>
         <div className="mt-6 xl:mt-8 grid gap-4 xl:gap-2">

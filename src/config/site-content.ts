@@ -1,5 +1,5 @@
 import type { NavItem, PageTheme, PublicPageKey, SeoProps } from '@/types';
-
+import { appSettings } from '@/config/app-settings';
 export interface CardContent {
   eyebrow: string;
   title: string;
@@ -299,17 +299,17 @@ export const driveFeatureCards: CardContent[] = [
     description:
       'Drivers are positioned to respond quickly with instant ride notifications, in-app chat, and operational clarity across each trip.',
     bullets: ['Real-time trip requests', 'In-ride rider communication', 'Fast and luxury ride classes'],
-    href: '/about#how-ecoride-works',
-    hrefLabel: 'See the workflow',
+    // href: '/about#how-ecoride-works',
+    // hrefLabel: 'See the workflow',
   },
   {
     eyebrow: 'Support',
-    title: 'Onboarding and safety remain visible',
+    title: 'Easy sign-up onboarding',
     description:
-      'From documents to support access, the product keeps driver readiness and escalation paths close to daily work.',
+      'From documents to support access, sign up happens fully in the mobile app - no need for visiting a physical location, download to explore.',
     bullets: ['Document-based onboarding', 'Driver Safety Hub', 'Support visibility'],
-    href: '/about#about-us',
-    hrefLabel: 'See the platform story',
+    href: appSettings.downloadLinks.driver.href,
+    hrefLabel: 'Download Ecoride Driver App',
   },
 ];
 

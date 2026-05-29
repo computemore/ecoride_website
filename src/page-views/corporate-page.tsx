@@ -51,8 +51,8 @@ export const CorporatePage = () => (
     <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
       <SectionHeading
         description=""
-        eyebrow="Why it matters"
-        title="The coroporate value is clear and clean cost control, oversight and analytics"
+        eyebrow="Why go corporate with Ecoride?"
+        title="We offer corporate value - transparency, clean cost control, extensive oversight and analytics"
         tone="brand"
       />
       <div className="mt-4 grid gap-5 md:grid-cols-3">
@@ -75,9 +75,9 @@ export const CorporatePage = () => (
           <BaseButton href={`mailto:${appSettings.supportEmail}`} variant="solid-light">
             Talk to Corporate Support
           </BaseButton>
-          <BaseButton href="/about#corporate-overview" variant="ghost-light">
+          {/* <BaseButton href="/about#corporate-overview" variant="ghost-light">
             Corporate Overview
-          </BaseButton>
+          </BaseButton> */}
         </div>
       </div>
     </section>
