@@ -1,8 +1,11 @@
+'use client';
+
 import Link from 'next/link';
 
 import { appSettings } from '@/config/app-settings';
 import { cn } from '@/utils/cn';
 import { SiteTitleIcon, SiteTitleIconDark } from '@/icons/headings/site-title';
+import { useRiderDownloadUrl } from '@/hooks/use-rider-download-url';
 
 interface SiteFooterProps {
   tone?: 'brand' | 'light';
@@ -10,6 +13,7 @@ interface SiteFooterProps {
 
 export const SiteFooter = ({ tone = 'brand' }: SiteFooterProps) => {
   const isLightTone = tone === 'light';
+  const riderDownloadUrl = useRiderDownloadUrl();
 
   return (
     <footer className={cn('pb-10 pt-8', isLightTone ? 'border-none bg-white/60' : 'border-none bg-slate-950/20')}>
@@ -66,7 +70,7 @@ export const SiteFooter = ({ tone = 'brand' }: SiteFooterProps) => {
             ))}
             <a 
               className="hover:text-teal-600 hover:font-bold transition" 
-              href={appSettings.downloadLinks.rider.href} rel="noreferrer" target="_blank">
+              href={riderDownloadUrl} rel="noreferrer" target="_blank">
               Rider App
             </a>
             <a 

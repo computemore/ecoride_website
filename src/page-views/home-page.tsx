@@ -10,6 +10,7 @@ import { MapOffice } from '@/components/widgets/map-office';
 import { SectionHeading } from '@/components/widgets/section-heading';
 import { appSettings } from '@/config/app-settings';
 import { homeInfoCards } from '@/config/site-content';
+import { useRiderDownloadUrl } from '@/hooks/use-rider-download-url';
 
 const AutoScrollingGallery = ({ images }: { images: string[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -80,6 +81,7 @@ const AutoScrollingGallery = ({ images }: { images: string[] }) => {
 
 export const HomePage = () => {
   const [showImage, setShowImage] = useState(false);
+  const riderDownloadUrl = useRiderDownloadUrl();
 
   const driverImages = [
     // '/home-marketing/processed/01-processed-login-page-phone-otp-page.png',
@@ -145,7 +147,7 @@ export const HomePage = () => {
                 showImage ? 'scale-111 md:translate-y-0 md:scale-[1.18]' : ''
               }`}
             >
-              <BaseButton href={appSettings.downloadLinks.rider.href} variant="solid-green">
+              <BaseButton href={riderDownloadUrl} variant="solid-green">
                 Download Rider App
               </BaseButton>
               <BaseButton href="/corporate" variant="ghost-dark">
