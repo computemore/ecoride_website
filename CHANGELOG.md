@@ -9,56 +9,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Changelog](#changelog)
   - [Contents](#contents)
-  - [\[1.0.0.1\] - 2026-04-19](#1001---2026-04-19)
+  - [\[1.0.1\] - 2026-06-07](#101---2026-06-07)
     - [Added](#added)
-    - [Resolved](#resolved)
     - [Validated](#validated)
     - [Documentation](#documentation)
     - [Pending](#pending)
   - [\[1.0.0\] - 2026-04-19](#100---2026-04-19)
-    - [Added](#added)
+    - [Added](#added-1)
     - [Resolved](#resolved)
-    - [Validated](#validated)
-    - [Documentation](#documentation)
-    - [Pending](#pending)
+    - [Validated](#validated-1)
+    - [Documentation](#documentation-1)
+    - [Pending](#pending-1)
 
 ---
 
-## [1.0.0.1] - 2026-04-19
+## [1.0.1] - 2026-06-07
 
 ### Added
 
-- Expanded the homepage into a fuller marketing flow with clearer CTAs, route handoff cards, trust signals, and stronger local credibility framing.
-- Enriched the Ride, Drive, Corporate, and About pages with more complete but still minimal storytelling, stronger pacing, and better internal linking.
-- Added a desktop corporate hero treatment using the existing `public/corporate-hero.svg` asset while keeping the heading centered and image hidden on mobile.
-- Added config-driven phase-two marketing data for homepage signals, journey cards, rider confidence, driver support, corporate outcomes, and About overview content.
-- Added link-aware marketing cards so shared content blocks can drive stronger internal navigation without one-off page markup.
-- Expanded the footer with social and app-download access while keeping the public shell consistent across routes.
-
-### Resolved
-
-- Changed the Login button text treatment to black while preserving the existing rounded white CTA style.
-- Strengthened CTA button typography across the site by moving all shared button text to a bold style.
-- Improved mobile spacing, section rhythm, shared heading scale, and footer responsiveness across the public marketing routes.
-- Aligned the corporate support CTA with the shared `appSettings` email source instead of leaving a separate hardcoded address.
-- Fixed the `SiteTitleIcon` prop typing so ESLint passes cleanly.
+- Better padding and scaling for mobile devices on every page.
 
 ### Validated
 
-- `npm run lint` passes.
-- `npm run build` passes.
-- The production build completes successfully with static generation for the public routes.
+- `npx tsc --noEmit -p tsconfig.json` passes.
+- `npm run build` passes without errors.
+- `git diff --stat` confirms scope across home page view, marketing card widget, shared CSS variables/main styles, and new screenshot asset directories.
+- Home page now references and renders the newly added framed and processed screenshot asset paths.
 
 ### Documentation
 
-- Replaced the stale Vite-era `REACT_DEV_GUIDE.md` with guidance aligned to the current Next.js App Router architecture.
-- Updated this changelog to record the phase-two marketing and UX refinement pass.
+- Added this `1.0.1.0.txt` release-note file in `.commits/` following the established 1.0.0.9 structure and detail level.
 
 ### Pending
 
-- Real auth flows and profile-aware public entry points remain deferred.
-- Live corporate dashboards, analytics backends, and account management workflows remain deferred.
-- Rich editorial blog content and deeper enterprise workflow depth remain deferred beyond the current public-site scope.
+- Login and ride sharing hooks natively in the app are still pending and will be scoped in a future release, but the home page now includes the new marketing assets that will support those features once live.  
+
+---
 
 ## [1.0.0] - 2026-04-19
 

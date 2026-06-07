@@ -95,6 +95,6 @@ ecoride-website/
 
 ## Deployment
 
-Use a platform with first-class Next.js support. Vercel is the cleanest default for this project because it handles App Router rendering, metadata, and image optimization without extra server glue.
+Use a platform with first-class `Next.js` support. Vercel is the cleanest default for this project because it handles App Router rendering, metadata, and image optimization without extra server glue.
 
-If you deploy elsewhere, make sure the host supports running a Next.js server or a compatible build output rather than expecting a static SPA bundle.
+If you deploy elsewhere, make sure the host supports running a `Next.js` server or a compatible build output rather than expecting a static SPA bundle.

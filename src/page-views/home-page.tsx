@@ -158,7 +158,7 @@ export const HomePage = () => {
         {/* Framed Screenshot Animation */}
         <a
           href="#"
-          className={`absolute bottom-0 mb-8 left-0 right-0 pb-8 md:pb-0 md:left-auto md:right-8 md:top-1/2 top-3/5 flex justify-center z-10 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+          className={`absolute bottom-0 -mt-12 mb-8 left-0 right-0 pb-8 md:pb-0 md:left-auto md:right-8 md:top-1/2 top-3/5 flex justify-center z-10 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
             showImage
               ? 'opacity-100 translate-y-0 md:-translate-y-1/2 md:translate-x-0'
               : 'opacity-0 translate-y-full md:-translate-y-1/2 md:translate-x-full'
@@ -210,11 +210,11 @@ export const HomePage = () => {
     </section>
 
     {/* above the footer content */}
-    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
-      <div className="surface-card rounded-card grid gap-8 p-7 md:grid-cols-[1.2fr,0.8fr] md:p-10">
+    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-0 lg:px-0">
+      <div className="grid gap-8 p-0 md:grid-cols-[1.2fr,0.8fr] md:p-10">
         <div>
-          <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-slate-950/85">Local credibility</p>
-          <h2 className="mt-4 text-2xl font-medium text-slate-950/95 md:text-4xl">Grounded in Malawi, built for the journeys people already make</h2>
+          <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-slate-950/85">Local flavor</p>
+          <h2 className="mt-4 text-2xl font-medium text-slate-950/95 md:text-4xl">Built in Malawi for the journeys people already make</h2>
           {/* <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-950/85 md:text-base md:leading-8"> */}
             {/* The new website treats Ecoride as a platform for riders, drivers, and teams without hiding the fact that real local transport depends on */}
             {/* practical support, local contact, and clear expectations. */}
@@ -228,7 +228,7 @@ export const HomePage = () => {
             </BaseButton>
           </div>
         </div>
-        <div className="w-full md:col-span-2 flex flex-row rounded-[18px]">
+        <div className="w-full lg:col-span-2 flex flex-col lg:flex-row rounded-[18px] justify-between">
           <MapOffice />
           <div className="rounded-[18px] min-w-[300px] p-6">
             <p className="text-[16px] font-semibold text-slate-950">Visit or call</p>
@@ -240,7 +240,7 @@ export const HomePage = () => {
                 <p key={phone}>{phone}</p>
               ))}
               <a 
-                className="rounded-[18px] text-[15px] bg-slate-950 inline-flex break-all items-center gap-2 pl-3 pr-2 text-white" 
+                className="rounded-[18px] text-[15px] bg-slate-950 inline-flex break-all items-center gap-2 pl-3 pr-2 text-white hover:scale-[1.03]" 
                 href={`mailto:${appSettings.supportEmail}`}
               >
                 {appSettings.supportEmail}

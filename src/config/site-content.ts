@@ -40,7 +40,7 @@ const aboutDropdownItems = [
 export const pageThemes: Record<PublicPageKey, PageTheme> = {
   home: { pageColor: '#ffffff' },
   ride: { pageColor: '#2c9c8e', pageBgColor: '#3cdac7' },
-  drive: { pageColor: '#f0453d', pageBgColor: '#ed7a74' },
+  drive: { pageColor: '#f0453d', pageBgColor: '#d01910' },
   corporate: { pageColor: '#2196F3', pageBgColor: '#64afec' },
   about: { pageColor: '#f0453d' },
   account: { pageColor: '#FF9800', pageBgColor: '#ffb74d' },

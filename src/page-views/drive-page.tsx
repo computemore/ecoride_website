@@ -93,9 +93,9 @@ const AutoScrollingGallery = () => {
 
 export const DrivePage = () => (
   <PublicLayout pageKey="drive">
-    <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-24 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
+    <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-12 lg:-mt-12">
       <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
-        <div className="mt-6 xl:mt-8 grid gap-4 xl:gap-2">
+        <div className="mt-0 xl:mt-8 grid gap-4 xl:gap-2">
           {/* {homeInfoCards.length > 0 && (
             <div className="h-full">
               <MarketingCard {...homeInfoCards[0]} />

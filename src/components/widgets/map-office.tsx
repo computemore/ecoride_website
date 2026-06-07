@@ -13,7 +13,7 @@ export const MapOffice = ({ style }: { style?: CSSProperties }) => {
   // the map office component is a simple wrapper around the Google Static Maps API
   return (
     // Inside your component above the footer
-    <div className="w-[80%] h-64 md:h-96 relative rounded-[20px] bg-gray-100 overflow-hidden" style={style}>
+    <div className="w-[100%] lg:w-[80%] h-64 md:h-96 relative rounded-[20px] bg-gray-100 overflow-hidden" style={style}>
       <iframe
         src={embeddedMapUrl}
         width="100%"

@@ -20,6 +20,27 @@
 		},
 		{
 			"path": "../../skillsets"
+		},
+		{
+			"path": "../../technische-ideas"
+		},
+		{
+			"path": "../../nbm-commercial-website"
+		},
+		{
+			"path": "../../queaudit"
+		},
+		{
+			"path": "../../writing-aids/proposals"
+		},
+		{
+			"path": "../../writing-aids/drawings"
+		},
+		{
+			"path": "../../pangani-saas"
+		},
+		{
+			"path": "../../spec-driven-design"
 		}
 	],
 	"settings": {
