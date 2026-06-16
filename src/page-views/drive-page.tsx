@@ -123,17 +123,25 @@ export const DrivePage = () => (
       </div>
     </section>
 
-    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
+    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8 lg:mb-32">
       <SectionHeading
         description="Our promise is: earning flexibility, responsive demand, support access, and transparent driver readiness."
         eyebrow="Driver features"
         title="Clear earning potential - earn up to MWK100,000/day with ecoride"
         tone="brand"
       />
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
+      <div className="mt-4 grid gap-5 md:grid-cols-3">
         {driveFeatureCards.map((card) => (
           <MarketingCard key={card.title} {...card} />
         ))}
+      </div>
+      <div className="flex flex-wrap gap-3 md:justify-start md:items-center mt-8">
+        <BaseButton href={appSettings.downloadLinks.driver.href} variant="solid-light">
+          Get Driver App
+        </BaseButton>
+        {/* <BaseButton href="/about#partners" variant="ghost-light">
+          Partner With Ecoride
+        </BaseButton> */}
       </div>
     </section>
 
@@ -151,23 +159,16 @@ export const DrivePage = () => (
       </div>
     </section> */}
 
-    <section className="mx-auto max-w-content-wide px-4 pb-16 md:px-6 lg:px-8">
-      <SectionHeading
+    {/* <section className="mx-auto max-w-content-wide px-4 pb-16 md:px-6 lg:px-8"> */}
+      {/* <SectionHeading
         description="The final step in the driver journey: a seamless experience that reinforces confidence and convenience."
         eyebrow="Ready to earn?"
         title="Download the driver app for Android/iOS and get started"
         tone="brand"
-      />
-      <div className="flex flex-wrap gap-3 md:justify-start md:items-center mt-6">
-        <BaseButton href={appSettings.downloadLinks.driver.href} variant="solid-light">
-          Get Driver App
-        </BaseButton>
-        {/* <BaseButton href="/about#partners" variant="ghost-light">
-          Partner With Ecoride
-        </BaseButton> */}
-      </div>
+      /> */}
+
       {/* </div> */}
-    </section>
+    {/* </section> */}
     {/* <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
       <div className="surface-card rounded-card grid gap-6 p-6 md:grid-cols-[1fr,auto] md:items-center md:p-8">
         <div>

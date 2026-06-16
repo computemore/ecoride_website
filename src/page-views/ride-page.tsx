@@ -102,17 +102,17 @@ export const RidePage = () => {
   return (
     <PublicLayout pageKey="ride">
       <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-24 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr,1.1fr] lg:items-center">
           {/* Hero */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-right">
             {/* <p className="text-[16px] ml-1 font-semibold uppercase tracking-[0.26em] text-white/66">Rider App</p> */}
-            <h1 className="text-2xl lg:text-5xl mt-6 max-w-4xl font-semibold leading-[0.96] text-white lg:max-w-5xl">
+            <h1 className="text-2xl lg:text-[2.8rem] mt-6 max-w-4xl font-semibold leading-[0.96] text-white lg:max-w-5xl">
               Local first mobility, customer-first safety features, and digital payments.
             </h1>
-            <p className="mt-6 max-w-2xl text-sm lg:text-base leading-7 text-white/80 lg:max-w-3xl">
+            <p className="mt-6 max-w-2xl text-[14px] lg:text-base leading-7 text-white/80 lg:max-w-3xl">
               The Ecoride Rider App brings a distinct feel to Malawian ride-sharing, now with shared rides, live tracking and digital payment. Getting you where you need to go.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+            <div className="mt-4 flex flex-wrap justify-right gap-3 lg:justify-end">
               <BaseButton href={riderDownloadUrl} variant="solid-light">
                 Download Rider App
               </BaseButton>
@@ -133,17 +133,25 @@ export const RidePage = () => {
       </section>
       
       {/* TODO: add focused screenshots or videos for marketing */}
-      <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
+      <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8 lg:mb-32">
         <SectionHeading
           description="Safer pickups, clearer trip context, and flexible payment choices - innovations that make it easy for you."
           eyebrow="Rider features"
           title="With Ecoride, the Rider always comes first"
           tone="brand"
         />
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-4 grid gap-5 md:grid-cols-3">
           {rideFeatureCards.map((card) => (
             <MarketingCard key={card.title} {...card} />
           ))}
+        </div>
+        <div className="flex flex-wrap gap-3 md:justify-start md:items-center mt-8">
+          <BaseButton href={riderDownloadUrl} variant="solid-light">
+            Get Rider App
+          </BaseButton>
+          <BaseButton href="/about#explore" variant="ghost-light">
+            Explore More
+          </BaseButton>
         </div>
       </section>
 
@@ -160,24 +168,24 @@ export const RidePage = () => {
           ))}
         </div>
       </section> */}
-
-      <section className="mx-auto max-w-content-wide px-4 pb-16 md:px-6 lg:px-8">
-        <SectionHeading
+{/* 
+      <section className="mx-auto max-w-content-wide px-4 pb-16 md:px-6 lg:px-8"> */}
+        {/* <SectionHeading
           description="The final step in the rider journey: a seamless experience that reinforces confidence and convenience."
           eyebrow="Ready to ride?"
           title="Use the rider app built for clearer local journeys"
           tone="brand"
         />
-        <div className="flex flex-wrap gap-3 md:justify-start md:items-center mt-6">
+        <div className="flex flex-wrap gap-3 md:justify-start md:items-center mt-2">
           <BaseButton href={riderDownloadUrl} variant="solid-light">
             Get Rider App
           </BaseButton>
           <BaseButton href="/about#explore" variant="ghost-light">
             Explore More
           </BaseButton>
-        </div>
+        </div> */}
         {/* </div> */}
-      </section>
+      {/* </section> */}
     </PublicLayout>
   );
 };

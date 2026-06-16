@@ -135,8 +135,8 @@ export const HomePage = () => {
           }`}
         >
           <div className="text-center">
-            <h1 className="text-balance mx-auto mt-0 max-w-5xl text-5xl font-medium leading-[0.92] text-slate-950/95 md:text-7xl lg:text-[3.8rem] xl:text-[6.8rem]">
-              <SiteTitleIconDark className='w-[220px] xl:w-[460px] lg:w-[300px] inline-flex items-center justify-center'/>
+            <h1 className="text-balance mx-auto mt-0 max-w-5xl text-5xl font-medium leading-[0.92] text-slate-950/95 md:text-7xl lg:text-[3.6rem] xl:text-[5.8rem]">
+              <SiteTitleIconDark className='w-[190px] xl:w-[400px] lg:w-[260px] inline-flex items-center justify-center'/>
               <br/>a ride simplified.
             </h1>
             <p className="mx-auto mt-4 lg:mt-6 max-w-3xl lg:max-w-xl text-[16px] leading-7 md:leading-10 text-slate-950/85">
@@ -160,7 +160,7 @@ export const HomePage = () => {
         {/* Framed Screenshot Animation */}
         <a
           href="#"
-          className={`absolute bottom-0 -mt-12 mb-8 left-0 right-0 pb-8 md:pb-0 md:left-auto md:right-8 md:top-1/2 top-3/5 flex justify-center z-10 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+          className={`absolute bottom-0 -mt-0 mb-8 left-0 right-0 pb-8 md:pb-0 md:left-auto md:right-8 md:top-1/2 top-3/5 flex justify-center z-10 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
             showImage
               ? 'opacity-100 translate-y-0 md:-translate-y-1/2 md:translate-x-0'
               : 'opacity-0 translate-y-full md:-translate-y-1/2 md:translate-x-full'
@@ -215,7 +215,7 @@ export const HomePage = () => {
     <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-0 lg:px-0">
       <div className="grid gap-8 p-0 md:grid-cols-[1.2fr,0.8fr] md:p-10">
         <div>
-          <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-slate-950/85">Local flavor</p>
+          <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-slate-950/85">Locally made</p>
           <h2 className="mt-4 text-2xl font-medium text-slate-950/95 md:text-4xl">Built in Malawi for the journeys people already make</h2>
           {/* <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-950/85 md:text-base md:leading-8"> */}
             {/* The new website treats Ecoride as a platform for riders, drivers, and teams without hiding the fact that real local transport depends on */}
@@ -233,8 +233,8 @@ export const HomePage = () => {
         <div className="w-full lg:col-span-2 flex flex-col lg:flex-row rounded-[18px] justify-between">
           <MapOffice />
           <div className="rounded-[18px] min-w-[300px] p-6">
-            <p className="text-[16px] font-semibold text-slate-950">Visit or call</p>
-            <div className="mt-4 space-y-2 text-[16px] leading-6 text-slate-950/80 sm:text-sm sm:leading-7">
+            <p className="text-[14px] font-semibold text-slate-950">Visit or call</p>
+            <div className="mt-4 space-y-2 text-[14px] leading-6 text-slate-950/80 sm:text-sm sm:leading-7">
               {appSettings.addressLines.map((line) => (
                 <p key={line}>{line}</p>
               ))}
