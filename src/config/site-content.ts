@@ -215,7 +215,7 @@ export const homeInfoCards: CardContent[] = [
   {
     eyebrow: 'Drive',
     title: 'Earn with flexible availability and visible support',
-    description: 'Featuring smooth, GPS-aware navigation, real-time support, live driver analytics and controls, with in-ride chat.',
+    description: 'Featuring smooth, GPS-aware navigation, real-time support, live driver analytics and controls, with in-ride chat. With transparency and driver-safety as a priority.',
     bullets: ['Flexible earning, with realtime analytics', 'Fast and luxury ride classes', 'Driver Safety Hub support'],
     variation: 'red',
     href: '/drive',

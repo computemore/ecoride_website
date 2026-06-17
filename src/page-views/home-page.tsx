@@ -60,7 +60,7 @@ const AutoScrollingGallery = ({ images }: { images: string[] }) => {
   return (
     <div 
       ref={containerRef} 
-      className="w-full h-full min-h-[300px] overflow-hidden rounded-[18px] md:rounded-[20px] bg-slate-900/0 border-none border-slate-900/10 flex items-center"
+      className="w-full h-full min-h-[290px] overflow-hidden rounded-[var(--radius-card)] bg-slate-900/0 border-none border-slate-900/10 flex items-center"
     >
       <div ref={trackRef} className="flex gap-4 px-4 py-4 w-max">
         {images.map((src, i) => (
@@ -177,13 +177,13 @@ export const HomePage = () => {
       </section>
 
     {/* rider app section */}
-    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
+    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8 my-12">
       <SectionHeading
         description="Designed and engineered to take you wherever you want to go"
         eyebrow="The Ecoride rider app"
         title="Explore the ecoride rider app on both iOS and Android"
       />
-      <div className="mt-6 xl:mt-8 grid gap-4 xl:gap-2 lg:grid-cols-[1fr,2fr]">
+      <div className="mt-2 xl:mt-8 grid gap-4 xl:gap-2 lg:grid-cols-[1fr,2fr]">
         {homeInfoCards.length > 0 && (
           <div className="h-full">
             <MarketingCard {...homeInfoCards[0]} />
@@ -194,14 +194,14 @@ export const HomePage = () => {
     </section>
 
     {/* driver app and program section */}
-    <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
+    <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8 my-12">
       <SectionHeading
         description="Your money, your way - we understand, your time matters"
         eyebrow="Want to earn?"
         title="Enroll for our driver program and start earning with ecoride"
         forceAlignment='right'
       />
-      <div className="mt-6 xl:mt-8 grid gap-4 xl:gap-2 lg:grid-cols-[2fr,1fr]">
+      <div className="mt-2 xl:mt-8 grid gap-4 xl:gap-2 lg:grid-cols-[2fr,1fr]">
         <AutoScrollingGallery images={driverImages} />
         {homeInfoCards.length > 1 && (
           <div className="h-full">
@@ -212,7 +212,7 @@ export const HomePage = () => {
     </section>
 
     {/* above the footer content */}
-    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-0 lg:px-0">
+    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-0 lg:px-0 my-20">
       <div className="grid gap-8 p-0 md:grid-cols-[1.2fr,0.8fr] md:p-10">
         <div>
           <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-slate-950/85">Locally made</p>
@@ -222,7 +222,7 @@ export const HomePage = () => {
             {/* practical support, local contact, and clear expectations. */}
           {/* </p> */}
           <div className="mt-6 flex flex-wrap gap-3">
-            <BaseButton href="/about" variant="solid-dark">
+            <BaseButton href="/about/terms" variant="solid-dark">
               About Ecoride
             </BaseButton>
             <BaseButton href="/drive" variant="ghost-dark">

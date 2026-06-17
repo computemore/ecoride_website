@@ -72,9 +72,9 @@ const AutoScrollingGallery = () => {
   return (
     <div 
       ref={containerRef} 
-      className="w-full h-full min-h-[300px] overflow-hidden rounded-[18px] md:rounded-[20px] bg-slate-900/0 border-none border-slate-900/10 flex items-center"
+      className="w-full h-full min-h-[300px] overflow-hidden 0rounded-[8px] bg-slate-900/0 border-none border-slate-900/10 flex items-center"
     >
-      <div ref={trackRef} className="flex py-0 w-max">
+      <div ref={trackRef} className="flex gap-6 py-0 w-max">
         {images.map((src, i) => (
           <Image
             key={i} 
@@ -82,7 +82,7 @@ const AutoScrollingGallery = () => {
             alt={`App Screen ${i + 1}`} 
             width={360}
             height={760}
-            className="h-[280px] xl:h-[420px] w-auto object-contain rounded-xl shadow-md hover:scale-[1.05] transition-transform duration-300"
+            className="h-[360px] xl:h-[480px] w-auto object-contain rounded-[8px] shadow-md hover:scale-[1.05] transition-transform duration-300"
             loading="lazy"
           />
         ))}
@@ -105,13 +105,13 @@ export const DrivePage = () => (
         </div>
         <div className="text-center lg:text-left">
           {/* <p className="text-[16px] ml-1 font-semibold uppercase tracking-[0.26em] text-white/66">Driver App</p> */}
-          <h1 className="text-2xl lg:text-5xl mt-6 max-w-4xl font-semibold leading-[0.96] text-white lg:max-w-5xl">
+          <h1 className="text-2xl lg:text-[2.8rem] mt-6 max-w-4xl font-semibold leading-[0.96] text-white lg:max-w-5xl">
             Time is money, and Ecoride Driver gets you the best of both.
           </h1>
-          <p className="mt-6 max-w-2xl text-sm lg:text-base leading-7 text-white/80 lg:max-w-3xl">
+          <p className="mt-4 max-w-2xl text-[14px] lg:text-base leading-7 text-white/80 lg:max-w-3xl">
             The driver experience is designed and engineered around your time and money - featuring real-time demand indicators, smooth navigation, and earnings breakdowns!
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+          <div className="mt-4 flex flex-wrap justify-center gap-3 lg:justify-start">
             <BaseButton href={appSettings.downloadLinks.driver.href} variant="solid-light">
               Download Driver App
             </BaseButton>

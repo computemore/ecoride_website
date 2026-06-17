@@ -77,9 +77,9 @@ const AutoScrollingGallery = () => {
   return (
     <div 
       ref={containerRef} 
-      className="w-full h-full min-h-[300px] overflow-hidden rounded-[18px] md:rounded-[20px] bg-slate-900/0 border-none border-slate-900/10 flex items-center"
+      className="w-full h-full min-h-[360px] overflow-hidden rounded-[8px] bg-slate-900/0 border-none border-slate-900/10 flex items-center"
     >
-      <div ref={trackRef} className="flex py-0 w-max">
+      <div ref={trackRef} className="flex gap-6 py-0 w-max">
         {images.map((src, i) => (
           <Image
             key={i} 
@@ -87,7 +87,7 @@ const AutoScrollingGallery = () => {
             alt={`App Screen ${i + 1}`} 
             width={360}
             height={760}
-            className="h-[280px] xl:h-[420px] w-auto object-contain rounded-xl shadow-md hover:scale-[1.05] transition-transform duration-300"
+            className="h-[360px] xl:h-[480px] w-auto object-contain rounded-[8px] shadow-md hover:scale-[1.05] transition-transform duration-300"
             loading="lazy"
           />
         ))}
@@ -109,7 +109,7 @@ export const RidePage = () => {
             <h1 className="text-2xl lg:text-[2.8rem] mt-6 max-w-4xl font-semibold leading-[0.96] text-white lg:max-w-5xl">
               Local first mobility, customer-first safety features, and digital payments.
             </h1>
-            <p className="mt-6 max-w-2xl text-[14px] lg:text-base leading-7 text-white/80 lg:max-w-3xl">
+            <p className="mt-4 max-w-2xl text-[14px] lg:text-base leading-7 text-white/80 lg:max-w-3xl">
               The Ecoride Rider App brings a distinct feel to Malawian ride-sharing, now with shared rides, live tracking and digital payment. Getting you where you need to go.
             </p>
             <div className="mt-4 flex flex-wrap justify-right gap-3 lg:justify-end">
@@ -140,7 +140,7 @@ export const RidePage = () => {
           title="With Ecoride, the Rider always comes first"
           tone="brand"
         />
-        <div className="mt-4 grid gap-5 md:grid-cols-3">
+        <div className="mt-6 grid gap-5 md:grid-cols-3">
           {rideFeatureCards.map((card) => (
             <MarketingCard key={card.title} {...card} />
           ))}
