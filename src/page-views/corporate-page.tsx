@@ -10,7 +10,7 @@ import { PublicLayout } from '@/layouts/public-layout';
 export const CorporatePage = () => (
   <PublicLayout pageKey="corporate">
     <section className="relative overflow-hidden mx-auto flex min-h-screen max-w-content-wide items-center px-4 pb-4 pt-0 md:px-6 md:pt-0 lg:px-8 -mt-8 lg:-mt-12">
-      <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+      <div className="grid gap-10 lg:grid-cols-[0.9fr,1.1fr] lg:items-center">
         <div className="text-center lg:text-left">
           {/* <p className="text-[16px] ml-1 font-semibold uppercase tracking-[0.26em] text-white/66">ecoride Corporate</p> */}
           <h1 className="text-2xl lg:text-5xl mt-6 max-w-4xl font-semibold leading-[0.96] text-white lg:max-w-5xl">
@@ -28,7 +28,7 @@ export const CorporatePage = () => (
             </BaseButton>
           </div>
         </div>
-        <div className="surface-card rounded-card relative hidden overflow-hidden p-6 lg:flex lg:justify-center lg:p-8">
+        <div className="surface-card rounded-[var(--radius-card)] relative hidden overflow-hidden p-6 lg:flex lg:justify-center lg:p-8">
           <Image alt="Illustration of Ecoride corporate mobility planning" height={640} priority src="/corporate-hero.svg" width={640} />
         </div>
       </div>
@@ -48,7 +48,7 @@ export const CorporatePage = () => (
       </div>
     </section> */}
 
-    <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
+    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8 my-12">
       <SectionHeading
         description=""
         eyebrow="Why go corporate with Ecoride?"
@@ -62,11 +62,11 @@ export const CorporatePage = () => (
       </div>
     </section>
 
-    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
-      <div className="surface-card rounded-card grid gap-6 p-6 md:grid-cols-[1fr,auto] md:items-center md:p-8">
+    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8 my-24">
+      <div className="surface-card rounded-[var(--radius-card)] grid gap-6 p-6 md:grid-cols-[1fr,auto] md:items-center md:p-6">
         <div>
           <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-white/68">Corporate support</p>
-          <h2 className="mt-3 text-2xl font-semibold text-white md:text-3xl">Plan team transport with more clarity and less fleet burden</h2>
+          <h2 className="mt-3 text-2xl font-semibold text-white md:text-3xl">Plan team transport with more clarity and less transportation burden</h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-white/76 md:text-base md:leading-8">
             Ecoride Corporate is built for organizations that want clearer transport costs, dashboard visibility, and a dedicated support team instead of more depreciating vehicles to manage.
           </p>
