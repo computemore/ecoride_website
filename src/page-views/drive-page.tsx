@@ -59,14 +59,13 @@ const AutoScrollingGallery = () => {
     // '/home-marketing/processed/01-processed-login-page-phone-otp-page.png',
     // '/home-marketing/processed/02-processed-login-page-email-pass-page.png',
     // '/home-marketing/processed/03-processed-home-page.png',
-    '/home-marketing/processed-driver/01_login_page.png', 
-    '/home-marketing/processed-driver/02_create_account.png',
-    '/home-marketing/processed-driver/03_home_page.png',
-    '/home-marketing/processed-driver/05_driver_navigation.png',
-    '/home-marketing/processed-driver/06_in_ride_chat.png', 
-    '/home-marketing/processed-driver/07_ride_cash_collection.png',
-    '/home-marketing/processed-driver/08_driver_dashboard.png',
-    '/home-marketing/processed-driver/09_account_page.png',
+    '/home-marketing/marketing-driver/marketing_3.png', 
+    '/home-marketing/marketing-driver/marketing_4.png',
+    '/home-marketing/marketing-driver/marketing_5.png',
+    '/home-marketing/marketing-driver/marketing_6.png',
+    '/home-marketing/marketing-driver/marketing_7.png',
+    '/home-marketing/marketing-driver/marketing_8.png',
+    '/home-marketing/marketing-driver/marketing_9.png',
   ];
 
   return (
