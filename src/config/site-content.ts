@@ -41,6 +41,7 @@ export const pageThemes: Record<PublicPageKey, PageTheme> = {
   home: { pageColor: '#ffffff' },
   ride: { pageColor: '#2c9c8e', pageBgColor: '#3cdac7' },
   drive: { pageColor: '#f0453d', pageBgColor: '#d01910' },
+  payments: { pageColor: '#ffffff' },
   corporate: { pageColor: '#2196F3', pageBgColor: '#64afec' },
   about: { pageColor: '#f0453d' },
   account: { pageColor: '#FF9800', pageBgColor: '#ffb74d' },
@@ -71,6 +72,14 @@ export const pageSeo: Record<PublicPageKey, SeoProps> = {
     canonical: '/drive',
     ogImage: '/ecoride-256.png',
     keywords: ['drive with Ecoride', 'driver app Malawi', 'earn by driving Malawi'],
+  },
+  payments: {
+    title: 'Driver Payments | Ecoride Malawi',
+    description:
+      'Learn how Ecoride driver payouts work, when drivers are paid, how digital payouts move, and how to update payout methods in the driver app.',
+    canonical: '/drive/payments',
+    ogImage: '/ecoride-256.png',
+    keywords: ['Ecoride driver payments', 'driver payouts Malawi', 'Ecoride payout methods'],
   },
   corporate: {
     title: 'Ecoride Corporate | Reliable Transport For Teams',
@@ -138,7 +147,13 @@ export const headerNavigation: Record<PublicPageKey, NavItem[]> = {
   ],
   drive: [
     { kind: 'link', label: 'Drive', href: '/drive' },
+    { kind: 'link', label: 'Payments', href: '/drive/payments' },
     // { kind: 'link', label: 'Rent out'},
+  ],
+  payments: [
+    { kind: 'link', label: 'Drive', href: '/drive' },
+    { kind: 'link', label: 'Payments', href: '/drive/payments' },
+    { kind: 'dropdown', label: 'About', items: [...aboutDropdownItems] },
   ],
   corporate: [
     { kind: 'link', label: 'Ecoride Corporate', href: '/corporate' },

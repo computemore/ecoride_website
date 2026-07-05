@@ -23,7 +23,7 @@ const config: Config = {
         'content-wide': '86rem',
       },
       fontFamily: {
-        sans: ['var(--font-poppins)', 'sans-serif'],
+        sans: ['var(--font-inter)', 'sans-serif'],
       },
     },
   },

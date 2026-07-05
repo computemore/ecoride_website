@@ -47,6 +47,21 @@
 		},
 		{
 			"path": "../../unimarket-technologies-website"
+		},
+		{
+			"path": "../../afriflex"
+		},
+		{
+			"path": "../../afriflex-admin"
+		},
+		{
+			"path": "../../afriflex-webapp"
+		},
+		{
+			"path": "../../afriflex-contracts"
+		},
+		{
+			"path": "../../afriflex-ussd"
 		}
 	],
 	"settings": {

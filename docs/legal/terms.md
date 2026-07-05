@@ -25,7 +25,7 @@ The Services constitute a technology platform that enables users of Ecoride’s 
 
 Subject to your compliance with these Terms, Ecoride grants you a limited, non-exclusive, non-sublicensable, revocable, non-transferrable license to: (i) access and use the Applications on your personal device solely in connection with your use of the Services; and (ii) access and use any content, information and related materials that may be made available through the Services, in each case solely for your personal, noncommercial use. Any rights not expressly granted herein are reserved by Ecoride and Ecoride’s licensors.
 
-### 2.2. Restrictions.
+### 2.2. Restrictions
 
 You may not: (i) remove any copyright, trademark or other proprietary notices from any portion of the Services; (ii) reproduce, modify, prepare derivative works based upon, distribute, license, lease, sell, resell, transfer, publicly display, publicly perform, transmit, stream, broadcast or otherwise exploit the Services except as expressly permitted by Ecoride; (iii) decompile, reverse engineer or disassemble the Services except as may be permitted by applicable law; (iv) link to, mirror or frame any portion of the Services; (v) cause or launch any programs or scripts for the purpose of scraping, indexing, surveying, or otherwise data mining any portion of the Services or unduly burdening or hindering the operation and/or functionality of any aspect of the Services; or (vi) attempt to gain unauthorized access to or impair any aspect of the Services or its related systems or networks.
 
@@ -94,7 +94,7 @@ c) your issuing bank may levy additional charges or fees in respect of such inte
 
 You further acknowledge and agree that each time you select and use a saved digital payment method for a transaction via the Ecoride App, the foregoing provisions shall apply.
 
-### 4.2. Repair or Cleaning Fees.
+### 4.2. Repair or Cleaning Fees
 
 You shall be responsible for the cost of repair for damage to, or necessary cleaning of, Third Party Provider vehicles and property resulting from use of the Services under your Account in excess of normal “wear and tear” damages and necessary cleaning (“Repair or Cleaning”). In the event that a Third Party Provider reports the need for Repair or Cleaning, and such Repair or Cleaning request is verified by Ecoride in Ecoride’s reasonable discretion, Ecoride reserves the right to facilitate payment for the reasonable cost of such Repair or Cleaning on behalf of the Third Party Provider using your payment method designated in your Account. Such amounts will be transferred by Ecoride to the applicable Third Party Provider and are non-refundable.
 

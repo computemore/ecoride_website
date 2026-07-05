@@ -2,6 +2,7 @@ const riderAppLink = process.env.CLOSED_TESTING_RIDER_APP_LINK || 'https://play.
 // const riderAppTesterLink = process.env.CLOSED_TESTING_RIDER_APP_TESTER_LINK || 'https://play.google.com/apps/testing/com.computemore.ecoride';
 const driverAppLink = process.env.CLOSED_TESTING_DRIVER_APP_LINK || 'https://play.google.com/store/apps/details?id=com.computemore.ecoridedriver';
 // const driverAppTesterLink = process.env.CLOSED_TESTING_DRIVER_APP_TESTER_LINK || 'https://play.google.com/apps/testing/com.computemore.ecoridedriver';
+const driverPayoutMethodsVideoUrl = process.env.NEXT_PUBLIC_DRIVER_PAYOUT_METHODS_VIDEO_URL || '';
 
 // export this content for site wide use, such as in the header, footer, or contact page
 export const appSettings = {
@@ -24,5 +25,8 @@ export const appSettings = {
       label: 'Driver',
       href: driverAppLink,
     },
+  },
+  media: {
+    driverPayoutMethodsVideoUrl,
   },
 } as const;

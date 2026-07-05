@@ -1,4 +1,12 @@
-export type PublicPageKey = 'home' | 'ride' | 'drive' | 'corporate' | 'about' | 'account' | 'comingSoon';
+export type PublicPageKey =
+  | 'home'
+  | 'ride'
+  | 'drive'
+  | 'payments'
+  | 'corporate'
+  | 'about'
+  | 'account'
+  | 'comingSoon';
 
 export interface DropdownItem {
   href: string;
