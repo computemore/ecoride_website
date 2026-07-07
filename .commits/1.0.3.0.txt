@@ -1,0 +1,30 @@
+Ecoride Website 1.0.3.0 Release Notes
+Release Date: July 07, 2026
+=====================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.3.0] - 2026-07-07
+
+Diff Baseline
+- Compared against tag `1.0.2.0` using `git diff 1.0.2.0 -- . ':(exclude).commits/*'`.
+- Runtime diff size: 0 files changed.
+- `git status --short --untracked-files=all` reported no uncommitted runtime changes before this release note was created.
+- `package.json` still reports package version `1.0.0.9`; this release note reserves the repository release stream version `1.0.3.0`.
+
+### Release accounting
+- This is a release-note-only/version-reservation entry for the website repository.
+- The repository HEAD is currently at the `1.0.2.0` tag, so there is no source, asset, configuration, route, dependency, or styling delta to summarize between `1.0.2.0` and this `1.0.3.0` note.
+- No production website functionality is changed by this note on its own.
+
+### Documentation
+- Added `.commits/1.0.3.0.txt` following the existing `.commits` release-note convention used by `1.0.2.0.txt` and earlier website notes.
+- The note explicitly records the empty runtime diff so future release audits do not mistake this version marker for a hidden source change.
+
+### Breaking changes
+- None.
+
+### Testing recommendations
+- If a `1.0.3.0` website release is to ship with runtime changes later, create the source changes first and regenerate this note from the new tag/diff baseline.
+- For the current state, standard website validation can be limited to confirming repository cleanliness and successful build parity with `1.0.2.0`.
