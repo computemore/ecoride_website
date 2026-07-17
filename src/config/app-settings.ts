@@ -1,8 +1,11 @@
-const riderAppLink = process.env.CLOSED_TESTING_RIDER_APP_LINK || 'https://play.google.com/store/apps/details?id=com.computemore.ecoride';
+import { useDriverDownloadUrl } from '@/hooks/use-driver-download-url';
+import { useRiderDownloadUrl } from '@/hooks/use-rider-download-url';
+
+const riderAppLink = useRiderDownloadUrl;
 // const riderAppTesterLink = process.env.CLOSED_TESTING_RIDER_APP_TESTER_LINK || 'https://play.google.com/apps/testing/com.computemore.ecoride';
-const driverAppLink = process.env.CLOSED_TESTING_DRIVER_APP_LINK || 'https://play.google.com/store/apps/details?id=com.computemore.ecoridedriver';
+const driverAppLink = useDriverDownloadUrl;
 // const driverAppTesterLink = process.env.CLOSED_TESTING_DRIVER_APP_TESTER_LINK || 'https://play.google.com/apps/testing/com.computemore.ecoridedriver';
-const driverPayoutMethodsVideoUrl = process.env.NEXT_PUBLIC_DRIVER_PAYOUT_METHODS_VIDEO_URL || '';
+const driverPayoutMethodsVideoUrl = process.env.NEXT_PUBLIC_DRIVER_PAYOUT_METHODS_VIDEO_URL || 'https://media.ecoridemw.com/videos/iphone-17-pro_payout-method-add-720p.mp4';
 
 // export this content for site wide use, such as in the header, footer, or contact page
 export const appSettings = {

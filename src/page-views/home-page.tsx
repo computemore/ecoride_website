@@ -11,6 +11,7 @@ import { SectionHeading } from '@/components/widgets/section-heading';
 import { appSettings } from '@/config/app-settings';
 import { homeInfoCards } from '@/config/site-content';
 import { useRiderDownloadUrl } from '@/hooks/use-rider-download-url';
+// import { useDriverDownloadUrl } from '@/hooks/use-driver-download-url';
 
 const AutoScrollingGallery = ({ images }: { images: string[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -82,6 +83,7 @@ const AutoScrollingGallery = ({ images }: { images: string[] }) => {
 export const HomePage = () => {
   const [showImage, setShowImage] = useState(false);
   const riderDownloadUrl = useRiderDownloadUrl();
+  // const driverDownloadUrl = useDriverDownloadUrl();
 
   const driverImages = [
     // '/home-marketing/processed/01-processed-login-page-phone-otp-page.png',
