@@ -323,8 +323,8 @@ export const driveFeatureCards: CardContent[] = [
     description:
       'From documents to support access, sign up happens fully in the mobile app - no need for visiting a physical location, download to explore.',
     bullets: ['Document-based onboarding', 'Driver Safety Hub', 'Support visibility'],
-    href: appSettings.downloadLinks.driver.href,
-    hrefLabel: 'Download Ecoride Driver App',
+    // href: appSettings.downloadLinks.driver.href,
+    // hrefLabel: 'Download Ecoride Driver App',
   },
 ];
 
