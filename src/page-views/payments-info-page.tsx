@@ -10,6 +10,7 @@ import { appSettings } from '@/config/app-settings';
 import type { CardContent } from '@/config/site-content';
 import { CheckCircleIcon, SiteTitleIconDark } from '@/icons';
 import { PublicLayout } from '@/layouts/public-layout';
+import { useDriverDownloadUrl } from '@/hooks/use-driver-download-url';
 
 const payoutCards = [
   {
@@ -80,6 +81,7 @@ const methodSteps = [
 export const PaymentsInfoPage = () => {
   const [showImage, setShowImage] = useState(false);
   const payoutMethodsVideoUrl = appSettings.media.driverPayoutMethodsVideoUrl;
+  const driverDownloadUrl = useDriverDownloadUrl();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -116,7 +118,7 @@ export const PaymentsInfoPage = () => {
               <BaseButton href="#payout-methods" variant="solid-green">
                 Watch payout guide
               </BaseButton>
-              <BaseButton href={appSettings.downloadLinks.driver.href} variant="ghost-dark">
+              <BaseButton href={driverDownloadUrl} variant="ghost-dark">
                 Download Driver App
               </BaseButton>
             </div>

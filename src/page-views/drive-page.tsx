@@ -115,7 +115,7 @@ export const DrivePage = () => {
               The driver experience is designed and engineered around your time and money - featuring real-time demand indicators, smooth navigation, and earnings breakdowns!
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-3 lg:justify-start">
-              <BaseButton href={appSettings.downloadLinks.driver.href} variant="solid-light">
+              <BaseButton href={driverDownloadUrl} variant="solid-light">
                 Download Driver App
               </BaseButton>
               {/* <BaseButton href="/about#partners" variant="ghost-light">
