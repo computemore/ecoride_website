@@ -11,10 +11,11 @@ export const useRiderDownloadUrl = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const userAgent = window.navigator.userAgent || window.navigator.vendor || (window as any).opera;
+    const browserWindow = window as Window & { opera?: string; MSStream?: unknown };
+    const userAgent = window.navigator.userAgent || window.navigator.vendor || browserWindow.opera || '';
     
     // Check for iOS (iPhone, iPad, iPod)
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream;
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !browserWindow.MSStream;
     
     // Check for iPadOS (iPad on iOS 13+)
     const isIPadOS = window.navigator.platform === 'MacIntel' && window.navigator.maxTouchPoints > 1;
