@@ -10,6 +10,8 @@ import { MapOffice } from '@/components/widgets/map-office';
 import { SectionHeading } from '@/components/widgets/section-heading';
 import { appSettings } from '@/config/app-settings';
 import { homeInfoCards } from '@/config/site-content';
+import { useRiderDownloadUrl } from '@/hooks/use-rider-download-url';
+// import { useDriverDownloadUrl } from '@/hooks/use-driver-download-url';
 
 const AutoScrollingGallery = ({ images }: { images: string[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -59,7 +61,7 @@ const AutoScrollingGallery = ({ images }: { images: string[] }) => {
   return (
     <div 
       ref={containerRef} 
-      className="w-full h-full min-h-[300px] overflow-hidden rounded-[18px] md:rounded-[20px] bg-slate-900/0 border-none border-slate-900/10 flex items-center"
+      className="w-full h-full min-h-[290px] overflow-hidden rounded-[var(--radius-card)] bg-slate-900/0 border-none border-slate-900/10 flex items-center"
     >
       <div ref={trackRef} className="flex gap-4 px-4 py-4 w-max">
         {images.map((src, i) => (
@@ -80,38 +82,31 @@ const AutoScrollingGallery = ({ images }: { images: string[] }) => {
 
 export const HomePage = () => {
   const [showImage, setShowImage] = useState(false);
+  const riderDownloadUrl = useRiderDownloadUrl();
+  // const driverDownloadUrl = useDriverDownloadUrl();
 
   const driverImages = [
     // '/home-marketing/processed/01-processed-login-page-phone-otp-page.png',
     // '/home-marketing/processed/02-processed-login-page-email-pass-page.png',
     // '/home-marketing/processed/03-processed-home-page.png',
-    '/home-marketing/processed-driver/01_login_page.png', 
-    '/home-marketing/processed-driver/02_create_account.png',
-    '/home-marketing/processed-driver/03_home_page.png',
-    '/home-marketing/processed-driver/05_driver_navigation.png',
-    '/home-marketing/processed-driver/06_in_ride_chat.png', 
-    '/home-marketing/processed-driver/07_ride_cash_collection.png',
-    '/home-marketing/processed-driver/08_driver_dashboard.png',
-    '/home-marketing/processed-driver/09_account_page.png',
+    '/home-marketing/marketing-driver/marketing_3.png', 
+    '/home-marketing/marketing-driver/marketing_4.png',
+    '/home-marketing/marketing-driver/marketing_5.png',
+    '/home-marketing/marketing-driver/marketing_6.png',
+    '/home-marketing/marketing-driver/marketing_7.png',
+    '/home-marketing/marketing-driver/marketing_8.png',
+    '/home-marketing/marketing-driver/marketing_9.png',
   ];
 
   // Mocking your processed images array (update counts/filenames as needed)
   const riderImages = [
-    '/home-marketing/processed/01-processed-login-page-phone-otp-page.png',
-    '/home-marketing/processed/02-processed-login-page-email-pass-page.png',
-    '/home-marketing/processed/03-processed-home-page.png',
-    '/home-marketing/processed/04-processed-favorite-places-pop-page.png',
-    '/home-marketing/processed/05-processed-favorite-places-add-page.png',
-    '/home-marketing/processed/06-processed-select-location-page.png',
-    '/home-marketing/processed/07-processed-confirm-ride-page.png',
-    '/home-marketing/processed/08-processed-pinpoint-page.png',
-    '/home-marketing/processed/09-processed-account-page.png',
-    '/home-marketing/processed/10-processed-safety-hub-page.png',
-    '/home-marketing/processed/11-processed-login-security-page.png',
-    '/home-marketing/processed/12-processed-payment-method-page.png',
-    '/home-marketing/processed/13-processed-topup-page.png',
-    '/home-marketing/processed/14-processed-transactions-page.png',
-    '/home-marketing/processed/15-processed-referrals-page.png',
+    '/home-marketing/marketing-rider/marketing_page_3.png', 
+    '/home-marketing/marketing-rider/marketing_page_4.png',
+    '/home-marketing/marketing-rider/marketing_page_5.png',
+    '/home-marketing/marketing-rider/marketing_page_6.png',
+    '/home-marketing/marketing-rider/marketing_page_7.png',
+    '/home-marketing/marketing-rider/marketing_page_8.png',
+    '/home-marketing/marketing-rider/marketing_page_9.png',
   ];
 
   useEffect(() => {
@@ -133,11 +128,11 @@ export const HomePage = () => {
           }`}
         >
           <div className="text-center">
-            <h1 className="text-balance mx-auto mt-0 max-w-5xl text-5xl font-medium leading-[0.92] text-slate-950/95 md:text-7xl lg:text-[3.8rem] xl:text-[6.8rem]">
-              <SiteTitleIconDark className='w-[220px] xl:w-[460px] lg:w-[300px] inline-flex items-center justify-center'/>
+            <h1 className="text-balance mx-auto mt-0 max-w-5xl text-5xl font-medium leading-[0.92] text-slate-950/95 md:text-7xl lg:text-[3.6rem] xl:text-[5.8rem]">
+              <SiteTitleIconDark className='w-[190px] xl:w-[400px] lg:w-[260px] inline-flex items-center justify-center'/>
               <br/>a ride simplified.
             </h1>
-            <p className="mx-auto mt-4 lg:mt-6 max-w-3xl lg:max-w-xl text-[16px] leading-7 md:text-[18px] md:leading-10 text-slate-950/85">
+            <p className="mx-auto mt-4 lg:mt-6 max-w-3xl lg:max-w-xl text-[16px] leading-7 md:leading-10 text-slate-950/85">
               A local-first ride sharing and car rental platform by Malawians, for Malawians, with support for corporates
             </p>
             <div 
@@ -145,7 +140,7 @@ export const HomePage = () => {
                 showImage ? 'scale-111 md:translate-y-0 md:scale-[1.18]' : ''
               }`}
             >
-              <BaseButton href={appSettings.downloadLinks.rider.href} variant="solid-green">
+              <BaseButton href={riderDownloadUrl} variant="solid-green">
                 Download Rider App
               </BaseButton>
               <BaseButton href="/corporate" variant="ghost-dark">
@@ -158,7 +153,7 @@ export const HomePage = () => {
         {/* Framed Screenshot Animation */}
         <a
           href="#"
-          className={`absolute bottom-0 mb-8 left-0 right-0 pb-8 md:pb-0 md:left-auto md:right-8 md:top-1/2 top-3/5 flex justify-center z-10 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+          className={`absolute bottom-0 -mt-0 mb-8 left-0 right-0 pb-8 md:pb-0 md:left-auto md:right-8 md:top-1/2 top-3/5 flex justify-center z-10 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
             showImage
               ? 'opacity-100 translate-y-0 md:-translate-y-1/2 md:translate-x-0'
               : 'opacity-0 translate-y-full md:-translate-y-1/2 md:translate-x-full'
@@ -175,13 +170,13 @@ export const HomePage = () => {
       </section>
 
     {/* rider app section */}
-    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
+    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8 my-12">
       <SectionHeading
         description="Designed and engineered to take you wherever you want to go"
         eyebrow="The Ecoride rider app"
         title="Explore the ecoride rider app on both iOS and Android"
       />
-      <div className="mt-6 xl:mt-8 grid gap-4 xl:gap-2 lg:grid-cols-[1fr,2fr]">
+      <div className="mt-2 xl:mt-8 grid gap-4 xl:gap-2 lg:grid-cols-[1fr,2fr]">
         {homeInfoCards.length > 0 && (
           <div className="h-full">
             <MarketingCard {...homeInfoCards[0]} />
@@ -192,14 +187,14 @@ export const HomePage = () => {
     </section>
 
     {/* driver app and program section */}
-    <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8">
+    <section className="mx-auto max-w-content-wide px-4 pb-14 md:px-6 lg:px-8 my-12">
       <SectionHeading
         description="Your money, your way - we understand, your time matters"
         eyebrow="Want to earn?"
         title="Enroll for our driver program and start earning with ecoride"
         forceAlignment='right'
       />
-      <div className="mt-6 xl:mt-8 grid gap-4 xl:gap-2 lg:grid-cols-[2fr,1fr]">
+      <div className="mt-2 xl:mt-8 grid gap-4 xl:gap-2 lg:grid-cols-[2fr,1fr]">
         <AutoScrollingGallery images={driverImages} />
         {homeInfoCards.length > 1 && (
           <div className="h-full">
@@ -210,17 +205,17 @@ export const HomePage = () => {
     </section>
 
     {/* above the footer content */}
-    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-6 lg:px-8">
-      <div className="surface-card rounded-card grid gap-8 p-7 md:grid-cols-[1.2fr,0.8fr] md:p-10">
+    <section className="mx-auto max-w-content-wide px-4 pb-24 md:px-0 lg:px-0 my-20">
+      <div className="grid gap-8 p-0 md:grid-cols-[1.2fr,0.8fr] md:p-10">
         <div>
-          <p className="text-[14px] font-semibold uppercase tracking-[0.24em] text-slate-950/85">Local credibility</p>
-          <h2 className="mt-4 text-2xl font-medium text-slate-950/95 md:text-4xl">Grounded in Malawi, built for the journeys people already make</h2>
+          <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-slate-950/85">Locally made</p>
+          <h2 className="mt-4 text-2xl font-medium text-slate-950/95 md:text-4xl">Built in Malawi for the journeys people already make</h2>
           {/* <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-950/85 md:text-base md:leading-8"> */}
             {/* The new website treats Ecoride as a platform for riders, drivers, and teams without hiding the fact that real local transport depends on */}
             {/* practical support, local contact, and clear expectations. */}
           {/* </p> */}
           <div className="mt-6 flex flex-wrap gap-3">
-            <BaseButton href="/about" variant="solid-dark">
+            <BaseButton href="/about/terms" variant="solid-dark">
               About Ecoride
             </BaseButton>
             <BaseButton href="/drive" variant="ghost-dark">
@@ -228,11 +223,11 @@ export const HomePage = () => {
             </BaseButton>
           </div>
         </div>
-        <div className="w-full md:col-span-2 flex flex-row rounded-[18px]">
+        <div className="w-full lg:col-span-2 flex flex-col lg:flex-row rounded-[18px] justify-between">
           <MapOffice />
           <div className="rounded-[18px] min-w-[300px] p-6">
-            <p className="text-[16px] font-semibold text-slate-950">Visit or call</p>
-            <div className="mt-4 space-y-2 text-[16px] leading-6 text-slate-950/80 sm:text-sm sm:leading-7">
+            <p className="text-[14px] font-semibold text-slate-950">Visit or call</p>
+            <div className="mt-4 space-y-2 text-[14px] leading-6 text-slate-950/80 sm:text-sm sm:leading-7">
               {appSettings.addressLines.map((line) => (
                 <p key={line}>{line}</p>
               ))}
@@ -240,7 +235,7 @@ export const HomePage = () => {
                 <p key={phone}>{phone}</p>
               ))}
               <a 
-                className="rounded-[18px] text-[15px] bg-slate-950 inline-flex break-all items-center gap-2 pl-3 pr-2 text-white" 
+                className="rounded-[18px] text-[15px] bg-slate-950 inline-flex break-all items-center gap-2 pl-3 pr-2 text-white hover:scale-[1.03]" 
                 href={`mailto:${appSettings.supportEmail}`}
               >
                 {appSettings.supportEmail}

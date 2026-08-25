@@ -103,7 +103,7 @@ If a token exists in both code and documentation, code is the executable source 
 Defined in `tailwind.config.ts`:
 
 | Token | Value | Usage |
-|---|---:|---|
+| --- | ---: | --- |
 | `brand.red` | `#f0453d` | Home and Drive route identity |
 | `brand.teal` | `#2c9c8e` | Ride route identity |
 | `brand.blue` | `#2196F3` | Corporate route identity |
@@ -113,7 +113,7 @@ Defined in `tailwind.config.ts`:
 Defined in `src/styles/variables.css`:
 
 | Token | Value | Usage |
-|---|---:|---|
+| --- | ---: | --- |
 | `--text-primary` | `rgba(255, 255, 255, 1)` | Primary text |
 | `--text-secondary` | `rgba(255, 255, 255, 0.76)` | Secondary body copy |
 | `--text-tertiary` | `rgba(255, 255, 255, 0.62)` | Lower-priority labels |
@@ -143,14 +143,14 @@ This yields the required subtle diagonal curve from slightly darker to full-colo
 Defined in both `variables.css` and `tailwind.config.ts`:
 
 | Token | Value | Usage |
-|---|---:|---|
+| --- | ---: | --- |
 | `--radius-pill` / `rounded-pill` | `20px` | Buttons, pills, dropdown items, small chips |
 | `--radius-card` / `rounded-card` | `28px` | Cards, hero panels, surface blocks |
 
 ### 4.4 Layout Tokens
 
 | Token | Value | Usage |
-|---|---:|---|
+| --- | ---: | --- |
 | `--content-max-width` | `86rem` | Main route container width |
 | `max-w-content-wide` | `86rem` | Shared content shell utility |
 
@@ -159,7 +159,7 @@ Defined in both `variables.css` and `tailwind.config.ts`:
 Defined in `tailwind.config.ts`:
 
 | Token | Value | Usage |
-|---|---:|---|
+| --- | ---: | --- |
 | `shadow-float` | `0 18px 40px rgba(15, 23, 42, 0.18)` | Elevated cards on hover |
 | `shadow-glow` | `0 12px 30px rgba(255, 255, 255, 0.12)` | Reserved accent glow usage |
 
@@ -323,7 +323,7 @@ It should always support:
 Each route has its own identity but must still feel like the same system.
 
 | Route | Surface identity | Narrative role |
-|---|---|---|
+| --- | --- | --- |
 | Home | Red | Brand entry and route selection |
 | Ride | Teal | Safety, confidence, convenience |
 | Drive | Red | Earning, readiness, support |

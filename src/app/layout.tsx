@@ -1,16 +1,16 @@
 import type { Metadata, Viewport } from 'next';
-import { Poppins } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import type { Organization, WebSite, WithContext } from 'schema-dts';
 
 import { StructuredData } from '@/components/widgets/structured-data';
 import { appSettings } from '@/config/app-settings';
 import '@/styles/main.css';
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
-  variable: '--font-poppins',
+  variable: '--font-inter',
 });
 
 const organizationSchema: WithContext<Organization> = {
@@ -173,7 +173,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   // return this jsx, rm bg-brand-red to prevent red paint
   return (
-    <html className={poppins.variable} lang="en">
+    <html className={inter.variable} lang="en">
       <body className="min-h-screen bg-[var(--page-color)] text-white antialiased">
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />

@@ -1,5 +1,5 @@
 import type { NavItem, PageTheme, PublicPageKey, SeoProps } from '@/types';
-
+import { appSettings } from '@/config/app-settings';
 export interface CardContent {
   eyebrow: string;
   title: string;
@@ -40,7 +40,8 @@ const aboutDropdownItems = [
 export const pageThemes: Record<PublicPageKey, PageTheme> = {
   home: { pageColor: '#ffffff' },
   ride: { pageColor: '#2c9c8e', pageBgColor: '#3cdac7' },
-  drive: { pageColor: '#f0453d', pageBgColor: '#ed7a74' },
+  drive: { pageColor: '#f0453d', pageBgColor: '#d01910' },
+  payments: { pageColor: '#ffffff' },
   corporate: { pageColor: '#2196F3', pageBgColor: '#64afec' },
   about: { pageColor: '#f0453d' },
   account: { pageColor: '#FF9800', pageBgColor: '#ffb74d' },
@@ -71,6 +72,14 @@ export const pageSeo: Record<PublicPageKey, SeoProps> = {
     canonical: '/drive',
     ogImage: '/ecoride-256.png',
     keywords: ['drive with Ecoride', 'driver app Malawi', 'earn by driving Malawi'],
+  },
+  payments: {
+    title: 'Driver Payments | Ecoride Malawi',
+    description:
+      'Learn how Ecoride driver payouts work, when drivers are paid, how digital payouts move, and how to update payout methods in the driver app.',
+    canonical: '/drive/payments',
+    ogImage: '/ecoride-256.png',
+    keywords: ['Ecoride driver payments', 'driver payouts Malawi', 'Ecoride payout methods'],
   },
   corporate: {
     title: 'Ecoride Corporate | Reliable Transport For Teams',
@@ -138,7 +147,13 @@ export const headerNavigation: Record<PublicPageKey, NavItem[]> = {
   ],
   drive: [
     { kind: 'link', label: 'Drive', href: '/drive' },
+    { kind: 'link', label: 'Payments', href: '/drive/payments' },
     // { kind: 'link', label: 'Rent out'},
+  ],
+  payments: [
+    { kind: 'link', label: 'Drive', href: '/drive' },
+    { kind: 'link', label: 'Payments', href: '/drive/payments' },
+    { kind: 'dropdown', label: 'About', items: [...aboutDropdownItems] },
   ],
   corporate: [
     { kind: 'link', label: 'Ecoride Corporate', href: '/corporate' },
@@ -215,7 +230,7 @@ export const homeInfoCards: CardContent[] = [
   {
     eyebrow: 'Drive',
     title: 'Earn with flexible availability and visible support',
-    description: 'Featuring smooth, GPS-aware navigation, real-time support, live driver analytics and controls, with in-ride chat.',
+    description: 'Featuring smooth, GPS-aware navigation, real-time support, live driver analytics and controls, with in-ride chat. With transparency and driver-safety as a priority.',
     bullets: ['Flexible earning, with realtime analytics', 'Fast and luxury ride classes', 'Driver Safety Hub support'],
     variation: 'red',
     href: '/drive',
@@ -290,8 +305,8 @@ export const driveFeatureCards: CardContent[] = [
     description:
       'The driver product is built around flexible schedules, online-offline control, and clear activity visibility for everyday earning.',
     bullets: ['Flexible availability', 'Daily activity visibility', 'Earnings-led workflow'],
-    href: '/about#partners',
-    hrefLabel: 'Explore driver opportunities',
+    // href: '/about#partners',
+    // hrefLabel: 'Explore driver opportunities',
   },
   {
     eyebrow: 'Move Fast',
@@ -299,17 +314,17 @@ export const driveFeatureCards: CardContent[] = [
     description:
       'Drivers are positioned to respond quickly with instant ride notifications, in-app chat, and operational clarity across each trip.',
     bullets: ['Real-time trip requests', 'In-ride rider communication', 'Fast and luxury ride classes'],
-    href: '/about#how-ecoride-works',
-    hrefLabel: 'See the workflow',
+    // href: '/about#how-ecoride-works',
+    // hrefLabel: 'See the workflow',
   },
   {
     eyebrow: 'Support',
-    title: 'Onboarding and safety remain visible',
+    title: 'Easy sign-up onboarding',
     description:
-      'From documents to support access, the product keeps driver readiness and escalation paths close to daily work.',
+      'From documents to support access, sign up happens fully in the mobile app - no need for visiting a physical location, download to explore.',
     bullets: ['Document-based onboarding', 'Driver Safety Hub', 'Support visibility'],
-    href: '/about#about-us',
-    hrefLabel: 'See the platform story',
+    // href: appSettings.downloadLinks.driver.href,
+    // hrefLabel: 'Download Ecoride Driver App',
   },
 ];
 

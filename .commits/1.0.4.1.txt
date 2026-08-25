@@ -1,0 +1,27 @@
+Ecoride Website 1.0.4.1 Release Notes
+Release Date: July 17, 2026
+=====================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.4.1] - 2026-07-17
+
+Diff Baseline
+- Compared against tag `1.0.4.0` using `git diff 1.0.4.0 -- . ':(exclude).commits/*'`.
+- Runtime diff size: 2 files changed.
+- `git status --short --untracked-files=all` reported 2 modified files before this release note was created.
+- `package.json` updated to version `1.0.4.1`.
+
+### Content adjustments
+- Modified `src/config/site-content.ts` to comment out the `href` and `hrefLabel` links inside the "Easy sign-up onboarding" card in the `driveFeatureCards` array.
+- This removes the download link/button from this specific onboarding card on the drive page to refine the user interface.
+
+### Documentation
+- Created `.commits/1.0.4.1.txt` outlining the changes introduced in this release stream increment.
+
+### Breaking changes
+- None.
+
+### Testing recommendations
+- Confirm that the drive page (`/drive`) renders successfully and that the "Easy sign-up onboarding" card no longer renders a redirect button.

@@ -6,9 +6,11 @@ This guide explains how to connect the new `ecoridemw.com` frontend built with N
 
 Store your API base URL in an environment variable so that you can switch between local and production API targets without changing application code.
 
-1.  Create a `.env.local` file in the root of the project:
+1. Create a `.env.local` file in the root of the project:
+
     ```env
-  NEXT_PUBLIC_API_BASE_URL=https://api.yourbackenddomain.com/v1
+
+  NEXT_PUBLIC_API_BASE_URL=<https://api.yourbackenddomain.com/v1>
     ```
 2.  In Next.js, variables prefixed with `NEXT_PUBLIC_` are exposed to browser-side code.
 
@@ -90,7 +92,7 @@ export const ContactForm: React.FC = () => {
 Because the website and API may live on different domains, the browser will block requests unless the backend explicitly allows the website origin.
 
 **On your backend server (e.g., Express.js, Django, Laravel):**
-You must configure your CORS policy to allow requests originating from `https://ecoridemw.com`. 
+You must configure your CORS policy to allow requests originating from `https://ecoridemw.com`.
 
 Example configuring CORS in an Express.js/Node API:
 
@@ -108,6 +110,7 @@ app.use(cors(corsOptions));
 ## 5. Deployment Checks on Vercel
 
 When deploying this frontend to Vercel:
+
 1. Go to your project settings in Vercel.
 2. Navigate to **Environment Variables**.
 3. Add `NEXT_PUBLIC_API_BASE_URL` and set its value to the production backend URL.

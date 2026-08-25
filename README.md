@@ -6,11 +6,10 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.3-blue)](https://tailwindcss.com/)
 [![Poppins Font](https://img.shields.io/badge/Poppins-Font-green)](https://fonts.google.com/specimen/Poppins)
 [![SEO](https://img.shields.io/badge/SEO-Optimized-green)](https://developers.google.com/search/docs/appearance/seo-starter-guide)
-[![SignalR](https://img.shields.io/badge/SignalR-8.0-blue)](https://dotnet.microsoft.com/apps/aspnet/signalr) 
+[![SignalR](https://img.shields.io/badge/SignalR-8.0-blue)](https://dotnet.microsoft.com/apps/aspnet/signalr)
 [![Google Maps API](https://img.shields.io/badge/Google%20Maps-APIs-green)](https://developers.google.com/maps)
 [![Google Sign-In](https://img.shields.io/badge/Google%20Sign--In-OAuth%202.0-red)](https://developers.google.com/identity)
 [![Microsoft Identity](https://img.shields.io/badge/Microsoft-OIDC-blue)](https://learn.microsoft.com/en-us/entra/identity-platform/)
-
 
 > Next.js App Router marketing website for Ecoride Malawi, built for strong SEO, fast server-rendered public pages, and a clean path to future rider, driver, and corporate growth.
 
@@ -53,7 +52,7 @@ Auth is intentionally deferred. The header reserves a login/profile slot without
 ## Commands
 
 | Command | Description |
-|---|---|
+| --- | --- |
 | `npm install` | Install dependencies |
 | `npm run dev -- --port 3003` | Start the Next.js dev server on port 3003 |
 | `npm run lint` | Run ESLint |
@@ -95,6 +94,6 @@ ecoride-website/
 
 ## Deployment
 
-Use a platform with first-class Next.js support. Vercel is the cleanest default for this project because it handles App Router rendering, metadata, and image optimization without extra server glue.
+Use a platform with first-class `Next.js` support. Vercel is the cleanest default for this project because it handles App Router rendering, metadata, and image optimization without extra server glue.
 
-If you deploy elsewhere, make sure the host supports running a Next.js server or a compatible build output rather than expecting a static SPA bundle.
+If you deploy elsewhere, make sure the host supports running a `Next.js` server or a compatible build output rather than expecting a static SPA bundle.

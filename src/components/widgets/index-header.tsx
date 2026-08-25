@@ -9,6 +9,8 @@ import { headerNavigation } from '@/config/site-content';
 import { ChevronDownIcon, SiteTitleIcon, EcorideMenuIcon, EcorideCloseIcon, SiteTitleIconDark, SiteTitleIconRound } from '@/icons';
 import type { PublicPageKey } from '@/types';
 import { cn } from '@/utils/cn';
+import { useRiderDownloadUrl } from '@/hooks/use-rider-download-url';
+import { useDriverDownloadUrl } from '@/hooks/use-driver-download-url';
 
 interface IndexHeaderProps {
   pageKey: PublicPageKey;
@@ -22,6 +24,8 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
   const [appsOpen, setAppsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const isLightTone = tone === 'light';
+  const riderDownloadUrl = useRiderDownloadUrl();
+  const driverDownloadUrl = useDriverDownloadUrl();
 
   const navigation = headerNavigation[pageKey];
   
@@ -136,7 +140,7 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
                           ? 'text-slate-700 hover:bg-slate-900/5 hover:text-slate-950 hover:font-bold'
                           : 'text-white/80 hover:bg-white/10 hover:text-white hover:font-bold',
                       )}
-                      href={item.href}
+                      href={item.label === 'Rider' ? riderDownloadUrl : driverDownloadUrl}
                       key={item.label}
                       rel="noreferrer"
                       target="_blank"
@@ -253,7 +257,7 @@ export const IndexHeader = ({ pageKey, tone = 'brand' }: IndexHeaderProps) => {
                           ? 'text-slate-700 hover:bg-slate-900/5 hover:text-slate-950'
                           : 'text-white/78 hover:bg-white/10 hover:text-white',
                       )}
-                      href={item.href}
+                      href={item.label === 'Rider' ? riderDownloadUrl : driverDownloadUrl}
                       key={item.label}
                       rel="noreferrer"
                       target="_blank"

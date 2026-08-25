@@ -20,6 +20,53 @@
 		},
 		{
 			"path": "../../skillsets"
+		},
+		{
+			"path": "../../technische-ideas"
+		},
+		{
+			"path": "../../nbm-commercial-website"
+		},
+		{
+			"path": "../../queaudit"
+		},
+		{
+			"path": "../../writing-aids/proposals"
+		},
+		{
+			"path": "../../writing-aids/drawings"
+		},
+		{
+			"path": "../../pangani-saas"
+		},
+		{
+			"path": "../../spec-driven-design"
+		},
+		{
+			"path": "../../INNTEGRATE"
+		},
+		{
+			"path": "../../unimarket-technologies-website"
+		},
+		{
+			"path": "../../afriflex"
+		},
+		{
+			"path": "../../afriflex-admin"
+		},
+		{
+			"path": "../../afriflex-webapp"
+		},
+		{
+			"path": "../../afriflex-contracts"
+		},
+		{
+			"path": "../../afriflex-ussd"
 		}
-	]
+	],
+	"settings": {
+		"chat.tools.terminal.autoApprove": {
+			"dotnet build": true
+		}
+	}
 }

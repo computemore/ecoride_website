@@ -14,84 +14,84 @@ In compliance with the Data Protection Act, user data shall be processed in acco
 
 We collect data to provide, improve, and personalize our Services, ensure safety, and comply with legal obligations.
 
-### a. Information You Provide Directly:
+### a. Information You Provide Directly
 
-•	Account Information: Name, email address, phone number, profile photo, and payment information (handled by secure, PCI-compliant processors).
+• Account Information: Name, email address, phone number, profile photo, and payment information (handled by secure, PCI-compliant processors).
 
-•	Service Details: Pick-up and drop-off locations, delivery instructions, recipient contact information, and contents/values for delivery items (where required for insurance or special handling).
+• Service Details: Pick-up and drop-off locations, delivery instructions, recipient contact information, and contents/values for delivery items (where required for insurance or special handling).
 
-•	Communications: Records of your interactions with our customer support, drivers, or couriers.
+• Communications: Records of your interactions with our customer support, drivers, or couriers.
 
-### b. Information Collected Automatically:
+### b. Information Collected Automatically
 
-•	Location Data: Precise real-time and background location (when the app is in use) is essential for matching you with nearby drivers, tracking your ride or delivery, ensuring safety, and analyzing traffic patterns. You can control location permissions through your device settings.
+• Location Data: Precise real-time and background location (when the app is in use) is essential for matching you with nearby drivers, tracking your ride or delivery, ensuring safety, and analyzing traffic patterns. You can control location permissions through your device settings.
 
-•	Device & Usage Information: IP address, device type, operating system, app crashes, unique device identifiers, and information about how you interact with our Services (e.g., pages viewed, features used).
+• Device & Usage Information: IP address, device type, operating system, app crashes, unique device identifiers, and information about how you interact with our Services (e.g., pages viewed, features used).
 
-•	Trip/Delivery Data: Date, time, distance, route, fare, driver/courier details, and ratings you provide.
+• Trip/Delivery Data: Date, time, distance, route, fare, driver/courier details, and ratings you provide.
 
-### c. How We Use Your Information:
+### c. How We Use Your Information
 
-•	To Provide Core Services: To facilitate and fulfill your transportation and delivery requests, process payments, and communicate trip/delivery status.
+• To Provide Core Services: To facilitate and fulfill your transportation and delivery requests, process payments, and communicate trip/delivery status.
 
-•	For Safety & Security: To verify user identities, conduct background checks on drivers/couriers (where applicable), and investigate and prevent fraudulent or unsafe activities.
+• For Safety & Security: To verify user identities, conduct background checks on drivers/couriers (where applicable), and investigate and prevent fraudulent or unsafe activities.
 
-•	To Improve & Personalize: To develop new features, perform analytics, and personalize your experience (e.g., suggesting frequent destinations).
+• To Improve & Personalize: To develop new features, perform analytics, and personalize your experience (e.g., suggesting frequent destinations).
 
-•	For Communication: To send you service-related announcements, transactional receipts, support messages, and (with your consent) promotional offers and updates.
+• For Communication: To send you service-related announcements, transactional receipts, support messages, and (with your consent) promotional offers and updates.
 
-•	For Legal & Compliance: To comply with legal obligations, resolve disputes, and enforce our Terms of Service.
+• For Legal & Compliance: To comply with legal obligations, resolve disputes, and enforce our Terms of Service.
 
 ## 3. Legal Basis for Processing
 
 The Platform processes personal data on one or more of the following lawful bases as recognized under the Data Protection Act, 2024:
 
-•	Consent of the user
+• Consent of the user
 
-•	Performance of a contract to which the user is a party
+• Performance of a contract to which the user is a party
 
-•	Compliance with a legal obligation
+• Compliance with a legal obligation
 
-•	Legitimate interests of the Platform, provided such interests do not override the rights and freedoms of the user
+• Legitimate interests of the Platform, provided such interests do not override the rights and freedoms of the user
 
 ## 4. Consumer Consent and Trust: Your Choices and Rights
 
 Your trust is paramount. We are committed to giving you control over your personal data.
 
-### a. Providing and Withdrawing Consent:
+### a. Providing and Withdrawing Consent
 
-•	By creating an account and using our Services, you consent to the collection and use of your personal data as described in this policy and under the Data Protection Act, 2024.
+• By creating an account and using our Services, you consent to the collection and use of your personal data as described in this policy and under the Data Protection Act, 2024.
 
-•	Marketing Communications: You will only receive promotional emails and push notifications if you explicitly opt-in. You can withdraw this consent and opt-out at any time via the "Unsubscribe" link in emails or through your app notification settings.
+• Marketing Communications: You will only receive promotional emails and push notifications if you explicitly opt-in. You can withdraw this consent and opt-out at any time via the "Unsubscribe" link in emails or through your app notification settings.
 
-•	Location Services: You provide consent for location data collection when you enable location permissions for the Ecoride app on your device. You can change this at any time in your device settings, though disabling may limit core service functionality.
+• Location Services: You provide consent for location data collection when you enable location permissions for the Ecoride app on your device. You can change this at any time in your device settings, though disabling may limit core service functionality.
 
-### b. Your Data Protection Rights:
+### b. Your Data Protection Rights
 
 Depending on your location, you may have the following rights regarding your personal data:
 
-•	Right to Access & Portability: Request a copy of the personal data we hold about you in a structured, machine-readable format.
+• Right to Access & Portability: Request a copy of the personal data we hold about you in a structured, machine-readable format.
 
-•	Right to Correction: Request correction of inaccurate or incomplete personal data.
+• Right to Correction: Request correction of inaccurate or incomplete personal data.
 
-•	Right to Deletion: Request deletion of your personal data under certain circumstances (subject to legal retention requirements for safety, fraud, or financial record-keeping).
+• Right to Deletion: Request deletion of your personal data under certain circumstances (subject to legal retention requirements for safety, fraud, or financial record-keeping).
 
-•	Right to Object/Restrict Processing: Object to or restrict our processing of your data, particularly for direct marketing.
+• Right to Object/Restrict Processing: Object to or restrict our processing of your data, particularly for direct marketing.
 
-•	Right to Withdraw Consent: Where we rely on consent, you may withdraw it at any time without affecting the lawfulness of processing based on prior consent.
-To exercise these rights, please contact our Data Protection Officer (DPO) at privacy@ecoridemw.com. We will respond to legitimate requests within the timeframes required by applicable law.
+• Right to Withdraw Consent: Where we rely on consent, you may withdraw it at any time without affecting the lawfulness of processing based on prior consent.
+To exercise these rights, please contact our Data Protection Officer (DPO) at <privacy@ecoridemw.com>. We will respond to legitimate requests within the timeframes required by applicable law.
 
-### c. Building Trust through Security & Transparency:
+### c. Building Trust through Security & Transparency
 
-•	Data Security: We implement robust technical and organizational measures, including encryption, access controls, and secure cloud infrastructure, to protect your data from unauthorized access, loss, or misuse.
+• Data Security: We implement robust technical and organizational measures, including encryption, access controls, and secure cloud infrastructure, to protect your data from unauthorized access, loss, or misuse.
 
-•	Data Sharing & Disclosure: We do not sell your personal data. We only share it with trusted third parties as necessary (e.g., drivers/couriers to complete your trip, payment processors, cloud service providers, legal authorities when required). All third parties are contractually obligated to protect your data.
+• Data Sharing & Disclosure: We do not sell your personal data. We only share it with trusted third parties as necessary (e.g., drivers/couriers to complete your trip, payment processors, cloud service providers, legal authorities when required). All third parties are contractually obligated to protect your data.
 
-•	Data Retention: We retain your personal data only for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law.
+• Data Retention: We retain your personal data only for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law.
 
-•	Children's Privacy: Our Services are not intended for individuals under the age of 16. We do not knowingly collect data from children.
+• Children's Privacy: Our Services are not intended for individuals under the age of 16. We do not knowingly collect data from children.
 
-•	Policy Updates: We may update this policy periodically. We will notify you of material changes via the app or email and will post the updated policy with a new "Last Updated" date.
+• Policy Updates: We may update this policy periodically. We will notify you of material changes via the app or email and will post the updated policy with a new "Last Updated" date.
 
 ## 5. Cross-Border Data Transfers
 
@@ -99,7 +99,7 @@ Where personal data is transferred, stored, or processed outside the Republic of
 
 In particular, Ecoride, as a data controller, and any appointed data processors shall not transfer personal data from Malawi to another country or to an international organization unless one or more of the following conditions are satisfied:
 
-### a. The recipient of the personal data is subject to:
+### a. The recipient of the personal data is subject to
 
 i. a law;
 
@@ -113,7 +113,7 @@ v. a recognized certification mechanism,
 
 Which affords an adequate level of protection for personal data in accordance with the standards prescribed under the Data Protection Act, 2024; or
 
-### b. One or more of the lawful conditions permitting cross-border data transfers, as prescribed under the Data Protection Act, 2024, applies.
+### b. One or more of the lawful conditions permitting cross-border data transfers, as prescribed under the Data Protection Act, 2024, applies
 
 Ecoride shall ensure that any cross-border transfer of personal data is limited to what is strictly necessary for the performance of its services and that appropriate technical and organizational safeguards are implemented to protect such data against unauthorized access, loss, or misuse.
 

@@ -1,0 +1,43 @@
+Ecoride Website 1.0.4.0 Release Notes
+Release Date: July 17, 2026
+=====================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.4.0] - 2026-07-17
+
+Diff Baseline
+- Compared against tag `1.0.3.0` using `git diff 1.0.3.0 -- . ':(exclude).commits/*'`.
+- Runtime diff size: 8 files changed.
+- `git status --short --untracked-files=all` reported 6 modified files and 2 untracked files before this release note was created.
+- `package.json` updated to version `1.0.4.0`.
+
+### Dynamic Platform Redirection
+- Created a server-side route handler at `src/app/download/route.ts` to act as a target for QR codes and deep links.
+- The handler inspects the incoming request's `User-Agent` header for iOS devices (`/iPad|iPhone|iPod/i`) and Mac desktop Safari requesting the desktop site (`/Macintosh/i` with `/Safari/i` and without `/Chrome/i`).
+- Issues an HTTP 302 Found redirect to the appropriate store location based on the detected operating system.
+- Supports a query parameter `?app=driver` to redirect to the Driver App instead of the default Rider App.
+
+### Driver Download Localization
+- Created `src/hooks/use-driver-download-url.ts` which uses React hooks to detect the client device type (iOS/iPadOS vs. Android/Others) and supply the correct platform-specific application download store URL.
+- Configured dynamic iOS Driver Store URL pointing to `https://apps.apple.com/za/app/ecoride-driver/id6765518718` and Google Play Store URL pointing to `https://play.google.com/store/apps/details?id=com.computemore.ecoridedriver`.
+
+### Navigation Header & Footer Integration
+- Updated `src/components/widgets/index-header.tsx` to bind the Driver App download links in both mobile and desktop menus to the `driverDownloadUrl` hook rather than hardcoding static links.
+- Updated `src/components/widgets/site-footer.tsx` to dynamically reference `driverDownloadUrl` for the "Driver App" footer link.
+
+### App Configurations & Views
+- Updated `src/config/app-settings.ts` to import and assign hook pointers `useRiderDownloadUrl` and `useDriverDownloadUrl` to `riderAppLink` and `driverAppLink` configurations.
+- Adjusted `driverPayoutMethodsVideoUrl` to reference `'https://media.ecoridemw.com/videos/iphone-17-pro_payout-method-add-720p.mp4'`.
+- Refactored `src/page-views/drive-page.tsx` and `src/page-views/home-page.tsx` to link to dynamic download URLs.
+
+### Documentation
+- Created `.commits/1.0.4.0.txt` outlining the changes introduced in this release stream increment.
+
+### Breaking changes
+- None.
+
+### Testing recommendations
+- Validate the route handler locally by requesting `http://localhost:3000/download` and `http://localhost:3000/download?app=driver` from different user-agents (e.g., iPhone vs. Android/Chrome) to verify correct 302 redirection.
+- Verify the header and footer links resolve correctly to their respective store paths on dynamic OS environments.

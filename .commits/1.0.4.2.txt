@@ -1,0 +1,65 @@
+Ecoride Website v1.0.4.2 Release Notes
+Release Date: August 23, 2026
+======================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.4.2] - 2026-08-23
+
+Diff Baseline
+=============
+
+- Previous documented version and Git tag: `1.0.4.1` (commit `a427f111318f4b37b1970868041eb395f52cdde2`).
+- Working branch: `main`.
+- Release scope commands: `git diff 1.0.4.1 -- . ':(exclude).commits/**'`, `git diff 1.0.4.1 --numstat -- . ':(exclude).commits/**'`, `git ls-files --others --exclude-standard -- . ':(exclude).commits/**'`, and `git status --short`.
+- Tracked scope: 5 modified files, 9 insertions, 7 deletions.
+- Untracked runtime scope: 1 new route handler (`src/app/driver-download/route.ts`).
+- Effective runtime scope excluding `.commits/**`: 6 files, 30 insertions, 7 deletions.
+- Version mapping progression: `1.0.4.1` -> `1.0.4.2`.
+- `package.json` and `package-lock.json` synchronized to `1.0.4.2`.
+- No Git tag, commit, push, or production deployment was performed.
+
+Universal Driver Download Route Handler
+=======================================
+
+- Added dynamic Next.js App Router route handler at `src/app/driver-download/route.ts`:
+  - Handles incoming `GET /driver-download` HTTP requests on `ecoridemw.com`.
+  - Performs runtime inspection of incoming `User-Agent` request headers for mobile operating systems:
+    - **iOS Detection**: Identifies iPhone, iPad, and iPod mobile Safari user agents using regex `/iPad|iPhone|iPod/i`.
+    - **iPadOS / macOS Safari Detection**: Evaluates desktop-class iPad user agents matching `/Macintosh/i` with `/Safari/i` exclusion.
+  - Automatically issues an HTTP 302 temporary redirect:
+    - **iOS / iPadOS**: Redirects to Apple App Store listing (`https://apps.apple.com/za/app/ecoride-driver/id6765518718`).
+    - **Android / Desktop**: Redirects to Google Play Store listing (`https://play.google.com/store/apps/details?id=com.computemore.ecoridedriver`).
+  - Seamlessly complements the existing `/download` route handler (used for rider app downloads).
+
+TypeScript Strictness and Download Hook Typing Repairs
+=====================================================
+
+- Refined `src/hooks/use-driver-download-url.ts` and `src/hooks/use-rider-download-url.ts`:
+  - Removed unchecked `(window as any)` type assertions in client device evaluation logic.
+  - Introduced typed browser window shape `Window & { opera?: string; MSStream?: unknown }` to safely check Opera and legacy IE mobile properties without bypassing compiler constraints.
+  - Resolved ESLint rule `@typescript-eslint/no-explicit-any` across both client hooks.
+
+Code Files Touched
+==================
+
+- `src/app/driver-download/route.ts` [NEW]: Dedicated Next.js server route handler for device-aware driver app downloads.
+- `src/hooks/use-driver-download-url.ts`: Removed unsafe type casts and added explicit window typing.
+- `src/hooks/use-rider-download-url.ts`: Removed unsafe type casts and added explicit window typing.
+- `package.json`: Advanced website version to `1.0.4.2`.
+- `package-lock.json`: Advanced lockfile version to `1.0.4.2`.
+- `next-env.d.ts`: Maintained Next.js compiler environment type definitions.
+
+Compatibility and Deployment Notes
+==================================
+
+- Fully compatible with `Next.js 16.2.7 (Turbopack)` and `React 19.2.7`.
+- Universal URL `https://ecoridemw.com/driver-download` is immediately accessible across all marketing links, promotional campaigns, and automated admin SMS welcome notifications.
+- No environment variable, DNS configuration, or database migration changes are required.
+
+Validation Performed
+====================
+
+- `npm run lint`: Passed with 0 errors (`eslint .`).
+- `npm run build`: Passed (`next build` compiled all 16 static pages and 2 dynamic server routes `ƒ /download` and `ƒ /driver-download` in 5.0s with Turbopack).

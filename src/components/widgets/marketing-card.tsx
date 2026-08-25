@@ -44,7 +44,7 @@ export const MarketingCard = ({ eyebrow, title, description, bullets, variation 
         <ul className="mt-1 space-y-1 xl:mt-4 xl:space-y-4">
           {bullets.map((bullet) => (
             <li key={bullet} className="flex items-start gap-3 text-xs leading-6 text-white/74 xl:text-sm">
-              <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-white" />
+              <CheckCircleIcon className="h-5 w-5 shrink-0 text-white" />
               <span>{bullet}</span>
             </li>
           ))}

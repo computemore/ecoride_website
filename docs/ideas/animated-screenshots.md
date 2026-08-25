@@ -1,6 +1,6 @@
 # Animated Screenshots Concept for Driver and Rider Info Cards
 
-**Version:** 1.0.0.9
+**Version:** 1.0.3.0
 **Production URL:** `https://ecoridemw.com`  
 **Idea Inception Date:** April 24, 2026
 **Last Updated:** April 24, 2026
@@ -43,9 +43,10 @@ Given that we are already struggling with Large Contentful Paint (LCP) on mobile
 - Mobile browsers (Safari/Chrome) have strict autoplay policies. Even if we set a video to muted playsinline autoplay, browsers on "Low Power Mode" or under certain network conditions will block the video from playing, leaving the user staring at a frozen frame or a play button. Image animations via CSS/JS will always run regardless of power saving modes.
 
 > ### How to implement the "Animated Images" approach efficiently?
+>
 > The most performant way to build this in Next.js is to stack the images on top of each other using CSS absolute positioning, and fade their opacity in and out.
 
-## Here is a conceptual example of how we can build a lightweight "App Flow" component:
+## Here is a conceptual example of how we can build a lightweight "App Flow" component
 
 ```typescript
 'use client';
